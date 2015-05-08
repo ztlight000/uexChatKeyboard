@@ -1,0 +1,479 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3C5A1C291A3A8BE400F237F6 /* EUExChatKeyboard.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C5A1C281A3A8BE400F237F6 /* EUExChatKeyboard.h */; };
+		3C5A1C2B1A3A8BE400F237F6 /* EUExChatKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5A1C2A1A3A8BE400F237F6 /* EUExChatKeyboard.m */; };
+		3C5A1C7B1A3A972800F237F6 /* ZBMessageInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5A1C781A3A972800F237F6 /* ZBMessageInputView.m */; };
+		3C5A1C7C1A3A972800F237F6 /* ZBMessageTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5A1C7A1A3A972800F237F6 /* ZBMessageTextView.m */; };
+		3C5A1C861A3A999700F237F6 /* ChatKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5A1C851A3A999700F237F6 /* ChatKeyboard.m */; };
+		3C66A5EF1A3AD53B00B68E6B /* ZBExpressionSectionBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C66A5E51A3AD53B00B68E6B /* ZBExpressionSectionBar.m */; };
+		3C66A5F01A3AD53B00B68E6B /* ZBFaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C66A5E71A3AD53B00B68E6B /* ZBFaceView.m */; };
+		3C66A5F11A3AD53B00B68E6B /* ZBMessageManagerFaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C66A5E91A3AD53B00B68E6B /* ZBMessageManagerFaceView.m */; };
+		3C66A5F21A3AD53B00B68E6B /* ZBMessageShareMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C66A5EC1A3AD53B00B68E6B /* ZBMessageShareMenuItem.m */; };
+		3C66A5F31A3AD53B00B68E6B /* ZBMessageShareMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C66A5EE1A3AD53B00B68E6B /* ZBMessageShareMenuView.m */; };
+		3C66A5FC1A3AD74C00B68E6B /* NSAttributedString+Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C66A5F71A3AD74C00B68E6B /* NSAttributedString+Attributes.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3C66A5FD1A3AD74C00B68E6B /* NSString+Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C66A5F91A3AD74C00B68E6B /* NSString+Message.m */; };
+		3C66A5FE1A3AD74C00B68E6B /* UIImage+XHRounded.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C66A5FB1A3AD74C00B68E6B /* UIImage+XHRounded.m */; };
+		3C66A6061A3ADC5D00B68E6B /* ZBMessageAvatorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C66A6011A3ADC5D00B68E6B /* ZBMessageAvatorFactory.m */; };
+		3C66A6071A3ADC5D00B68E6B /* ZBMessageBubbleFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C66A6031A3ADC5D00B68E6B /* ZBMessageBubbleFactory.m */; };
+		3C66A6081A3ADC5D00B68E6B /* ZBMessageVoiceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C66A6051A3ADC5D00B68E6B /* ZBMessageVoiceFactory.m */; };
+		3C66A60C1A3ADC7900B68E6B /* ZBMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C66A60B1A3ADC7900B68E6B /* ZBMessage.m */; };
+		3C6D9C2D1A6C9BCE00F87CF1 /* ACPVoiceActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D9C2C1A6C9BCE00F87CF1 /* ACPVoiceActionView.m */; };
+		3C7DD5731AAD2AA600FDE63B /* ChatKeyboardData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7DD5721AAD2AA600FDE63B /* ChatKeyboardData.m */; };
+		3C9651DC1A636BCD0045C1E0 /* ChatKeyboardUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9651DB1A636BCD0045C1E0 /* ChatKeyboardUtility.m */; };
+		3CC7CC6E1AA5B30C00FEF7A6 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC7CC6D1AA5B30C00FEF7A6 /* XMLReader.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3C5A1C231A3A8BE400F237F6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				3C5A1C291A3A8BE400F237F6 /* EUExChatKeyboard.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3C5A1C251A3A8BE400F237F6 /* libuexChatKeyboard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libuexChatKeyboard.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C5A1C281A3A8BE400F237F6 /* EUExChatKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EUExChatKeyboard.h; sourceTree = "<group>"; };
+		3C5A1C2A1A3A8BE400F237F6 /* EUExChatKeyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EUExChatKeyboard.m; sourceTree = "<group>"; };
+		3C5A1C401A3A8CA200F237F6 /* EUExBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBase.h; sourceTree = "<group>"; };
+		3C5A1C411A3A8CA200F237F6 /* EUExBaseDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBaseDefine.h; sourceTree = "<group>"; };
+		3C5A1C421A3A8CA200F237F6 /* EUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUtility.h; sourceTree = "<group>"; };
+		3C5A1C771A3A972800F237F6 /* ZBMessageInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBMessageInputView.h; sourceTree = "<group>"; };
+		3C5A1C781A3A972800F237F6 /* ZBMessageInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBMessageInputView.m; sourceTree = "<group>"; };
+		3C5A1C791A3A972800F237F6 /* ZBMessageTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBMessageTextView.h; sourceTree = "<group>"; };
+		3C5A1C7A1A3A972800F237F6 /* ZBMessageTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBMessageTextView.m; sourceTree = "<group>"; };
+		3C5A1C841A3A999700F237F6 /* ChatKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatKeyboard.h; sourceTree = "<group>"; };
+		3C5A1C851A3A999700F237F6 /* ChatKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatKeyboard.m; sourceTree = "<group>"; };
+		3C66A5E41A3AD53B00B68E6B /* ZBExpressionSectionBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBExpressionSectionBar.h; sourceTree = "<group>"; };
+		3C66A5E51A3AD53B00B68E6B /* ZBExpressionSectionBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBExpressionSectionBar.m; sourceTree = "<group>"; };
+		3C66A5E61A3AD53B00B68E6B /* ZBFaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBFaceView.h; sourceTree = "<group>"; };
+		3C66A5E71A3AD53B00B68E6B /* ZBFaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBFaceView.m; sourceTree = "<group>"; };
+		3C66A5E81A3AD53B00B68E6B /* ZBMessageManagerFaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBMessageManagerFaceView.h; sourceTree = "<group>"; };
+		3C66A5E91A3AD53B00B68E6B /* ZBMessageManagerFaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBMessageManagerFaceView.m; sourceTree = "<group>"; };
+		3C66A5EB1A3AD53B00B68E6B /* ZBMessageShareMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBMessageShareMenuItem.h; sourceTree = "<group>"; };
+		3C66A5EC1A3AD53B00B68E6B /* ZBMessageShareMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBMessageShareMenuItem.m; sourceTree = "<group>"; };
+		3C66A5ED1A3AD53B00B68E6B /* ZBMessageShareMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBMessageShareMenuView.h; sourceTree = "<group>"; };
+		3C66A5EE1A3AD53B00B68E6B /* ZBMessageShareMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBMessageShareMenuView.m; sourceTree = "<group>"; };
+		3C66A5F41A3AD6B400B68E6B /* EBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBrowserView.h; sourceTree = "<group>"; };
+		3C66A5F61A3AD74C00B68E6B /* NSAttributedString+Attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Attributes.h"; sourceTree = "<group>"; };
+		3C66A5F71A3AD74C00B68E6B /* NSAttributedString+Attributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Attributes.m"; sourceTree = "<group>"; };
+		3C66A5F81A3AD74C00B68E6B /* NSString+Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Message.h"; sourceTree = "<group>"; };
+		3C66A5F91A3AD74C00B68E6B /* NSString+Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Message.m"; sourceTree = "<group>"; };
+		3C66A5FA1A3AD74C00B68E6B /* UIImage+XHRounded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+XHRounded.h"; sourceTree = "<group>"; };
+		3C66A5FB1A3AD74C00B68E6B /* UIImage+XHRounded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+XHRounded.m"; sourceTree = "<group>"; };
+		3C66A6001A3ADC5D00B68E6B /* ZBMessageAvatorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBMessageAvatorFactory.h; sourceTree = "<group>"; };
+		3C66A6011A3ADC5D00B68E6B /* ZBMessageAvatorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBMessageAvatorFactory.m; sourceTree = "<group>"; };
+		3C66A6021A3ADC5D00B68E6B /* ZBMessageBubbleFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBMessageBubbleFactory.h; sourceTree = "<group>"; };
+		3C66A6031A3ADC5D00B68E6B /* ZBMessageBubbleFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBMessageBubbleFactory.m; sourceTree = "<group>"; };
+		3C66A6041A3ADC5D00B68E6B /* ZBMessageVoiceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBMessageVoiceFactory.h; sourceTree = "<group>"; };
+		3C66A6051A3ADC5D00B68E6B /* ZBMessageVoiceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBMessageVoiceFactory.m; sourceTree = "<group>"; };
+		3C66A60A1A3ADC7900B68E6B /* ZBMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBMessage.h; sourceTree = "<group>"; };
+		3C66A60B1A3ADC7900B68E6B /* ZBMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBMessage.m; sourceTree = "<group>"; };
+		3C6D9C2B1A6C9BCE00F87CF1 /* ACPVoiceActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACPVoiceActionView.h; sourceTree = "<group>"; };
+		3C6D9C2C1A6C9BCE00F87CF1 /* ACPVoiceActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACPVoiceActionView.m; sourceTree = "<group>"; };
+		3C7DD5711AAD2AA600FDE63B /* ChatKeyboardData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatKeyboardData.h; sourceTree = "<group>"; };
+		3C7DD5721AAD2AA600FDE63B /* ChatKeyboardData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatKeyboardData.m; sourceTree = "<group>"; };
+		3C9651DA1A636BCD0045C1E0 /* ChatKeyboardUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatKeyboardUtility.h; sourceTree = "<group>"; };
+		3C9651DB1A636BCD0045C1E0 /* ChatKeyboardUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatKeyboardUtility.m; sourceTree = "<group>"; };
+		3C9651EE1A63AC2D0045C1E0 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		3C9651EF1A63AC2D0045C1E0 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		3C9651F01A63AC2D0045C1E0 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		3C9651F11A63AC2D0045C1E0 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		3C9651F21A63AC2D0045C1E0 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		3C9651F31A63AC2D0045C1E0 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		3C9651F41A63AC2D0045C1E0 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		3CC7CC6C1AA5B30C00FEF7A6 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
+		3CC7CC6D1AA5B30C00FEF7A6 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3C5A1C221A3A8BE400F237F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3C5A1C1C1A3A8BE400F237F6 = {
+			isa = PBXGroup;
+			children = (
+				3C5A1C271A3A8BE400F237F6 /* EUExChatKeyboard */,
+				3C5A1C261A3A8BE400F237F6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3C5A1C261A3A8BE400F237F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3C5A1C251A3A8BE400F237F6 /* libuexChatKeyboard.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3C5A1C271A3A8BE400F237F6 /* EUExChatKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				3C5A1C3F1A3A8CA200F237F6 /* engineHeader */,
+				3C5A1C281A3A8BE400F237F6 /* EUExChatKeyboard.h */,
+				3C5A1C2A1A3A8BE400F237F6 /* EUExChatKeyboard.m */,
+				3C5A1C751A3A972800F237F6 /* sourceCode */,
+			);
+			path = EUExChatKeyboard;
+			sourceTree = "<group>";
+		};
+		3C5A1C3F1A3A8CA200F237F6 /* engineHeader */ = {
+			isa = PBXGroup;
+			children = (
+				3C66A5F41A3AD6B400B68E6B /* EBrowserView.h */,
+				3C5A1C401A3A8CA200F237F6 /* EUExBase.h */,
+				3C5A1C411A3A8CA200F237F6 /* EUExBaseDefine.h */,
+				3C5A1C421A3A8CA200F237F6 /* EUtility.h */,
+			);
+			path = engineHeader;
+			sourceTree = "<group>";
+		};
+		3C5A1C751A3A972800F237F6 /* sourceCode */ = {
+			isa = PBXGroup;
+			children = (
+				3CC7CC6B1AA5B30C00FEF7A6 /* xmlRaeder */,
+				3C9651ED1A63AC2D0045C1E0 /* json */,
+				3C66A6091A3ADC7900B68E6B /* Models */,
+				3C66A5FF1A3ADC5D00B68E6B /* Factory */,
+				3C66A5F51A3AD74C00B68E6B /* Extend */,
+				3C66A5E31A3AD53B00B68E6B /* messageFaceView */,
+				3C66A5EA1A3AD53B00B68E6B /* messageShareView */,
+				3C5A1C761A3A972800F237F6 /* MessageInputView */,
+				3C5A1C841A3A999700F237F6 /* ChatKeyboard.h */,
+				3C5A1C851A3A999700F237F6 /* ChatKeyboard.m */,
+				3C9651DA1A636BCD0045C1E0 /* ChatKeyboardUtility.h */,
+				3C9651DB1A636BCD0045C1E0 /* ChatKeyboardUtility.m */,
+				3C6D9C2B1A6C9BCE00F87CF1 /* ACPVoiceActionView.h */,
+				3C6D9C2C1A6C9BCE00F87CF1 /* ACPVoiceActionView.m */,
+				3C7DD5711AAD2AA600FDE63B /* ChatKeyboardData.h */,
+				3C7DD5721AAD2AA600FDE63B /* ChatKeyboardData.m */,
+			);
+			path = sourceCode;
+			sourceTree = "<group>";
+		};
+		3C5A1C761A3A972800F237F6 /* MessageInputView */ = {
+			isa = PBXGroup;
+			children = (
+				3C5A1C771A3A972800F237F6 /* ZBMessageInputView.h */,
+				3C5A1C781A3A972800F237F6 /* ZBMessageInputView.m */,
+				3C5A1C791A3A972800F237F6 /* ZBMessageTextView.h */,
+				3C5A1C7A1A3A972800F237F6 /* ZBMessageTextView.m */,
+			);
+			path = MessageInputView;
+			sourceTree = "<group>";
+		};
+		3C66A5E31A3AD53B00B68E6B /* messageFaceView */ = {
+			isa = PBXGroup;
+			children = (
+				3C66A5E41A3AD53B00B68E6B /* ZBExpressionSectionBar.h */,
+				3C66A5E51A3AD53B00B68E6B /* ZBExpressionSectionBar.m */,
+				3C66A5E61A3AD53B00B68E6B /* ZBFaceView.h */,
+				3C66A5E71A3AD53B00B68E6B /* ZBFaceView.m */,
+				3C66A5E81A3AD53B00B68E6B /* ZBMessageManagerFaceView.h */,
+				3C66A5E91A3AD53B00B68E6B /* ZBMessageManagerFaceView.m */,
+			);
+			path = messageFaceView;
+			sourceTree = "<group>";
+		};
+		3C66A5EA1A3AD53B00B68E6B /* messageShareView */ = {
+			isa = PBXGroup;
+			children = (
+				3C66A5EB1A3AD53B00B68E6B /* ZBMessageShareMenuItem.h */,
+				3C66A5EC1A3AD53B00B68E6B /* ZBMessageShareMenuItem.m */,
+				3C66A5ED1A3AD53B00B68E6B /* ZBMessageShareMenuView.h */,
+				3C66A5EE1A3AD53B00B68E6B /* ZBMessageShareMenuView.m */,
+			);
+			path = messageShareView;
+			sourceTree = "<group>";
+		};
+		3C66A5F51A3AD74C00B68E6B /* Extend */ = {
+			isa = PBXGroup;
+			children = (
+				3C66A5F61A3AD74C00B68E6B /* NSAttributedString+Attributes.h */,
+				3C66A5F71A3AD74C00B68E6B /* NSAttributedString+Attributes.m */,
+				3C66A5F81A3AD74C00B68E6B /* NSString+Message.h */,
+				3C66A5F91A3AD74C00B68E6B /* NSString+Message.m */,
+				3C66A5FA1A3AD74C00B68E6B /* UIImage+XHRounded.h */,
+				3C66A5FB1A3AD74C00B68E6B /* UIImage+XHRounded.m */,
+			);
+			path = Extend;
+			sourceTree = "<group>";
+		};
+		3C66A5FF1A3ADC5D00B68E6B /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				3C66A6001A3ADC5D00B68E6B /* ZBMessageAvatorFactory.h */,
+				3C66A6011A3ADC5D00B68E6B /* ZBMessageAvatorFactory.m */,
+				3C66A6021A3ADC5D00B68E6B /* ZBMessageBubbleFactory.h */,
+				3C66A6031A3ADC5D00B68E6B /* ZBMessageBubbleFactory.m */,
+				3C66A6041A3ADC5D00B68E6B /* ZBMessageVoiceFactory.h */,
+				3C66A6051A3ADC5D00B68E6B /* ZBMessageVoiceFactory.m */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		3C66A6091A3ADC7900B68E6B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3C66A60A1A3ADC7900B68E6B /* ZBMessage.h */,
+				3C66A60B1A3ADC7900B68E6B /* ZBMessage.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3C9651ED1A63AC2D0045C1E0 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				3C9651EE1A63AC2D0045C1E0 /* JSON.h */,
+				3C9651EF1A63AC2D0045C1E0 /* NSObject+SBJSON.h */,
+				3C9651F01A63AC2D0045C1E0 /* NSString+SBJSON.h */,
+				3C9651F11A63AC2D0045C1E0 /* SBJSON.h */,
+				3C9651F21A63AC2D0045C1E0 /* SBJsonBase.h */,
+				3C9651F31A63AC2D0045C1E0 /* SBJsonParser.h */,
+				3C9651F41A63AC2D0045C1E0 /* SBJsonWriter.h */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
+		3CC7CC6B1AA5B30C00FEF7A6 /* xmlRaeder */ = {
+			isa = PBXGroup;
+			children = (
+				3CC7CC6C1AA5B30C00FEF7A6 /* XMLReader.h */,
+				3CC7CC6D1AA5B30C00FEF7A6 /* XMLReader.m */,
+			);
+			path = xmlRaeder;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3C5A1C241A3A8BE400F237F6 /* EUExChatKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C5A1C391A3A8BE400F237F6 /* Build configuration list for PBXNativeTarget "EUExChatKeyboard" */;
+			buildPhases = (
+				3C5A1C211A3A8BE400F237F6 /* Sources */,
+				3C5A1C221A3A8BE400F237F6 /* Frameworks */,
+				3C5A1C231A3A8BE400F237F6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EUExChatKeyboard;
+			productName = EUExChatKeyboard;
+			productReference = 3C5A1C251A3A8BE400F237F6 /* libuexChatKeyboard.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3C5A1C1D1A3A8BE400F237F6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = com.zywx;
+				TargetAttributes = {
+					3C5A1C241A3A8BE400F237F6 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = 3C5A1C201A3A8BE400F237F6 /* Build configuration list for PBXProject "EUExChatKeyboard" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3C5A1C1C1A3A8BE400F237F6;
+			productRefGroup = 3C5A1C261A3A8BE400F237F6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3C5A1C241A3A8BE400F237F6 /* EUExChatKeyboard */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3C5A1C211A3A8BE400F237F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C7DD5731AAD2AA600FDE63B /* ChatKeyboardData.m in Sources */,
+				3C66A5FD1A3AD74C00B68E6B /* NSString+Message.m in Sources */,
+				3CC7CC6E1AA5B30C00FEF7A6 /* XMLReader.m in Sources */,
+				3C66A6061A3ADC5D00B68E6B /* ZBMessageAvatorFactory.m in Sources */,
+				3C5A1C2B1A3A8BE400F237F6 /* EUExChatKeyboard.m in Sources */,
+				3C66A5F01A3AD53B00B68E6B /* ZBFaceView.m in Sources */,
+				3C66A6071A3ADC5D00B68E6B /* ZBMessageBubbleFactory.m in Sources */,
+				3C5A1C7B1A3A972800F237F6 /* ZBMessageInputView.m in Sources */,
+				3C66A5F31A3AD53B00B68E6B /* ZBMessageShareMenuView.m in Sources */,
+				3C66A60C1A3ADC7900B68E6B /* ZBMessage.m in Sources */,
+				3C6D9C2D1A6C9BCE00F87CF1 /* ACPVoiceActionView.m in Sources */,
+				3C66A5F21A3AD53B00B68E6B /* ZBMessageShareMenuItem.m in Sources */,
+				3C66A5EF1A3AD53B00B68E6B /* ZBExpressionSectionBar.m in Sources */,
+				3C66A5FC1A3AD74C00B68E6B /* NSAttributedString+Attributes.m in Sources */,
+				3C66A5F11A3AD53B00B68E6B /* ZBMessageManagerFaceView.m in Sources */,
+				3C5A1C7C1A3A972800F237F6 /* ZBMessageTextView.m in Sources */,
+				3C5A1C861A3A999700F237F6 /* ChatKeyboard.m in Sources */,
+				3C9651DC1A636BCD0045C1E0 /* ChatKeyboardUtility.m in Sources */,
+				3C66A6081A3ADC5D00B68E6B /* ZBMessageVoiceFactory.m in Sources */,
+				3C66A5FE1A3AD74C00B68E6B /* UIImage+XHRounded.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3C5A1C371A3A8BE400F237F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/uexChatKeyboard";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3C5A1C381A3A8BE400F237F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/uexChatKeyboard";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3C5A1C3A1A3A8BE400F237F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/uexChatKeyboard";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EUExChatKeyboard/sourceCode/speakhere/opencore",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = uexChatKeyboard;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3C5A1C3B1A3A8BE400F237F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/uexChatKeyboard";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EUExChatKeyboard/sourceCode/speakhere/opencore",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = uexChatKeyboard;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3C5A1C201A3A8BE400F237F6 /* Build configuration list for PBXProject "EUExChatKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C5A1C371A3A8BE400F237F6 /* Debug */,
+				3C5A1C381A3A8BE400F237F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C5A1C391A3A8BE400F237F6 /* Build configuration list for PBXNativeTarget "EUExChatKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C5A1C3A1A3A8BE400F237F6 /* Debug */,
+				3C5A1C3B1A3A8BE400F237F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3C5A1C1D1A3A8BE400F237F6 /* Project object */;
+}
