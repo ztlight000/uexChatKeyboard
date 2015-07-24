@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <uexplugins>
-    <plugin uexName="uexChatKeyboard" version="3.0.3" build="3">
-        <info>3:open方法参数改为json类型,可以设置默认文字，自定义语音输入时的提示框</info>
+    <plugin uexName="uexChatKeyboard" version="3.0.4" build="4">
+    	<info>4:新增API：获取键盘高度</info>
+        <build>3:open方法参数改为json类型,可以设置默认文字，自定义语音输入时的提示框</build>
         <build>2:修复语音提示图片不显示的问题</build>
         <build>1:onCommit接口的参数使用json格式</build>
         <build>0:EUExChatKeyboard插件</build>

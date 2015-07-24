@@ -102,6 +102,33 @@
     }
 }
 
+//7-24 by lkl
+
+-(void)getInputBarHeight:(NSMutableArray*)inArguments{
+    CGFloat height;
+    if ([[[UIDevice currentDevice]systemVersion]floatValue]>=7) {
+        height = 45.0f;
+    }
+    else{
+        height = 40.0f;
+    }
+    [self callBackJsonWithName:@"cbGetInputBarHeight" Object:@{@"height":@(height)}];
+    
+}
+-(void)callBackJsonWithName:(NSString *)name Object:(id)obj{
+    const NSString *kPluginName = @"uexChatKeyboard";
+    NSString *result=[obj JSONFragment];
+    NSString *jsSuccessStr = [NSString stringWithFormat:@"if(%@.%@ != null){%@.%@('%@');}",kPluginName,name,kPluginName,name,result];
+    [self performSelector:@selector(delayedCallBack:) withObject:jsSuccessStr afterDelay:0.01];
+    
+}
+
+
+-(void)delayedCallBack:(NSString *)str{
+    [EUtility brwView:meBrwView evaluateScript:str];
+    
+}
+
 -(void)getShareDicFromSharePath:(NSString *)sharePath
 {
     NSData * xmlData = [NSData dataWithContentsOfFile:sharePath];

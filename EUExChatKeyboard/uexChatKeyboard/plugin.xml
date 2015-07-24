@@ -3,5 +3,6 @@
     <plugin name="uexChatKeyboard">
         <method name="open"></method>
         <method name="close"></method>
+        <method name="getInputBarHeight"></method>
     </plugin>
 </uexplugins>
