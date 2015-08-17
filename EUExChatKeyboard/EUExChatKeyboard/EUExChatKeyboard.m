@@ -102,6 +102,17 @@
     }
 }
 
+- (void)hideKeyboard:(NSMutableArray*)inArguments {
+    
+    if (_chatKeyboard) {
+        [_chatKeyboard hideKeyboard];
+    }
+    
+    
+    
+    
+}
+
 //7-24 by lkl
 
 -(void)getInputBarHeight:(NSMutableArray*)inArguments{
@@ -153,8 +164,7 @@
     return reDic;
 }
 
--(void)getFaceDicByFaceXMLPath:(NSString *)xmlPath
-{
+-(void)getFaceDicByFaceXMLPath:(NSString *)xmlPath {
     NSData * xmlData = [NSData dataWithContentsOfFile:xmlPath];
     NSError * error;
     NSDictionary * xmlDic = [XMLReader dictionaryForXMLData:xmlData error: &error];
@@ -162,6 +172,16 @@
     [ChatKeyboardData sharedChatKeyboardData].faceArray = [emojiconsDic objectForKey:@"key"];
     [ChatKeyboardData sharedChatKeyboardData].faceImgArray = [emojiconsDic objectForKey:@"string"];
     [ChatKeyboardData sharedChatKeyboardData].deleteImg = [emojiconsDic objectForKey:@"delete"];
+}
+
+- (void)changeWebViewFrame:(NSMutableArray *)array {
+    
+    float h = [[array objectAtIndex:0] floatValue];
+    
+    if (_chatKeyboard) {
+        [_chatKeyboard changeWebView:h];
+    }
+    
 }
 
 -(void)close:(NSMutableArray *)array {

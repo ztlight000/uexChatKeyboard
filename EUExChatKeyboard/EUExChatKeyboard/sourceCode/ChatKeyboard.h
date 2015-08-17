@@ -52,10 +52,14 @@ typedef NS_ENUM(NSInteger,ZBMessageViewState) {
 
 @property (nonatomic,strong) NSString * facePath;
 
+@property (nonatomic,copy) NSString * keyboardStatus;
+
 
 
 
 -(instancetype)initWithUexobj:(EUExChatKeyboard *)uexObj;
 -(void)open;
 -(void)close;
+- (void)hideKeyboard;
+- (void)changeWebView:(float)height;
 @end
