@@ -51,11 +51,11 @@
             sender.selected = !sender.selected;
             
             if (sender.selected) {
-                NSLog(@"声音被点击的");
+                
                 [self.messageInputTextView resignFirstResponder];
                 
             } else {
-                NSLog(@"声音被点击结束");
+                
                 [self.messageInputTextView becomeFirstResponder];
             }
             
@@ -78,10 +78,10 @@
             
             sender.selected = !sender.selected;
             if (sender.selected) {
-                NSLog(@"表情被点击");
+                
                 [self.messageInputTextView resignFirstResponder];
             }else{
-                NSLog(@"表情没被点击");
+                
                 [self.messageInputTextView becomeFirstResponder];
             }
             
@@ -104,10 +104,10 @@
             
             sender.selected = !sender.selected;
             if (sender.selected) {
-                NSLog(@"分享被点击");
+                
                 [self.messageInputTextView resignFirstResponder];
             }else{
-                NSLog(@"分享没被点击");
+                
                 [self.messageInputTextView becomeFirstResponder];
             }
 

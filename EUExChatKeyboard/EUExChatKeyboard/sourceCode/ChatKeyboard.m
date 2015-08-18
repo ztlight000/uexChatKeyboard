@@ -120,7 +120,6 @@
 }
 
 - (void)shareFaceView{
-    NSLog(@"shareFaceView");
     
     if (!self.faceView) {
         self.faceView = [[ZBMessageManagerFaceView alloc]initWithFrame:CGRectMake(0.0f,UEX_SCREENHEIGHT, UEX_SCREENWIDTH, 196) andFacePath:self.facePath];
@@ -431,9 +430,13 @@
 {
     
     NSDictionary * jsDic = [NSDictionary dictionaryWithObject:messageInputTextView.text forKey:@"emojiconsText"];
-    NSString *jsStr = [NSString stringWithFormat:@"if(uexChatKeyboard.onCommit!=null){uexChatKeyboard.onCommit(%@);}", [jsDic JSONFragment]];
     
-    NSDictionary * cbDic = [NSDictionary dictionaryWithObject:jsStr forKey:@"cbKey"];
+    NSString *jsStr = [NSString stringWithFormat:@"if(uexChatKeyboard.onCommit!=null){uexChatKeyboard.onCommit(\'%@\');}", [jsDic JSONFragment]];
+    [self.uexObj.meBrwView stringByEvaluatingJavaScriptFromString:jsStr];
+    
+    NSString *cbJsonStr = [NSString stringWithFormat:@"if(uexChatKeyboard.onCommitJson!=null){uexChatKeyboard.onCommitJson(%@);}", [jsDic JSONFragment]];
+    
+    NSDictionary * cbDic = [NSDictionary dictionaryWithObject:cbJsonStr forKey:@"cbKey"];
     
     NSString * cbjson = [cbDic objectForKey:@"cbKey"];
     
