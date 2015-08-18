@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <uexplugins>
-    <plugin uexName="uexChatKeyboard" version="3.0.4" build="4">
-    	<info>4:新增API：获取键盘高度</info>
+    <plugin uexName="uexChatKeyboard" version="3.0.7" build="7">
+        <info>7:新增方法onCommitJson回调，onCommit方法保持不变</info>
+        <build>6:onCommit直接回调json对象,新增方法changeWebViewFrame</build>
+        <build>5:新增API：隐藏键盘</build>
+    	<build>4:新增API：获取键盘高度</build>
         <build>3:open方法参数改为json类型,可以设置默认文字，自定义语音输入时的提示框</build>
         <build>2:修复语音提示图片不显示的问题</build>
         <build>1:onCommit接口的参数使用json格式</build>

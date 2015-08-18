@@ -4,5 +4,7 @@
         <method name="open"></method>
         <method name="close"></method>
         <method name="getInputBarHeight"></method>
+        <method name="hideKeyboard"></method>
+        <method name="changeWebViewFrame"></method>
     </plugin>
 </uexplugins>
