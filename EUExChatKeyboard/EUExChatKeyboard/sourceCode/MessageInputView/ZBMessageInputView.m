@@ -225,6 +225,7 @@
     [self.holdDownButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
     [self.holdDownButton addTarget:self action:@selector(holdDownButtonTouchDown) forControlEvents:UIControlEventTouchDown];
     [self.holdDownButton addTarget:self action:@selector(holdDownButtonTouchUpOutside) forControlEvents:UIControlEventTouchUpOutside];
+    [self.holdDownButton addTarget:self action:@selector(holdDownButtonTouchUpOutside) forControlEvents:UIControlEventTouchCancel];
     [self.holdDownButton addTarget:self action:@selector(holdDownButtonTouchUpInside) forControlEvents:UIControlEventTouchUpInside];
     [self.holdDownButton addTarget:self action:@selector(holdDownButtonTouchDragOutside) forControlEvents:UIControlEventTouchDragOutside];
     [self.holdDownButton addTarget:self action:@selector(holdDownButtonTouchDragInside) forControlEvents:UIControlEventTouchDragInside];
