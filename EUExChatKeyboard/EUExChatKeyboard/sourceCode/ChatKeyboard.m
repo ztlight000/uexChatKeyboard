@@ -67,11 +67,11 @@
 
 - (void)hideKeyboard {
     
-    
+    [self.messageToolView.messageInputTextView resignFirstResponder];
     
     if (CGRectGetMaxY(self.messageToolView.frame) < UEX_SCREENHEIGHT) {
         
-        [self messageViewAnimationWithMessageRect:self.keyboardRect
+        [self messageViewAnimationWithMessageRect:CGRectZero
                          withMessageInputViewRect:self.messageToolView.frame
                                       andDuration:self.animationDuration
                                          andState:ZBMessageViewStateShowNone];
@@ -130,9 +130,10 @@
         self.sendButton.frame = CGRectMake(UEX_SCREENWIDTH-70, CGRectGetMaxY(self.faceView.frame)+3, 70, 37);
         [self.sendButton setTitle:@"  发送" forState:UIControlStateNormal];
         [self.sendButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-        [self.sendButton setBackgroundColor:[UIColor blueColor]];
-        self.sendButton.layer.borderWidth = 0.5f;
-        self.sendButton.layer.borderColor = [[UIColor grayColor]CGColor];
+        //[self.sendButton setBackgroundColor:[UIColor blueColor]];
+//        self.sendButton.layer.borderWidth = 0.5f;
+//        self.sendButton.layer.borderColor = [[UIColor grayColor]CGColor];
+        
         [self.sendButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:UEX_SEND_FACE_NORMAL ofType:@"png"]] forState:UIControlStateNormal];
         [self.sendButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:UEX_SEND_FACE_HL ofType:@"png"]] forState:UIControlStateHighlighted];
         [EUtility brwView:self.uexObj.meBrwView addSubview:self.sendButton];
@@ -375,9 +376,13 @@
 
 - (void)inputTextViewDidChange:(ZBMessageTextView *)messageInputTextView
 {
-    if (_isInit) {
+//    if (_isInit) {
+//        self.previousTextViewContentHeight = messageInputTextView.contentSize.height;
+//        _isInit = NO;
+//    }
+    if (!self.previousTextViewContentHeight)
+    {
         self.previousTextViewContentHeight = messageInputTextView.contentSize.height;
-        _isInit = NO;
     }
     
     CGFloat maxHeight = [ZBMessageInputView maxHeight];
@@ -429,7 +434,11 @@
 - (void)didSendTextAction:(ZBMessageTextView *)messageInputTextView
 {
     
-    NSDictionary * jsDic = [NSDictionary dictionaryWithObject:messageInputTextView.text forKey:@"emojiconsText"];
+    NSString * testContent = messageInputTextView.text;
+    [messageInputTextView setText:nil];
+    
+    
+    NSDictionary * jsDic = [NSDictionary dictionaryWithObject:testContent forKey:@"emojiconsText"];
     
     NSString *jsStr = [NSString stringWithFormat:@"if(uexChatKeyboard.onCommit!=null){uexChatKeyboard.onCommit(\'%@\');}", [jsDic JSONFragment]];
     [self.uexObj.meBrwView stringByEvaluatingJavaScriptFromString:jsStr];
@@ -442,10 +451,9 @@
     
     
     [self.uexObj.meBrwView stringByEvaluatingJavaScriptFromString:cbjson];
-
-    [messageInputTextView resignFirstResponder];
-    [messageInputTextView setText:nil];
+    
     [self inputTextViewDidChange:messageInputTextView];
+    [messageInputTextView resignFirstResponder];
 }
 
 

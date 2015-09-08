@@ -11,31 +11,42 @@
 #import "XMLReader.h"
 #import "ChatKeyboardData.h"
 
-@interface EUExChatKeyboard()
+@interface EUExChatKeyboard()<UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) ChatKeyboard * chatKeyboard;
 @property (nonatomic, strong) NSString * delete;
 @property (nonatomic, strong) NSString * pageNum;
+@property (nonatomic, strong) UITapGestureRecognizer * tapGR;
 
 @end
 
 @implementation EUExChatKeyboard
 
--(id)initWithBrwView:(EBrowserView *)eInBrwView {
+- (id)initWithBrwView:(EBrowserView *)eInBrwView {
+    
     if (self = [super initWithBrwView:eInBrwView]) {
         //
     }
+    
     return self;
+    
 }
 
--(void)clean {
+- (void)clean {
+    
+    [meBrwView removeGestureRecognizer:_tapGR];
+    
     if (_chatKeyboard) {
+        
         [_chatKeyboard close];
         _chatKeyboard = nil;
+        
     }
+    
 }
 
 -(void)open:(NSMutableArray *)array {
+    
     if ([array count] < 1) {
         return;
     }
@@ -97,20 +108,44 @@
     
     
     if (!_chatKeyboard) {
+        
         _chatKeyboard = [[ChatKeyboard alloc]initWithUexobj:self];
         [_chatKeyboard open];
+        
+        _tapGR = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hideKeyboard:)];
+        
+        [self.meBrwView addGestureRecognizer:_tapGR];
+        
+        _tapGR.delegate = self;
+        
+        
+        
     }
+    
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    
+    
+    return YES;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    return YES;
 }
 
 - (void)hideKeyboard:(NSMutableArray*)inArguments {
     
     if (_chatKeyboard) {
+        
         [_chatKeyboard hideKeyboard];
+        
     }
-    
-    
-    
-    
+
 }
 
 //7-24 by lkl
@@ -126,6 +161,7 @@
     [self callBackJsonWithName:@"cbGetInputBarHeight" Object:@{@"height":@(height)}];
     
 }
+
 -(void)callBackJsonWithName:(NSString *)name Object:(id)obj{
     const NSString *kPluginName = @"uexChatKeyboard";
     NSString *result=[obj JSONFragment];
@@ -185,6 +221,9 @@
 }
 
 -(void)close:(NSMutableArray *)array {
+    
+    [meBrwView removeGestureRecognizer:_tapGR];
+    
     if (_chatKeyboard) {
         [_chatKeyboard close];
         _chatKeyboard = nil;
