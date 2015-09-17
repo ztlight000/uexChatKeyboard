@@ -38,6 +38,7 @@
 		3C6CD9761AAE8A7900D38A65 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6CD96C1AAE8A7900D38A65 /* MapKit.framework */; };
 		3C6CD9771AAE8A7900D38A65 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6CD96D1AAE8A7900D38A65 /* AudioToolbox.framework */; };
 		3C6CD9791AAE8BDF00D38A65 /* libAppCanEngine_IOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6CD9781AAE8BDF00D38A65 /* libAppCanEngine_IOS.a */; };
+		42B9285E1BAACAF8008D4B54 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B9285D1BAACAF8008D4B54 /* ImageIO.framework */; };
 		F769E3081AAE81AD009A471B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F769E3071AAE81AD009A471B /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +117,7 @@
 		3C6CD96C1AAE8A7900D38A65 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3C6CD96D1AAE8A7900D38A65 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		3C6CD9781AAE8BDF00D38A65 /* libAppCanEngine_IOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAppCanEngine_IOS.a; path = ../libAppCanEngine_IOS.a; sourceTree = "<group>"; };
+		42B9285D1BAACAF8008D4B54 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		F769E3041AAE81AD009A471B /* uexChatKeyboard.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = uexChatKeyboard.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		F769E3071AAE81AD009A471B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -125,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42B9285E1BAACAF8008D4B54 /* ImageIO.framework in Frameworks */,
 				3C6CD9701AAE8A7900D38A65 /* QuartzCore.framework in Frameworks */,
 				3C6CD9731AAE8A7900D38A65 /* SystemConfiguration.framework in Frameworks */,
 				3C6CD9761AAE8A7900D38A65 /* MapKit.framework in Frameworks */,
@@ -292,6 +295,7 @@
 		F769E3061AAE81AD009A471B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42B9285D1BAACAF8008D4B54 /* ImageIO.framework */,
 				3C6CD9781AAE8BDF00D38A65 /* libAppCanEngine_IOS.a */,
 				3C6CD9641AAE8A7900D38A65 /* UIKit.framework */,
 				3C6CD9651AAE8A7900D38A65 /* CoreGraphics.framework */,

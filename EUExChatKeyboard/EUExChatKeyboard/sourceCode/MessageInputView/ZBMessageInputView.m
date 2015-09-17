@@ -41,6 +41,25 @@
 }
 
 #pragma mark - Action
+-(void)uex_change:(BOOL)isAudio{
+    if(!isAudio){
+        return;
+    }
+    self.faceSendButton.selected = NO;
+    self.multiMediaSendButton.selected = NO;
+    [self.messageInputTextView resignFirstResponder];
+    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.holdDownButton.hidden = NO;
+        self.messageInputTextView.hidden = YES;
+    } completion:^(BOOL finished) {
+        
+    }];
+    
+    if ([self.delegate respondsToSelector:@selector(didChangeSendVoiceAction:)]) {
+        [self.delegate didChangeSendVoiceAction:YES];
+    }
+
+}
 
 - (void)messageStyleButtonClicked:(UIButton *)sender {
     switch (sender.tag) {

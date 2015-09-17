@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <uexplugins>
-    <plugin uexName="uexChatKeyboard" version="3.0.9" build="9">
-        <info>9:修复直接输入表情时输入框变形问题.修复联系点击录音按钮录音提示无法关闭问题</info>
+    <plugin uexName="uexChatKeyboard" version="3.0.10" build="10">
+        <info>10:open添加可选参数，可以设置初始键盘页面为语音页面</info>
+        <build>9:修复直接输入表情时输入框变形问题.修复联系点击录音按钮录音提示无法关闭问题</build>
         <build>8:修复输入内容过多时的显示问题</build>
         <build>7:新增方法onCommitJson回调，onCommit方法保持不变</build>
         <build>6:onCommit直接回调json对象,新增方法changeWebViewFrame</build>

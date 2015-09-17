@@ -145,6 +145,8 @@ typedef enum
  */
 + (CGFloat)maxHeight;
 
+
+-(void)uex_change:(BOOL)isAudio;
 #pragma end
 
 @end

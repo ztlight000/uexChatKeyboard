@@ -100,7 +100,10 @@
     if ([xmlDic objectForKey:@"textSize"]) {
         textSize = [[xmlDic objectForKey:@"textSize"] floatValue];
     }
-    
+    BOOL isAudio=NO;
+    if([xmlDic objectForKey:@"inputMode"]&&[[xmlDic objectForKey:@"inputMode"] integerValue]==1){
+        isAudio=YES;
+    }
     [ChatKeyboardData sharedChatKeyboardData].touchDownImg = touchDownImg;
     [ChatKeyboardData sharedChatKeyboardData].dragOutsideImg = dragOutsideImg;
     [ChatKeyboardData sharedChatKeyboardData].textColor = textColor;
@@ -117,6 +120,7 @@
         [self.meBrwView addGestureRecognizer:_tapGR];
         
         _tapGR.delegate = self;
+        [_chatKeyboard.messageToolView uex_change:isAudio];
         
         
         
