@@ -46,6 +46,7 @@
         return;
     }
     self.faceSendButton.selected = NO;
+    self.voiceChangeButton.selected=YES;
     self.multiMediaSendButton.selected = NO;
     [self.messageInputTextView resignFirstResponder];
     [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
@@ -195,8 +196,8 @@
     CGFloat buttonSize = [ZBMessageInputView textViewLineHeight];
     
     // 发送语音
-    self.voiceChangeButton = [self createButtonWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"uexChatKeyboard/messageInputViewResource/ToolViewInputVoice_ios7@2x" ofType:@"png"]] HLImage:nil];
-    [self.voiceChangeButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"uexChatKeyboard/messageInputViewResource/ToolViewKeyboard_ios7@2x" ofType:@"png"]]
+    self.voiceChangeButton = [self createButtonWithImage:[UIImage imageWithContentsOfFile:[UEX_PLUGIN_BUNDLE pathForResource:@"messageInputViewResource/ToolViewInputVoice_ios7@2x" ofType:@"png"]] HLImage:nil];
+    [self.voiceChangeButton setImage:[UIImage imageWithContentsOfFile:[UEX_PLUGIN_BUNDLE pathForResource:@"messageInputViewResource/ToolViewKeyboard_ios7@2x" ofType:@"png"]]
                             forState:UIControlStateSelected];
     [self.voiceChangeButton addTarget:self
                                action:@selector(messageStyleButtonClicked:)
@@ -208,7 +209,7 @@
     
     
     // 允许发送多媒体消息，为什么不是先放表情按钮呢？因为布局的需要！
-    self.multiMediaSendButton = [self createButtonWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"uexChatKeyboard/messageInputViewResource/TypeSelectorBtn_Black_ios7@2x" ofType:@"png"]] HLImage:nil];
+    self.multiMediaSendButton = [self createButtonWithImage:[UIImage imageWithContentsOfFile:[UEX_PLUGIN_BUNDLE pathForResource:@"messageInputViewResource/TypeSelectorBtn_Black_ios7@2x" ofType:@"png"]] HLImage:nil];
     
     [self.multiMediaSendButton addTarget:self
                                   action:@selector(messageStyleButtonClicked:)
@@ -221,9 +222,9 @@
                                                  buttonSize);
     
     // 发送表情
-    self.faceSendButton = [self createButtonWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"uexChatKeyboard/messageInputViewResource/ToolViewEmotion_ios7@2x" ofType:@"png"]]
+    self.faceSendButton = [self createButtonWithImage:[UIImage imageWithContentsOfFile:[UEX_PLUGIN_BUNDLE pathForResource:@"messageInputViewResource/ToolViewEmotion_ios7@2x" ofType:@"png"]]
                                               HLImage:nil];
-    [self.faceSendButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"uexChatKeyboard/messageInputViewResource/ToolViewKeyboard_ios7@2x" ofType:@"png"]]
+    [self.faceSendButton setImage:[UIImage imageWithContentsOfFile:[UEX_PLUGIN_BUNDLE pathForResource:@"messageInputViewResource/ToolViewKeyboard_ios7@2x" ofType:@"png"]]
                          forState:UIControlStateSelected];
     [self.faceSendButton addTarget:self
                             action:@selector(messageStyleButtonClicked:)
@@ -234,7 +235,7 @@
     
     
     // 如果是可以发送语言的，那就需要一个按钮录音的按钮，事件可以在外部添加
-    UIImage * normalImg = [UIImage imageNamed:@"uexChatKeyboard/voiceResource/holdDownButton"];
+    UIImage * normalImg = [UIImage imageWithContentsOfFile:[UEX_PLUGIN_BUNDLE pathForResource:@"voiceResource/holdDownButton@2x" ofType:@"png"]];
     //UIImage * hightLightImg = [UIImage imageNamed:@"uexChatKeyboard/voiceResource/holdupButton"];
 
     self.holdDownButton = [self createButtonWithImage:normalImg HLImage:normalImg];
@@ -369,16 +370,16 @@
     {
         _messageInputViewStyle = ZBMessageInputViewStyleDefault;
         
-        self.image = [[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"uexChatKeyboard/messageInputViewResource/input-bar-flat@2x" ofType:@"png"]] resizableImageWithCapInsets:UIEdgeInsetsMake(2.0f, 0.0f, 0.0f, 0.0f) resizingMode:UIImageResizingModeStretch];
+        self.image = [[UIImage imageWithContentsOfFile:[UEX_PLUGIN_BUNDLE pathForResource:@"messageInputViewResource/input-bar-flat@2x" ofType:@"png"]] resizableImageWithCapInsets:UIEdgeInsetsMake(2.0f, 0.0f, 0.0f, 0.0f) resizingMode:UIImageResizingModeStretch];
     }
     else
     {
         
         _messageInputViewStyle = ZBMessageInputViewStyleQuasiphysical;
         if ([[[UIDevice currentDevice]systemVersion]floatValue]>=6 ){
-        self.image = [[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"uexChatKeyboard/messageInputViewResource/input-bar-background@2x" ofType:@"png"]] resizableImageWithCapInsets:UIEdgeInsetsMake(19.0f, 3.0f, 19.0f, 3.0f) resizingMode:UIImageResizingModeStretch];
+        self.image = [[UIImage imageWithContentsOfFile:[UEX_PLUGIN_BUNDLE pathForResource:@"messageInputViewResource/input-bar-background@2x" ofType:@"png"]] resizableImageWithCapInsets:UIEdgeInsetsMake(19.0f, 3.0f, 19.0f, 3.0f) resizingMode:UIImageResizingModeStretch];
         } else {
-            self.image = [[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"uexChatKeyboard/messageInputViewResource/input-bar-background@2x" ofType:@"png"]] resizableImageWithCapInsets:UIEdgeInsetsMake(19.0f, 3.0f, 19.0f, 3.0f)];
+            self.image = [[UIImage imageWithContentsOfFile:[UEX_PLUGIN_BUNDLE pathForResource:@"messageInputViewResource/input-bar-background@2x" ofType:@"png"]] resizableImageWithCapInsets:UIEdgeInsetsMake(19.0f, 3.0f, 19.0f, 3.0f)];
         }
         
     }

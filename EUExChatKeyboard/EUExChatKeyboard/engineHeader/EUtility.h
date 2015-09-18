@@ -67,4 +67,6 @@ void PluginLog(NSString *format, ...);
 //20140616 softToken
 +(NSString*)md5SoftToken;
 +(void)setRootViewGestureRecognizerEnabled:(BOOL)isEnable;
+
++(NSBundle *)bundleForPlugin:(NSString *)pluginName;
 @end

@@ -9,16 +9,20 @@
 #import "ChatKeyboard.h"
 #import "ChatKeyboardData.h"
 
-#define UEX_SHARE_PIC_ITEM @"uexChatKeyboard/shareResource/sharemore_pic_ios7@2x"
-#define UEX_SHARE_VIDEO_ITEM @"uexChatKeyboard/shareResource/sharemore_video_ios7@2x"
-#define UEX_SHARE_LOC_ITEM @"uexChatKeyboard/shareResource/sharemore_location_ios7@2x"
-#define UEX_SHARE_VOIP_ITEM @"uexChatKeyboard/shareResource/sharemore_videovoip@2x"
-#define UEX_SEND_FACE_NORMAL @"uexChatKeyboard/messageInputViewResource/EmotionsSendBtnGrey@2x"
-#define UEX_SEND_FACE_HL @"uexChatKeyboard/messageInputViewResource/EmotionsSendBtnBlueHL@2x"
+
+
+#define UEX_SHARE_PIC_ITEM [UEX_PLUGIN_BUNDLE pathForResource:@"shareResource/sharemore_pic_ios7@2x" ofType:@"png"]
+#define UEX_SHARE_VIDEO_ITEM [UEX_PLUGIN_BUNDLE pathForResource:@"shareResource/sharemore_video_ios7@2x" ofType:@"png"]
+#define UEX_SHARE_LOC_ITEM [UEX_PLUGIN_BUNDLE pathForResource:@"shareResource/sharemore_video_ios7@2x" ofType:@"png"]
+#define UEX_SHARE_VOIP_ITEM [UEX_PLUGIN_BUNDLE pathForResource:@"shareResource/sharemore_videovoip@2x" ofType:@"png"]
+#define UEX_SEND_FACE_NORMAL [UEX_PLUGIN_BUNDLE pathForResource:@"messageInputViewResource/EmotionsSendBtnGrey@2x" ofType:@"png"]
+#define UEX_SEND_FACE_HL [UEX_PLUGIN_BUNDLE pathForResource:@"shareResource/messageInputViewResource/EmotionsSendBtnBlueHL@2x" ofType:@"png"]
 
 #define isSysVersionAbove7_0 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
 #define UEX_SCREENWIDTH (isSysVersionAbove7_0?[UIScreen mainScreen].bounds.size.width:[UIScreen mainScreen].applicationFrame.size.width)
 #define UEX_SCREENHEIGHT (isSysVersionAbove7_0?[UIScreen mainScreen].bounds.size.height:[UIScreen mainScreen].applicationFrame.size.height)
+
+
 
 @implementation ChatKeyboard
 
@@ -29,6 +33,7 @@
         self.isInit = YES;
         self.keyboardStatus = @"0";
     }
+    
     return self;
 }
 
@@ -535,7 +540,8 @@
 }
 
 -(void)willCancelRecordingVoiceAction{
-    UIImage * image = [UIImage imageNamed:@"uexChatKeyboard/voiceResource/touchDragOutside"];
+    //UIImage * image = [UIImage imageNamed:@"uexChatKeyboard/voiceResource/touchDragOutside"];
+    UIImage * image = [UIImage imageWithContentsOfFile:[UEX_PLUGIN_BUNDLE pathForResource:@"voiceResource/touchDragOutside@2x" ofType:@"png"]];
     if ([ChatKeyboardData sharedChatKeyboardData].dragOutsideImg) {
         UIImage * tempImg = [UIImage imageWithContentsOfFile:[ChatKeyboardData sharedChatKeyboardData].dragOutsideImg];
         if (tempImg) {
@@ -546,7 +552,8 @@
 }
 
 -(void)stopCancelRecordingVoiceAction{
-    UIImage * image = [UIImage imageNamed:@"uexChatKeyboard/voiceResource/touchdown"];
+    //UIImage * image = [UIImage imageNamed:@"uexChatKeyboard/voiceResource/touchdown"];
+    UIImage * image = [UIImage imageWithContentsOfFile:[UEX_PLUGIN_BUNDLE pathForResource:@"voiceResource/touchdown@2x" ofType:@"png"]];
     if ([ChatKeyboardData sharedChatKeyboardData].touchDownImg) {
         UIImage * tempImg = [UIImage imageWithContentsOfFile:[ChatKeyboardData sharedChatKeyboardData].touchDownImg];
         if (tempImg) {

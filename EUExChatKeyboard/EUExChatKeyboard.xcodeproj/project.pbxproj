@@ -28,7 +28,20 @@
 		3C7DD5731AAD2AA600FDE63B /* ChatKeyboardData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7DD5721AAD2AA600FDE63B /* ChatKeyboardData.m */; };
 		3C9651DC1A636BCD0045C1E0 /* ChatKeyboardUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9651DB1A636BCD0045C1E0 /* ChatKeyboardUtility.m */; };
 		3CC7CC6E1AA5B30C00FEF7A6 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC7CC6D1AA5B30C00FEF7A6 /* XMLReader.m */; };
+		420041B51BABE994000A57F5 /* messageBubbleResource in Resources */ = {isa = PBXBuildFile; fileRef = 420041B21BABE994000A57F5 /* messageBubbleResource */; settings = {ASSET_TAGS = (); }; };
+		420041B61BABE994000A57F5 /* messageInputViewResource in Resources */ = {isa = PBXBuildFile; fileRef = 420041B31BABE994000A57F5 /* messageInputViewResource */; settings = {ASSET_TAGS = (); }; };
+		420041B71BABE994000A57F5 /* voiceResource in Resources */ = {isa = PBXBuildFile; fileRef = 420041B41BABE994000A57F5 /* voiceResource */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		420041C41BABEC34000A57F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C5A1C1D1A3A8BE400F237F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 420041AA1BABE94F000A57F5;
+			remoteInfo = uexChatKeyboardBundle;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		3C5A1C231A3A8BE400F237F6 /* CopyFiles */ = {
@@ -96,10 +109,24 @@
 		3C9651F41A63AC2D0045C1E0 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		3CC7CC6C1AA5B30C00FEF7A6 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
 		3CC7CC6D1AA5B30C00FEF7A6 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
+		420041AB1BABE950000A57F5 /* uexChatKeyboard.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uexChatKeyboard.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		420041AD1BABE950000A57F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		420041B11BABE96E000A57F5 /* EUExBase+Bundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EUExBase+Bundle.h"; sourceTree = "<group>"; };
+		420041B21BABE994000A57F5 /* messageBubbleResource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = messageBubbleResource; sourceTree = "<group>"; };
+		420041B31BABE994000A57F5 /* messageInputViewResource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = messageInputViewResource; sourceTree = "<group>"; };
+		420041B41BABE994000A57F5 /* voiceResource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = voiceResource; sourceTree = "<group>"; };
+		420041CB1BABF363000A57F5 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		3C5A1C221A3A8BE400F237F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		420041A81BABE94F000A57F5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -113,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				3C5A1C271A3A8BE400F237F6 /* EUExChatKeyboard */,
+				420041AC1BABE950000A57F5 /* uexChatKeyboardBundle */,
 				3C5A1C261A3A8BE400F237F6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -121,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				3C5A1C251A3A8BE400F237F6 /* libuexChatKeyboard.a */,
+				420041AB1BABE950000A57F5 /* uexChatKeyboard.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,6 +168,7 @@
 		3C5A1C3F1A3A8CA200F237F6 /* engineHeader */ = {
 			isa = PBXGroup;
 			children = (
+				420041B11BABE96E000A57F5 /* EUExBase+Bundle.h */,
 				3C66A5F41A3AD6B400B68E6B /* EBrowserView.h */,
 				3C5A1C401A3A8CA200F237F6 /* EUExBase.h */,
 				3C5A1C411A3A8CA200F237F6 /* EUExBaseDefine.h */,
@@ -166,6 +196,7 @@
 				3C6D9C2C1A6C9BCE00F87CF1 /* ACPVoiceActionView.m */,
 				3C7DD5711AAD2AA600FDE63B /* ChatKeyboardData.h */,
 				3C7DD5721AAD2AA600FDE63B /* ChatKeyboardData.m */,
+				420041CB1BABF363000A57F5 /* PrefixHeader.pch */,
 			);
 			path = sourceCode;
 			sourceTree = "<group>";
@@ -263,6 +294,17 @@
 			path = xmlRaeder;
 			sourceTree = "<group>";
 		};
+		420041AC1BABE950000A57F5 /* uexChatKeyboardBundle */ = {
+			isa = PBXGroup;
+			children = (
+				420041B21BABE994000A57F5 /* messageBubbleResource */,
+				420041B31BABE994000A57F5 /* messageInputViewResource */,
+				420041B41BABE994000A57F5 /* voiceResource */,
+				420041AD1BABE950000A57F5 /* Info.plist */,
+			);
+			path = uexChatKeyboardBundle;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -277,11 +319,29 @@
 			buildRules = (
 			);
 			dependencies = (
+				420041C51BABEC34000A57F5 /* PBXTargetDependency */,
 			);
 			name = EUExChatKeyboard;
 			productName = EUExChatKeyboard;
 			productReference = 3C5A1C251A3A8BE400F237F6 /* libuexChatKeyboard.a */;
 			productType = "com.apple.product-type.library.static";
+		};
+		420041AA1BABE94F000A57F5 /* uexChatKeyboardBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 420041B01BABE950000A57F5 /* Build configuration list for PBXNativeTarget "uexChatKeyboardBundle" */;
+			buildPhases = (
+				420041A71BABE94F000A57F5 /* Sources */,
+				420041A81BABE94F000A57F5 /* Frameworks */,
+				420041A91BABE94F000A57F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = uexChatKeyboardBundle;
+			productName = uexChatKeyboardBundle;
+			productReference = 420041AB1BABE950000A57F5 /* uexChatKeyboard.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -294,6 +354,9 @@
 				TargetAttributes = {
 					3C5A1C241A3A8BE400F237F6 = {
 						CreatedOnToolsVersion = 6.1;
+					};
+					420041AA1BABE94F000A57F5 = {
+						CreatedOnToolsVersion = 7.0;
 					};
 				};
 			};
@@ -310,9 +373,23 @@
 			projectRoot = "";
 			targets = (
 				3C5A1C241A3A8BE400F237F6 /* EUExChatKeyboard */,
+				420041AA1BABE94F000A57F5 /* uexChatKeyboardBundle */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		420041A91BABE94F000A57F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				420041B61BABE994000A57F5 /* messageInputViewResource in Resources */,
+				420041B71BABE994000A57F5 /* voiceResource in Resources */,
+				420041B51BABE994000A57F5 /* messageBubbleResource in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3C5A1C211A3A8BE400F237F6 /* Sources */ = {
@@ -342,7 +419,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		420041A71BABE94F000A57F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		420041C51BABEC34000A57F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 420041AA1BABE94F000A57F5 /* uexChatKeyboardBundle */;
+			targetProxy = 420041C41BABEC34000A57F5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		3C5A1C371A3A8BE400F237F6 /* Debug */ = {
@@ -426,6 +518,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/uexChatKeyboard";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = $SRCROOT/EUExChatKeyboard/sourceCode/PrefixHeader.pch;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/EUExChatKeyboard/sourceCode/speakhere/opencore",
@@ -441,6 +535,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/uexChatKeyboard";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = $SRCROOT/EUExChatKeyboard/sourceCode/PrefixHeader.pch;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/EUExChatKeyboard/sourceCode/speakhere/opencore",
@@ -449,6 +545,45 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = uexChatKeyboard;
 				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		420041AE1BABE950000A57F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = uexChatKeyboardBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = www.3g2win.com.uexChatKeyboardBundle;
+				PRODUCT_MODULE_NAME = uexChatKeyboard;
+				PRODUCT_NAME = uexChatKeyboard;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		420041AF1BABE950000A57F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = uexChatKeyboardBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = www.3g2win.com.uexChatKeyboardBundle;
+				PRODUCT_MODULE_NAME = uexChatKeyboard;
+				PRODUCT_NAME = uexChatKeyboard;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -472,6 +607,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		420041B01BABE950000A57F5 /* Build configuration list for PBXNativeTarget "uexChatKeyboardBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				420041AE1BABE950000A57F5 /* Debug */,
+				420041AF1BABE950000A57F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

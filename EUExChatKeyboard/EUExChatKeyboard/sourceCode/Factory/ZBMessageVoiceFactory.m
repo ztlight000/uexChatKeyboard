@@ -25,13 +25,13 @@
     }
     NSMutableArray *images = [NSMutableArray arrayWithCapacity:4];
     for (NSInteger i = 0; i < 4; i ++) {
-        NSString * imagePath = [NSString stringWithFormat:@"uexChatKeyboard/voiceResource/%@VoiceNodePlaying00%ld@2x",imageSepatorName,(long)i];
-        UIImage *image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imagePath ofType:@"png"]];
+        NSString * imagePath = [NSString stringWithFormat:@"voiceResource/%@VoiceNodePlaying00%ld@2x",imageSepatorName,(long)i];
+        UIImage *image = [UIImage imageWithContentsOfFile:[UEX_PLUGIN_BUNDLE pathForResource:imagePath ofType:@"png"]];
         if (image)
             [images addObject:image];
     }
-    NSString * messageVoiceAniamtionImageViewPath = [NSString stringWithFormat:@"uexChatKeyboard/voiceResource/%@VoiceNodePlaying@2x",imageSepatorName];
-    messageVoiceAniamtionImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:messageVoiceAniamtionImageViewPath ofType:@"png"]];
+    NSString * messageVoiceAniamtionImageViewPath = [NSString stringWithFormat:@"voiceResource/%@VoiceNodePlaying@2x",imageSepatorName];
+    messageVoiceAniamtionImageView.image = [UIImage imageWithContentsOfFile:[UEX_PLUGIN_BUNDLE pathForResource:messageVoiceAniamtionImageViewPath ofType:@"png"]];
     messageVoiceAniamtionImageView.animationImages = images;
     messageVoiceAniamtionImageView.animationDuration = 1.0;
     [messageVoiceAniamtionImageView stopAnimating];

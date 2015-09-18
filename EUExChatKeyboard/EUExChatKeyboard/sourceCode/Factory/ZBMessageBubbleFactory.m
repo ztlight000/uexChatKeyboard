@@ -7,6 +7,7 @@
 //
 
 #import "ZBMessageBubbleFactory.h"
+#import "EUtility.h"
 
 @implementation ZBMessageBubbleFactory
 
@@ -41,8 +42,8 @@
         default:
             break;
     }
-    NSString * bublleImagePath = [NSString stringWithFormat:@"uexChatKeyboard/messageBubbleResource/%@@2x",messageTypeString];
-    UIImage *bublleImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:bublleImagePath ofType:@"png"]];
+    NSString * bublleImagePath = [NSString stringWithFormat:@"messageBubbleResource/%@@2x",messageTypeString];
+    UIImage *bublleImage = [UIImage imageWithContentsOfFile:[[EUtility bundleForPlugin:@"uexChatKeyboard"] pathForResource:bublleImagePath ofType:@"png"]];
     UIEdgeInsets bubbleImageEdgeInsets = [self bubbleImageEdgeInsetsWithStyle];
     [bublleImage resizableImageWithCapInsets:bubbleImageEdgeInsets];
     return bublleImage;
