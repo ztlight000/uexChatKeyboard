@@ -148,7 +148,7 @@
 
 - (void)dealloc {
     self.shareMenuItems = nil;
-    self.shareMenuScrollView.delegate = self;
+    self.shareMenuScrollView.delegate = nil;
     self.shareMenuScrollView = nil;
     self.shareMenuPageControl = nil;
 }

@@ -118,6 +118,8 @@
 		3C6CD96D1AAE8A7900D38A65 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		3C6CD9781AAE8BDF00D38A65 /* libAppCanEngine_IOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAppCanEngine_IOS.a; path = ../libAppCanEngine_IOS.a; sourceTree = "<group>"; };
 		42B9285D1BAACAF8008D4B54 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		42D7B5911BAFF05200BFBC33 /* EUExBase+Bundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EUExBase+Bundle.h"; sourceTree = "<group>"; };
+		42D7B5921BAFF10C00BFBC33 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		F769E3041AAE81AD009A471B /* uexChatKeyboard.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = uexChatKeyboard.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		F769E3071AAE81AD009A471B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -149,6 +151,7 @@
 		3C4BACD91AAE87B700B34133 /* engineHeader */ = {
 			isa = PBXGroup;
 			children = (
+				42D7B5911BAFF05200BFBC33 /* EUExBase+Bundle.h */,
 				3C4BACDA1AAE87B700B34133 /* EBrowserView.h */,
 				3C4BACDB1AAE87B700B34133 /* EUExBase.h */,
 				3C4BACDC1AAE87B700B34133 /* EUExBaseDefine.h */,
@@ -161,6 +164,7 @@
 		3C4BACE01AAE87B700B34133 /* sourceCode */ = {
 			isa = PBXGroup;
 			children = (
+				42D7B5921BAFF10C00BFBC33 /* PrefixHeader.pch */,
 				3C4BACE11AAE87B700B34133 /* ACPVoiceActionView.h */,
 				3C4BACE21AAE87B700B34133 /* ACPVoiceActionView.m */,
 				3C4BACE31AAE87B700B34133 /* ChatKeyboard.h */,
@@ -419,6 +423,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Wang GuoChun (GJL3LN9D59)";
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/uexChatKeyboard";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -433,7 +438,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 armv7s";
@@ -459,6 +464,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Wang GuoChun (GJL3LN9D59)";
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/uexChatKeyboard";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -467,7 +473,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -480,8 +486,9 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: leilei xu (T8E4RVNP82)";
 				DSTROOT = /tmp/uexChatKeyboard.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = NO;
-				GCC_PREFIX_HEADER = "";
+				ENABLE_BITCODE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = $SRCROOT/EUExChatKeyboard/sourceCode/PrefixHeader.pch;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/3g2win/Documents/vendor,
@@ -498,8 +505,9 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: leilei xu (T8E4RVNP82)";
 				DSTROOT = /tmp/uexChatKeyboard.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = NO;
-				GCC_PREFIX_HEADER = "";
+				ENABLE_BITCODE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = $SRCROOT/EUExChatKeyboard/sourceCode/PrefixHeader.pch;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/3g2win/Documents/vendor,
