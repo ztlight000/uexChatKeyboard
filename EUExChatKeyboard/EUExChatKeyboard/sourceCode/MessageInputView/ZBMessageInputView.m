@@ -215,7 +215,7 @@
                                   action:@selector(messageStyleButtonClicked:)
                         forControlEvents:UIControlEventTouchUpInside];
     self.multiMediaSendButton.tag = 2;
-    [self addSubview:self.multiMediaSendButton];
+    //[self addSubview:self.multiMediaSendButton];
     self.multiMediaSendButton.frame = CGRectMake(self.frame.size.width - horizontalPadding - buttonSize,
                                                  verticalPadding,
                                                  buttonSize,
@@ -230,7 +230,7 @@
                             action:@selector(messageStyleButtonClicked:)
                   forControlEvents:UIControlEventTouchUpInside];
     self.faceSendButton.tag = 1;
-    [self addSubview:self.faceSendButton];
+    //[self addSubview:self.faceSendButton];
     self.faceSendButton.frame = CGRectMake(self.frame.size.width - 2*buttonSize- horizontalPadding -5,verticalPadding,buttonSize,buttonSize);
     
     
@@ -270,7 +270,8 @@
         {
             self.holdDownButton.frame = CGRectMake(horizontalPadding + buttonSize +5.0f,
                                                      3.0f,
-                                                     CGRectGetWidth(self.bounds)- 3*buttonSize -2*horizontalPadding- 15.0f,
+                                                     //CGRectGetWidth(self.bounds)- 3*buttonSize -2*horizontalPadding- 15.0f,
+                                                    CGRectGetWidth(self.bounds)- 1*buttonSize -1*horizontalPadding- 15.0f,
                                                      buttonSize);
             _messageInputTextView.backgroundColor = [UIColor whiteColor];
             
@@ -278,7 +279,8 @@
         }
         case ZBMessageInputViewStyleDefault:
         {
-            self.holdDownButton.frame = CGRectMake(horizontalPadding + buttonSize +5.0f,4.5f,CGRectGetWidth(self.bounds)- 3*buttonSize -2*horizontalPadding- 15.0f,buttonSize);
+            //self.holdDownButton.frame = CGRectMake(horizontalPadding + buttonSize +5.0f,4.5f,CGRectGetWidth(self.bounds)- 3*buttonSize -2*horizontalPadding- 15.0f,buttonSize);
+            self.holdDownButton.frame = CGRectMake(horizontalPadding + buttonSize +5.0f,4.5f,CGRectGetWidth(self.bounds)- 1*buttonSize -1*horizontalPadding- 15.0f,buttonSize);
             _messageInputTextView.backgroundColor = [UIColor clearColor];
             _messageInputTextView.layer.borderColor = [UIColor colorWithWhite:0.8f alpha:1.0f].CGColor;
             _messageInputTextView.layer.borderWidth = 0.65f;
