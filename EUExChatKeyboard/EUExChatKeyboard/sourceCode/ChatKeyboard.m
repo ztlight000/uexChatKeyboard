@@ -32,6 +32,7 @@
         self.animationDuration = 0.25;
         self.isInit = YES;
         self.keyboardStatus = @"0";
+        self.bottomOffset=0;
     }
     
     return self;
@@ -110,7 +111,7 @@
         _inputViewHeight = 40.0f;
     }
     
-    self.messageToolView = [[ZBMessageInputView alloc]initWithFrame:CGRectMake(0.0f,UEX_SCREENHEIGHT - _inputViewHeight,UEX_SCREENWIDTH,_inputViewHeight)];
+    self.messageToolView = [[ZBMessageInputView alloc]initWithFrame:CGRectMake(0.0f,UEX_SCREENHEIGHT - _inputViewHeight-_bottomOffset,UEX_SCREENWIDTH,_inputViewHeight)];
     
     self.messageToolView.delegate = self;
     [EUtility brwView:self.uexObj.meBrwView addSubview:self.messageToolView];
@@ -187,13 +188,13 @@
 
 - (void)changeWebView:(float)height {
     
-    
+    float yy = self.uexObj.meBrwView.frame.origin.y;
     CGRect tempRect = self.uexObj.meBrwView.scrollView.frame;
-    tempRect.size.height = CGRectGetMinY(self.messageToolView.frame);
+    tempRect.size.height = CGRectGetMinY(self.messageToolView.frame)-yy;
     self.uexObj.meBrwView.scrollView.frame = tempRect;
     
-    float yy = self.uexObj.meBrwView.frame.origin.y;
     
+    [self.uexObj.meBrwView.scrollView setContentOffset:CGPointMake(0, 0)];
     if (CGRectGetMidY(self.messageToolView.frame) < yy + height) {
         
         
@@ -214,17 +215,24 @@
 - (void)messageViewAnimationWithMessageRect:(CGRect)rect  withMessageInputViewRect:(CGRect)inputViewRect andDuration:(double)duration andState:(ZBMessageViewState)state{
     
     //if (state != ZBMessageViewStateShowNone) {
-        duration = 0.0;
+        //duration = 0.0;
     //} else {
-     //   duration += 0.1;
+        duration += 0.1;
     //}
     
     [UIView animateWithDuration:duration animations:^{
         
-        self.messageToolView.frame = CGRectMake(0.0f,UEX_SCREENHEIGHT-CGRectGetHeight(rect)-CGRectGetHeight(inputViewRect),UEX_SCREENWIDTH,CGRectGetHeight(inputViewRect));
+        CGFloat offsetHeight=self.bottomOffset;
+        if(CGRectGetHeight(rect)>offsetHeight){
+            offsetHeight=CGRectGetHeight(rect);
+        }
+        
+        
+        self.messageToolView.frame = CGRectMake(0.0f,UEX_SCREENHEIGHT-offsetHeight-CGRectGetHeight(inputViewRect),UEX_SCREENWIDTH,CGRectGetHeight(inputViewRect));
         
         CGRect tempRect = self.uexObj.meBrwView.scrollView.frame;
-        tempRect.size.height = CGRectGetMinY(self.messageToolView.frame);
+        tempRect.size.height = CGRectGetMinY(self.messageToolView.frame)+self.bottomOffset+CGRectGetHeight(inputViewRect);
+
         self.uexObj.meBrwView.scrollView.frame = tempRect;
         
         

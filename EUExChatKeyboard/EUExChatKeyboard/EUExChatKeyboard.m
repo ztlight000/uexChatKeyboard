@@ -113,6 +113,11 @@
     if (!_chatKeyboard) {
         
         _chatKeyboard = [[ChatKeyboard alloc]initWithUexobj:self];
+        if([xmlDic objectForKey:@"bottom"]){
+            _chatKeyboard.bottomOffset=[[xmlDic objectForKey:@"bottom"] floatValue];
+        }
+        
+        
         [_chatKeyboard open];
         
         _tapGR = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hideKeyboard:)];
