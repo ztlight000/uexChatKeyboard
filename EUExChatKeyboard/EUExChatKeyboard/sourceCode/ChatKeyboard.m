@@ -572,7 +572,7 @@
 }
 
 -(void)didTimeOut{
-    NSDictionary * cbDic = [NSDictionary dictionaryWithObjectsAndKeys:@"2",@"status",@"2",@"voicePath", nil];
+    NSDictionary * cbDic = [NSDictionary dictionaryWithObjectsAndKeys:@"1",@"status",@"2",@"voicePath", nil];
     NSString *jsStr = [NSString stringWithFormat:@"if(uexChatKeyboard.onVoiceAction!=null){uexChatKeyboard.onVoiceAction(\'%@\');}", [cbDic JSONFragment]];
     [self.uexObj.meBrwView stringByEvaluatingJavaScriptFromString:jsStr];
     [self removeViewAndSubviewsFromSuperview:_v];
