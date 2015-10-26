@@ -190,24 +190,17 @@
     
     float yy = self.uexObj.meBrwView.frame.origin.y;
     CGRect tempRect = self.uexObj.meBrwView.scrollView.frame;
-    tempRect.size.height = CGRectGetMinY(self.messageToolView.frame)-yy;
+    tempRect.size.height = CGRectGetMinY(self.messageToolView.frame) - yy;
     self.uexObj.meBrwView.scrollView.frame = tempRect;
     
     
     [self.uexObj.meBrwView.scrollView setContentOffset:CGPointMake(0, 0)];
-    if (CGRectGetMidY(self.messageToolView.frame) < yy + height) {
-        
-        
+    
+    if (CGRectGetMinY(self.messageToolView.frame) < yy + height) {
         
         [self.uexObj.meBrwView.scrollView setContentOffset:CGPointMake(0, yy + height - CGRectGetMinY(self.messageToolView.frame))];
         
-        
-        
-        
     }
-    
-    
-    
     
 }
 
@@ -287,7 +280,7 @@
     
     if (CGRectGetHeight(rect) > 0) {
         status = @"1";
-    } else{
+    } else {
         if (self.uexObj.meBrwView.scrollView.frame.size.height >= self.uexObj.meBrwView.scrollView.contentOffset.y) {
             [self.uexObj.meBrwView.scrollView setContentOffset:CGPointMake(0, 0)];
         } else {
@@ -337,6 +330,7 @@
 
 - (void)didSendFaceAction:(BOOL)sendFace{
     if (sendFace) {
+        self.faceView.hidden = NO;
         [self messageViewAnimationWithMessageRect:self.faceView.frame
                          withMessageInputViewRect:self.messageToolView.frame
                                       andDuration:self.animationDuration
@@ -374,6 +368,7 @@
 
 - (void)inputTextViewDidBeginEditing:(ZBMessageTextView *)messageInputTextView
 {
+    self.faceView.hidden = YES;
     [self messageViewAnimationWithMessageRect:self.keyboardRect
                      withMessageInputViewRect:self.messageToolView.frame
                                   andDuration:self.animationDuration
@@ -476,17 +471,28 @@
 #pragma mark - ZBMessageFaceViewDelegate
 - (void)SendTheFaceStr:(NSString *)faceStr isDelete:(BOOL)dele
 {
-    NSString * oldMsg = self.messageToolView.messageInputTextView.text;
+    NSMutableString * oldMsg = [[NSMutableString alloc]initWithString:self.messageToolView.messageInputTextView.text];
+    
     if (dele && [oldMsg length] > 0) {
         
         [self.messageToolView.messageInputTextView deleteBackward];
         
     } else if (!dele) {
         
-        self.messageToolView.messageInputTextView.text = [oldMsg stringByAppendingString:faceStr];
-        [self inputTextViewDidChange:self.messageToolView.messageInputTextView];
+        NSRange range = [self.messageToolView.messageInputTextView selectedRange];
+        
+        [oldMsg insertString:faceStr atIndex:range.location];
+        
+        range.location += [faceStr length];
+        
+        
+        self.messageToolView.messageInputTextView.text = oldMsg;
+        
+        self.messageToolView.messageInputTextView.selectedRange = range;
         
     }
+    
+    [self inputTextViewDidChange:self.messageToolView.messageInputTextView];
     
 }
 #pragma end

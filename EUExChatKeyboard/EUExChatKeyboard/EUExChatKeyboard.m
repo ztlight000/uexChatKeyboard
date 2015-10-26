@@ -34,7 +34,12 @@
 
 - (void)clean {
     
-    [meBrwView removeGestureRecognizer:_tapGR];
+    if (_tapGR) {
+        
+        _tapGR.delegate = nil;
+        _tapGR = nil;
+    }
+    
     
     if (_chatKeyboard) {
         
@@ -235,12 +240,7 @@
 
 -(void)close:(NSMutableArray *)array {
     
-    [meBrwView removeGestureRecognizer:_tapGR];
-    
-    if (_chatKeyboard) {
-        [_chatKeyboard close];
-        _chatKeyboard = nil;
-    }
+    [self clean];
 }
 
 @end
