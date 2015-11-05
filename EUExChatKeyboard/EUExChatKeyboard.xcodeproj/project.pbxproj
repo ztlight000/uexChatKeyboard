@@ -28,9 +28,9 @@
 		3C7DD5731AAD2AA600FDE63B /* ChatKeyboardData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7DD5721AAD2AA600FDE63B /* ChatKeyboardData.m */; };
 		3C9651DC1A636BCD0045C1E0 /* ChatKeyboardUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9651DB1A636BCD0045C1E0 /* ChatKeyboardUtility.m */; };
 		3CC7CC6E1AA5B30C00FEF7A6 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC7CC6D1AA5B30C00FEF7A6 /* XMLReader.m */; };
-		420041B51BABE994000A57F5 /* messageBubbleResource in Resources */ = {isa = PBXBuildFile; fileRef = 420041B21BABE994000A57F5 /* messageBubbleResource */; settings = {ASSET_TAGS = (); }; };
-		420041B61BABE994000A57F5 /* messageInputViewResource in Resources */ = {isa = PBXBuildFile; fileRef = 420041B31BABE994000A57F5 /* messageInputViewResource */; settings = {ASSET_TAGS = (); }; };
-		420041B71BABE994000A57F5 /* voiceResource in Resources */ = {isa = PBXBuildFile; fileRef = 420041B41BABE994000A57F5 /* voiceResource */; settings = {ASSET_TAGS = (); }; };
+		420041B51BABE994000A57F5 /* messageBubbleResource in Resources */ = {isa = PBXBuildFile; fileRef = 420041B21BABE994000A57F5 /* messageBubbleResource */; };
+		420041B61BABE994000A57F5 /* messageInputViewResource in Resources */ = {isa = PBXBuildFile; fileRef = 420041B31BABE994000A57F5 /* messageInputViewResource */; };
+		420041B71BABE994000A57F5 /* voiceResource in Resources */ = {isa = PBXBuildFile; fileRef = 420041B41BABE994000A57F5 /* voiceResource */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,7 +110,6 @@
 		3CC7CC6C1AA5B30C00FEF7A6 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
 		3CC7CC6D1AA5B30C00FEF7A6 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
 		420041AB1BABE950000A57F5 /* uexChatKeyboard.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uexChatKeyboard.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		420041AD1BABE950000A57F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		420041B11BABE96E000A57F5 /* EUExBase+Bundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EUExBase+Bundle.h"; sourceTree = "<group>"; };
 		420041B21BABE994000A57F5 /* messageBubbleResource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = messageBubbleResource; sourceTree = "<group>"; };
 		420041B31BABE994000A57F5 /* messageInputViewResource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = messageInputViewResource; sourceTree = "<group>"; };
@@ -300,7 +299,6 @@
 				420041B21BABE994000A57F5 /* messageBubbleResource */,
 				420041B31BABE994000A57F5 /* messageInputViewResource */,
 				420041B41BABE994000A57F5 /* voiceResource */,
-				420041AD1BABE950000A57F5 /* Info.plist */,
 			);
 			path = uexChatKeyboardBundle;
 			sourceTree = "<group>";
@@ -555,7 +553,8 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = uexChatKeyboardBundle/Info.plist;
+				INFOPLIST_EXPAND_BUILD_SETTINGS = NO;
+				INFOPLIST_FILE = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
@@ -575,7 +574,8 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = uexChatKeyboardBundle/Info.plist;
+				INFOPLIST_EXPAND_BUILD_SETTINGS = NO;
+				INFOPLIST_FILE = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = www.3g2win.com.uexChatKeyboardBundle;
@@ -615,6 +615,7 @@
 				420041AF1BABE950000A57F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
