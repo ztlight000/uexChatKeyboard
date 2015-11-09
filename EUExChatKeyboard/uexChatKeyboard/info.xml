@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <uexplugins>
-    <plugin uexName="uexChatKeyboard" version="3.0.12" build="12">
-        <info>12:修复关闭输入法后窗口显示不正常的bug</info>
+    <plugin uexName="uexChatKeyboard" version="3.0.15" build="15">
+        <info>15:修复messageShareView可能会遮住文字的bug</info>
+        <build>14:修复插入表情时默认插入到最后的问题,修复在iPhone6 Plus上的显示问题</build>
+        <build>13:修复finishWidget时的崩溃问题,修复长按输入框显示放大镜时可以看见表情按钮的问题</build>
+        <build>12:修复关闭输入法后窗口显示不正常的bug</build>
         <build>11:修复一个在iOS9下可能导致APP崩溃的bug</build>
         <build>10:open添加可选参数，可以设置初始键盘页面为语音页面</build>
         <build>9:修复直接输入表情时输入框变形问题.修复联系点击录音按钮录音提示无法关闭问题</build>
