@@ -150,10 +150,11 @@
 
 -(void)sendButtonDidClicked:(id)sender {
     [self didSendTextAction:self.messageToolView.messageInputTextView];
-    [self messageViewAnimationWithMessageRect:CGRectZero
-                     withMessageInputViewRect:self.messageToolView.frame
-                                  andDuration:0.25
-                                     andState:ZBMessageViewStateShowNone];
+//    [self messageViewAnimationWithMessageRect:CGRectZero
+//                     withMessageInputViewRect:self.messageToolView.frame
+//                                  andDuration:0.25
+//                                     andState:ZBMessageViewStateShowNone];
+    
 }
 
 - (void)shareShareMeun
@@ -210,7 +211,7 @@
     //if (state != ZBMessageViewStateShowNone) {
         //duration = 0.0;
     //} else {
-        duration += 0.1;
+//        duration += 0.1;
     //}
     
     [UIView animateWithDuration:duration animations:^{
@@ -290,7 +291,8 @@
     }
     
     NSDictionary * jsDic = [NSDictionary dictionaryWithObject:status forKey:@"status"];
-    NSString *jsStr = [NSString stringWithFormat:@"if(uexChatKeyboard.onKeyBoardShow!=null){uexChatKeyboard.onKeyBoardShow(\'%@\');}", [jsDic JSONFragment]];
+    NSString *jsStr = [NSString stringWithFormat:@"if(uexChatKeyboard.onKeyBoardShow!=null){uexChatKeyboard.onKeyBoardShow(\'%@\');}",
+                       [jsDic JSONFragment]];
     
     //if (![status isEqualToString:_keyboardStatus]) {
         //_keyboardStatus = status;
@@ -461,7 +463,7 @@
     [self.uexObj.meBrwView stringByEvaluatingJavaScriptFromString:cbjson];
     
     [self inputTextViewDidChange:messageInputTextView];
-    [messageInputTextView resignFirstResponder];
+//    [messageInputTextView resignFirstResponder];
 }
 
 
