@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <uexplugins>
-    <plugin uexName="uexChatKeyboard" version="3.0.17" build="17">
-        <info>17:收回键盘遮挡数据</info>
+    <plugin uexName="uexChatKeyboard" version="3.0.18" build="18">
+        <info>17:修复自定义功能按钮和表情按钮重新打开会弹出键盘的bug</info>
+        <build>17:收回键盘遮挡数据</build>
         <build>16:修改点击发送不收回键盘</build>
         <build>15:修复了messageShareView两列遮住文字的bug</build>
         <build>14:修复插入表情时默认插入到最后的问题,修复在iPhone6 Plus上的显示问题</build>

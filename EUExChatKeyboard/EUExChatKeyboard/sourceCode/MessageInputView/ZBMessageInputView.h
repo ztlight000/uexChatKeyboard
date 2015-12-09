@@ -147,6 +147,8 @@ typedef enum
 
 
 -(void)uex_change:(BOOL)isAudio;
+
+@property (nonatomic,assign)BOOL isKeyBoardShow;
 #pragma end
 
 @end

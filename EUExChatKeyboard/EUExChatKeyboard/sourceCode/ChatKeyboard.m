@@ -23,7 +23,6 @@
 #define UEX_SCREENHEIGHT (isSysVersionAbove7_0?[UIScreen mainScreen].bounds.size.height:[UIScreen mainScreen].applicationFrame.size.height)
 
 
-
 @implementation ChatKeyboard
 
 -(instancetype)initWithUexobj:(EUExChatKeyboard *)uexObj{
@@ -278,14 +277,23 @@
     }];
     
     NSString * status = @"0";
+
     
     if (CGRectGetHeight(rect) > 0) {
         status = @"1";
+        self.messageToolView.isKeyBoardShow=YES;
     } else {
         if (self.uexObj.meBrwView.scrollView.frame.size.height >= self.uexObj.meBrwView.scrollView.contentOffset.y) {
             [self.uexObj.meBrwView.scrollView setContentOffset:CGPointMake(0, 0)];
+            
         } else {
             [self.uexObj.meBrwView.scrollView setContentOffset:CGPointMake(0, self.uexObj.meBrwView.scrollView.contentOffset.y)];
+        }
+        
+        //判断chatKeyboard是否收起
+        if(!self.faceView.isHidden&&!self.shareMenuView.isHidden){
+            self.messageToolView.faceSendButton.selected=NO;
+            self.messageToolView.isKeyBoardShow=NO;
         }
         
     }
