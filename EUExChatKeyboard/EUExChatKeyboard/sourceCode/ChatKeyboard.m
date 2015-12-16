@@ -11,12 +11,8 @@
 
 
 
-#define UEX_SHARE_PIC_ITEM [UEX_PLUGIN_BUNDLE pathForResource:@"shareResource/sharemore_pic_ios7@2x" ofType:@"png"]
-#define UEX_SHARE_VIDEO_ITEM [UEX_PLUGIN_BUNDLE pathForResource:@"shareResource/sharemore_video_ios7@2x" ofType:@"png"]
-#define UEX_SHARE_LOC_ITEM [UEX_PLUGIN_BUNDLE pathForResource:@"shareResource/sharemore_video_ios7@2x" ofType:@"png"]
-#define UEX_SHARE_VOIP_ITEM [UEX_PLUGIN_BUNDLE pathForResource:@"shareResource/sharemore_videovoip@2x" ofType:@"png"]
 #define UEX_SEND_FACE_NORMAL [UEX_PLUGIN_BUNDLE pathForResource:@"messageInputViewResource/EmotionsSendBtnGrey@2x" ofType:@"png"]
-#define UEX_SEND_FACE_HL [UEX_PLUGIN_BUNDLE pathForResource:@"shareResource/messageInputViewResource/EmotionsSendBtnBlueHL@2x" ofType:@"png"]
+#define UEX_SEND_FACE_HL [UEX_PLUGIN_BUNDLE pathForResource:@"messageInputViewResource/EmotionsSendBtnBlueHL@2x" ofType:@"png"]
 
 #define isSysVersionAbove7_0 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
 #define UEX_SCREENWIDTH (isSysVersionAbove7_0?[UIScreen mainScreen].bounds.size.width:[UIScreen mainScreen].applicationFrame.size.width)
@@ -139,8 +135,8 @@
 //        self.sendButton.layer.borderWidth = 0.5f;
 //        self.sendButton.layer.borderColor = [[UIColor grayColor]CGColor];
         
-        [self.sendButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:UEX_SEND_FACE_NORMAL ofType:@"png"]] forState:UIControlStateNormal];
-        [self.sendButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:UEX_SEND_FACE_HL ofType:@"png"]] forState:UIControlStateHighlighted];
+        [self.sendButton setBackgroundImage:[UIImage imageWithContentsOfFile:UEX_SEND_FACE_NORMAL] forState:UIControlStateNormal];
+        [self.sendButton setBackgroundImage:[UIImage imageWithContentsOfFile:UEX_SEND_FACE_HL] forState:UIControlStateHighlighted];
         [EUtility brwView:self.uexObj.meBrwView addSubview:self.sendButton];
         [self.sendButton addTarget:self action:@selector(sendButtonDidClicked:) forControlEvents:UIControlEventTouchUpInside];
         
