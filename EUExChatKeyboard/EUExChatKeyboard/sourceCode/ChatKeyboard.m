@@ -183,17 +183,18 @@
 
 
 - (void)changeWebView:(float)height {
-    
+    NSLog(@"changeWebView==>>进入changeWebView");
     float yy = self.uexObj.meBrwView.frame.origin.y;
-    CGRect tempRect = self.uexObj.meBrwView.scrollView.frame;
-    tempRect.size.height = CGRectGetMinY(self.messageToolView.frame) - yy;
-    self.uexObj.meBrwView.scrollView.frame = tempRect;
-    
-    
+//    CGRect tempRect = self.uexObj.meBrwView.scrollView.frame;
+//    tempRect.size.height = CGRectGetMinY(self.messageToolView.frame) - yy;
+//    self.uexObj.meBrwView.scrollView.frame = tempRect;
+    NSLog(@"changeWebView==>>meBrwView=%@",self.uexObj.meBrwView);
+    NSLog(@"changeWebView==>>scrollView=%@",self.uexObj.meBrwView.scrollView);
     [self.uexObj.meBrwView.scrollView setContentOffset:CGPointMake(0, 0)];
     
     if (CGRectGetMinY(self.messageToolView.frame) < yy + height) {
-        
+        NSLog(@"changeWebView==>>有遮挡设偏移量====%lf",yy + height - CGRectGetMinY(self.messageToolView.frame));
+
         [self.uexObj.meBrwView.scrollView setContentOffset:CGPointMake(0, yy + height - CGRectGetMinY(self.messageToolView.frame))];
         
     }
