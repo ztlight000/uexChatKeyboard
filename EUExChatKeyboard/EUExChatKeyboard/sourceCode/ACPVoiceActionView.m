@@ -65,10 +65,9 @@
 
 -(void)updateSecondLabel{
     
-    _second +=1;
     _secondLabel.text = [NSString stringWithFormat:@"%d’",_second];
-    
-    if (_second >= 60) {
+    _second +=1;
+    if (_second > 60) {
         [_secondTimer invalidate];
         [self timeOut];
     }

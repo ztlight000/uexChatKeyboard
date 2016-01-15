@@ -198,7 +198,7 @@
         [self.uexObj.meBrwView.scrollView setContentOffset:CGPointMake(0, yy + height - CGRectGetMinY(self.messageToolView.frame))];
         
     }
-    
+     NSLog(@"changeWebView调整之后==>>scrollView=%@",self.uexObj.meBrwView.scrollView);
 }
 
 #pragma mark - messageView animation
@@ -217,17 +217,13 @@
             offsetHeight=CGRectGetHeight(rect);
         }
         
-        
         self.messageToolView.frame = CGRectMake(0.0f,UEX_SCREENHEIGHT-offsetHeight-CGRectGetHeight(inputViewRect),UEX_SCREENWIDTH,CGRectGetHeight(inputViewRect));
         
         CGRect tempRect = self.uexObj.meBrwView.scrollView.frame;
-        tempRect.size.height = CGRectGetMinY(self.messageToolView.frame)+self.bottomOffset+CGRectGetHeight(inputViewRect);
+        tempRect.size.height = CGRectGetMinY(self.messageToolView.frame)+self.bottomOffset+CGRectGetHeight(inputViewRect)-self.uexObj.meBrwView.frame.origin.y;
 
         self.uexObj.meBrwView.scrollView.frame = tempRect;
-        
-        
-        
-        
+
         switch (state) {
                 
             case ZBMessageViewStateShowFace:
@@ -280,6 +276,7 @@
         status = @"1";
         self.messageToolView.isKeyBoardShow=YES;
     } else {
+        NSLog(@"messageViewAnimationWithMessageRect==>>键盘收回时scrollView=%@",self.uexObj.meBrwView.scrollView);
         if (self.uexObj.meBrwView.scrollView.frame.size.height >= self.uexObj.meBrwView.scrollView.contentOffset.y) {
             [self.uexObj.meBrwView.scrollView setContentOffset:CGPointMake(0, 0)];
             
@@ -295,13 +292,14 @@
         
     }
     
+    NSLog(@"messageViewAnimationWithMessageRect==>>messageInputTextView=%@;meBrwView=%@;scrollView=%@",self.messageToolView.messageInputTextView,self.uexObj.meBrwView,self.uexObj.meBrwView.scrollView);
+    
     NSDictionary * jsDic = [NSDictionary dictionaryWithObject:status forKey:@"status"];
-    NSString *jsStr = [NSString stringWithFormat:@"if(uexChatKeyboard.onKeyBoardShow!=null){uexChatKeyboard.onKeyBoardShow(\'%@\');}",
-                       [jsDic JSONFragment]];
+    NSString *jsStr = [NSString stringWithFormat:@"if(uexChatKeyboard.onKeyBoardShow!=null){uexChatKeyboard.onKeyBoardShow(\'%@\');}",[jsDic JSONFragment]];
     
     //if (![status isEqualToString:_keyboardStatus]) {
         //_keyboardStatus = status;
-        [self performSelectorOnMainThread:@selector(onKeyboardShowCallback:) withObject:jsStr waitUntilDone:NO];
+    [self performSelectorOnMainThread:@selector(onKeyboardShowCallback:) withObject:jsStr waitUntilDone:NO];
     //}
     
 }
