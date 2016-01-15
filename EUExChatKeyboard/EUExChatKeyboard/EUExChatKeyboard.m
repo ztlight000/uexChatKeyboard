@@ -136,14 +136,11 @@
 
         });
         
-        
-        
     }
     
 }
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
-    
     
     return YES;
 }
