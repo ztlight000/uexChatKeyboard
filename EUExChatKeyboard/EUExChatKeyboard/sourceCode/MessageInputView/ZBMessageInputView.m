@@ -25,6 +25,7 @@
 
 @property (nonatomic, copy) NSString *inputedText;
 
+
 @end
 
 @implementation ZBMessageInputView
@@ -96,11 +97,12 @@
             self.multiMediaSendButton.selected = NO;
             self.voiceChangeButton.selected = NO;
             
-            if(!self.isKeyBoardShow){
-                sender.selected=YES;
+            if(self.isKeyBoardShow){
+                sender.selected = !sender.selected;
             }
             else{
-                sender.selected = !sender.selected;
+                sender.selected=YES;
+                
             }
             if (sender.selected) {
                 
@@ -127,11 +129,12 @@
             self.voiceChangeButton.selected = NO;
             self.faceSendButton.selected = NO;
             
-            if(!self.isKeyBoardShow){
-                sender.selected=YES;
+            if(self.isKeyBoardShow){
+                sender.selected = !sender.selected;
             }
             else{
-                sender.selected = !sender.selected;
+                sender.selected=YES;
+                
             }
             
             if (sender.selected) {

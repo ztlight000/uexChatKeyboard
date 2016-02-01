@@ -19,6 +19,28 @@
 #define UEX_SCREENHEIGHT (isSysVersionAbove7_0?[UIScreen mainScreen].bounds.size.height:[UIScreen mainScreen].applicationFrame.size.height)
 
 
+@implementation UIButton (FillColor)
+
+- (void)setBackgroundColor:(UIColor *)backgroundColor forState:(UIControlState)state {
+    [self setBackgroundImage:[UIButton imageWithColor:backgroundColor] forState:state];
+}
+
++ (UIImage *)imageWithColor:(UIColor *)color {
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
+@end
+
 @implementation ChatKeyboard
 
 -(instancetype)initWithUexobj:(EUExChatKeyboard *)uexObj{
@@ -123,20 +145,21 @@
 - (void)shareFaceView{
     
     if (!self.faceView) {
+        ChatKeyboardData *chatKeyboardData = [ChatKeyboardData sharedChatKeyboardData];
         self.faceView = [[ZBMessageManagerFaceView alloc]initWithFrame:CGRectMake(0.0f,UEX_SCREENHEIGHT, UEX_SCREENWIDTH, 196) andFacePath:self.facePath];
         self.faceView.delegate = self;
         [EUtility brwView:self.uexObj.meBrwView addSubview:self.faceView];
         
         self.sendButton = [UIButton buttonWithType:UIButtonTypeCustom];
         self.sendButton.frame = CGRectMake(UEX_SCREENWIDTH-70, CGRectGetMaxY(self.faceView.frame)+3, 70, 37);
-        [self.sendButton setTitle:@"  发送" forState:UIControlStateNormal];
-        [self.sendButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-        //[self.sendButton setBackgroundColor:[UIColor blueColor]];
-//        self.sendButton.layer.borderWidth = 0.5f;
-//        self.sendButton.layer.borderColor = [[UIColor grayColor]CGColor];
-        
-        [self.sendButton setBackgroundImage:[UIImage imageWithContentsOfFile:UEX_SEND_FACE_NORMAL] forState:UIControlStateNormal];
-        [self.sendButton setBackgroundImage:[UIImage imageWithContentsOfFile:UEX_SEND_FACE_HL] forState:UIControlStateHighlighted];
+        [self.sendButton setTitle:chatKeyboardData.sendBtnText forState:UIControlStateNormal];
+        [self.sendButton setTitleColor:chatKeyboardData.sendBtnTextColor forState:UIControlStateNormal];
+        [self.sendButton setBackgroundColor:chatKeyboardData.sendBtnbgColorUp];
+        [self.sendButton setBackgroundColor:chatKeyboardData.sendBtnbgColorDown forState:UIControlStateHighlighted];
+        self.sendButton.layer.borderWidth = 0.6;
+        self.sendButton.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+//        [self.sendButton setBackgroundImage:[UIImage imageWithContentsOfFile:UEX_SEND_FACE_NORMAL] forState:UIControlStateNormal];
+//        [self.sendButton setBackgroundImage:[UIImage imageWithContentsOfFile:UEX_SEND_FACE_HL] forState:UIControlStateHighlighted];
         [EUtility brwView:self.uexObj.meBrwView addSubview:self.sendButton];
         [self.sendButton addTarget:self action:@selector(sendButtonDidClicked:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -199,17 +222,12 @@
         
     }
      NSLog(@"changeWebView调整之后==>>scrollView=%@",self.uexObj.meBrwView.scrollView);
+
 }
 
 #pragma mark - messageView animation
-- (void)messageViewAnimationWithMessageRect:(CGRect)rect  withMessageInputViewRect:(CGRect)inputViewRect andDuration:(double)duration andState:(ZBMessageViewState)state{
-    
-    //if (state != ZBMessageViewStateShowNone) {
-        //duration = 0.0;
-    //} else {
-//        duration += 0.1;
-    //}
-    
+- (void)messageViewAnimationWithMessageRect:(CGRect)rect withMessageInputViewRect:(CGRect)inputViewRect andDuration:(double)duration andState:(ZBMessageViewState)state{
+
     [UIView animateWithDuration:duration animations:^{
         
         CGFloat offsetHeight=self.bottomOffset;
@@ -221,9 +239,9 @@
         
         CGRect tempRect = self.uexObj.meBrwView.scrollView.frame;
         tempRect.size.height = CGRectGetMinY(self.messageToolView.frame)+self.bottomOffset+CGRectGetHeight(inputViewRect)-self.uexObj.meBrwView.frame.origin.y;
-
+        
         self.uexObj.meBrwView.scrollView.frame = tempRect;
-
+        
         switch (state) {
                 
             case ZBMessageViewStateShowFace:
@@ -270,7 +288,7 @@
     }];
     
     NSString * status = @"0";
-
+    
     
     if (CGRectGetHeight(rect) > 0) {
         status = @"1";
@@ -283,11 +301,10 @@
         } else {
             [self.uexObj.meBrwView.scrollView setContentOffset:CGPointMake(0, self.uexObj.meBrwView.scrollView.contentOffset.y)];
         }
-        
+        self.messageToolView.isKeyBoardShow=NO;
         //判断chatKeyboard是否收起
         if(!self.faceView.isHidden&&!self.shareMenuView.isHidden){
             self.messageToolView.faceSendButton.selected=NO;
-            self.messageToolView.isKeyBoardShow=NO;
         }
         
     }
@@ -298,10 +315,9 @@
     NSString *jsStr = [NSString stringWithFormat:@"if(uexChatKeyboard.onKeyBoardShow!=null){uexChatKeyboard.onKeyBoardShow(\'%@\');}",[jsDic JSONFragment]];
     
     //if (![status isEqualToString:_keyboardStatus]) {
-        //_keyboardStatus = status;
+    //_keyboardStatus = status;
     [self performSelectorOnMainThread:@selector(onKeyboardShowCallback:) withObject:jsStr waitUntilDone:NO];
     //}
-    
 }
 
 - (void)onKeyboardShowCallback:(id)userInfo {

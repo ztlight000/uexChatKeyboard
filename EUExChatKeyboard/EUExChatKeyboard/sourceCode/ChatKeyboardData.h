@@ -26,6 +26,12 @@
 @property (nonatomic,strong) UIColor * textColor;
 @property (nonatomic,assign) float textSize;
 
+@property (nonatomic,strong) UIColor * sendBtnbgColorUp;
+@property (nonatomic,strong) UIColor * sendBtnbgColorDown;
+@property (nonatomic,copy) NSString * sendBtnText;
+@property (nonatomic,assign) float sendBtnTextSize;
+@property (nonatomic,strong) UIColor * sendBtnTextColor;
+
 +(ChatKeyboardData *)sharedChatKeyboardData;
 
 @end
