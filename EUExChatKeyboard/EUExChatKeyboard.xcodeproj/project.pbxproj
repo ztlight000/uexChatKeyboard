@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C5A1C291A3A8BE400F237F6 /* EUExChatKeyboard.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C5A1C281A3A8BE400F237F6 /* EUExChatKeyboard.h */; };
 		3C5A1C2B1A3A8BE400F237F6 /* EUExChatKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5A1C2A1A3A8BE400F237F6 /* EUExChatKeyboard.m */; };
 		3C5A1C7B1A3A972800F237F6 /* ZBMessageInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5A1C781A3A972800F237F6 /* ZBMessageInputView.m */; };
 		3C5A1C7C1A3A972800F237F6 /* ZBMessageTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5A1C7A1A3A972800F237F6 /* ZBMessageTextView.m */; };
@@ -42,19 +41,6 @@
 			remoteInfo = uexChatKeyboardBundle;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		3C5A1C231A3A8BE400F237F6 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-				3C5A1C291A3A8BE400F237F6 /* EUExChatKeyboard.h in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3C5A1C251A3A8BE400F237F6 /* libuexChatKeyboard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libuexChatKeyboard.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -312,7 +298,6 @@
 			buildPhases = (
 				3C5A1C211A3A8BE400F237F6 /* Sources */,
 				3C5A1C221A3A8BE400F237F6 /* Frameworks */,
-				3C5A1C231A3A8BE400F237F6 /* CopyFiles */,
 			);
 			buildRules = (
 			);

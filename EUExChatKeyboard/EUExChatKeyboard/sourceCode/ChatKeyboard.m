@@ -11,17 +11,12 @@
 
 
 
-#define UEX_SHARE_PIC_ITEM [UEX_PLUGIN_BUNDLE pathForResource:@"shareResource/sharemore_pic_ios7@2x" ofType:@"png"]
-#define UEX_SHARE_VIDEO_ITEM [UEX_PLUGIN_BUNDLE pathForResource:@"shareResource/sharemore_video_ios7@2x" ofType:@"png"]
-#define UEX_SHARE_LOC_ITEM [UEX_PLUGIN_BUNDLE pathForResource:@"shareResource/sharemore_video_ios7@2x" ofType:@"png"]
-#define UEX_SHARE_VOIP_ITEM [UEX_PLUGIN_BUNDLE pathForResource:@"shareResource/sharemore_videovoip@2x" ofType:@"png"]
 #define UEX_SEND_FACE_NORMAL [UEX_PLUGIN_BUNDLE pathForResource:@"messageInputViewResource/EmotionsSendBtnGrey@2x" ofType:@"png"]
-#define UEX_SEND_FACE_HL [UEX_PLUGIN_BUNDLE pathForResource:@"shareResource/messageInputViewResource/EmotionsSendBtnBlueHL@2x" ofType:@"png"]
+#define UEX_SEND_FACE_HL [UEX_PLUGIN_BUNDLE pathForResource:@"messageInputViewResource/EmotionsSendBtnBlueHL@2x" ofType:@"png"]
 
 #define isSysVersionAbove7_0 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
 #define UEX_SCREENWIDTH (isSysVersionAbove7_0?[UIScreen mainScreen].bounds.size.width:[UIScreen mainScreen].applicationFrame.size.width)
 #define UEX_SCREENHEIGHT (isSysVersionAbove7_0?[UIScreen mainScreen].bounds.size.height:[UIScreen mainScreen].applicationFrame.size.height)
-
 
 
 @implementation ChatKeyboard
@@ -140,8 +135,8 @@
 //        self.sendButton.layer.borderWidth = 0.5f;
 //        self.sendButton.layer.borderColor = [[UIColor grayColor]CGColor];
         
-        [self.sendButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:UEX_SEND_FACE_NORMAL ofType:@"png"]] forState:UIControlStateNormal];
-        [self.sendButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:UEX_SEND_FACE_HL ofType:@"png"]] forState:UIControlStateHighlighted];
+        [self.sendButton setBackgroundImage:[UIImage imageWithContentsOfFile:UEX_SEND_FACE_NORMAL] forState:UIControlStateNormal];
+        [self.sendButton setBackgroundImage:[UIImage imageWithContentsOfFile:UEX_SEND_FACE_HL] forState:UIControlStateHighlighted];
         [EUtility brwView:self.uexObj.meBrwView addSubview:self.sendButton];
         [self.sendButton addTarget:self action:@selector(sendButtonDidClicked:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -150,10 +145,11 @@
 
 -(void)sendButtonDidClicked:(id)sender {
     [self didSendTextAction:self.messageToolView.messageInputTextView];
-    [self messageViewAnimationWithMessageRect:CGRectZero
-                     withMessageInputViewRect:self.messageToolView.frame
-                                  andDuration:0.25
-                                     andState:ZBMessageViewStateShowNone];
+//    [self messageViewAnimationWithMessageRect:CGRectZero
+//                     withMessageInputViewRect:self.messageToolView.frame
+//                                  andDuration:0.25
+//                                     andState:ZBMessageViewStateShowNone];
+    
 }
 
 - (void)shareShareMeun
@@ -187,17 +183,18 @@
 
 
 - (void)changeWebView:(float)height {
-    
+    NSLog(@"changeWebView==>>进入changeWebView");
     float yy = self.uexObj.meBrwView.frame.origin.y;
-    CGRect tempRect = self.uexObj.meBrwView.scrollView.frame;
-    tempRect.size.height = CGRectGetMinY(self.messageToolView.frame) - yy;
-    self.uexObj.meBrwView.scrollView.frame = tempRect;
-    
-    
+//    CGRect tempRect = self.uexObj.meBrwView.scrollView.frame;
+//    tempRect.size.height = CGRectGetMinY(self.messageToolView.frame) - yy;
+//    self.uexObj.meBrwView.scrollView.frame = tempRect;
+    NSLog(@"changeWebView==>>meBrwView=%@",self.uexObj.meBrwView);
+    NSLog(@"changeWebView==>>scrollView=%@",self.uexObj.meBrwView.scrollView);
     [self.uexObj.meBrwView.scrollView setContentOffset:CGPointMake(0, 0)];
     
     if (CGRectGetMinY(self.messageToolView.frame) < yy + height) {
-        
+        NSLog(@"changeWebView==>>有遮挡设偏移量====%lf",yy + height - CGRectGetMinY(self.messageToolView.frame));
+
         [self.uexObj.meBrwView.scrollView setContentOffset:CGPointMake(0, yy + height - CGRectGetMinY(self.messageToolView.frame))];
         
     }
@@ -210,7 +207,7 @@
     //if (state != ZBMessageViewStateShowNone) {
         //duration = 0.0;
     //} else {
-        duration += 0.1;
+//        duration += 0.1;
     //}
     
     [UIView animateWithDuration:duration animations:^{
@@ -277,20 +274,30 @@
     }];
     
     NSString * status = @"0";
+
     
     if (CGRectGetHeight(rect) > 0) {
         status = @"1";
+        self.messageToolView.isKeyBoardShow=YES;
     } else {
         if (self.uexObj.meBrwView.scrollView.frame.size.height >= self.uexObj.meBrwView.scrollView.contentOffset.y) {
             [self.uexObj.meBrwView.scrollView setContentOffset:CGPointMake(0, 0)];
+            
         } else {
             [self.uexObj.meBrwView.scrollView setContentOffset:CGPointMake(0, self.uexObj.meBrwView.scrollView.contentOffset.y)];
+        }
+        
+        //判断chatKeyboard是否收起
+        if(!self.faceView.isHidden&&!self.shareMenuView.isHidden){
+            self.messageToolView.faceSendButton.selected=NO;
+            self.messageToolView.isKeyBoardShow=NO;
         }
         
     }
     
     NSDictionary * jsDic = [NSDictionary dictionaryWithObject:status forKey:@"status"];
-    NSString *jsStr = [NSString stringWithFormat:@"if(uexChatKeyboard.onKeyBoardShow!=null){uexChatKeyboard.onKeyBoardShow(\'%@\');}", [jsDic JSONFragment]];
+    NSString *jsStr = [NSString stringWithFormat:@"if(uexChatKeyboard.onKeyBoardShow!=null){uexChatKeyboard.onKeyBoardShow(\'%@\');}",
+                       [jsDic JSONFragment]];
     
     //if (![status isEqualToString:_keyboardStatus]) {
         //_keyboardStatus = status;
@@ -461,7 +468,7 @@
     [self.uexObj.meBrwView stringByEvaluatingJavaScriptFromString:cbjson];
     
     [self inputTextViewDidChange:messageInputTextView];
-    [messageInputTextView resignFirstResponder];
+//    [messageInputTextView resignFirstResponder];
 }
 
 

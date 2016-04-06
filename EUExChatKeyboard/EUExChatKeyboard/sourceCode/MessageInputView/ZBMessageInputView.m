@@ -96,7 +96,12 @@
             self.multiMediaSendButton.selected = NO;
             self.voiceChangeButton.selected = NO;
             
-            sender.selected = !sender.selected;
+            if(!self.isKeyBoardShow){
+                sender.selected=YES;
+            }
+            else{
+                sender.selected = !sender.selected;
+            }
             if (sender.selected) {
                 
                 [self.messageInputTextView resignFirstResponder];
@@ -122,7 +127,13 @@
             self.voiceChangeButton.selected = NO;
             self.faceSendButton.selected = NO;
             
-            sender.selected = !sender.selected;
+            if(!self.isKeyBoardShow){
+                sender.selected=YES;
+            }
+            else{
+                sender.selected = !sender.selected;
+            }
+            
             if (sender.selected) {
                 
                 [self.messageInputTextView resignFirstResponder];

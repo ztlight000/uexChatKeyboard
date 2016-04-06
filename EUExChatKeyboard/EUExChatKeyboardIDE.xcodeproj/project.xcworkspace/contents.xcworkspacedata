@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:uexChatKeyboard.xcodeproj">
+      location = "self:EUExChatKeyboard.xcodeproj">
    </FileRef>
 </Workspace>

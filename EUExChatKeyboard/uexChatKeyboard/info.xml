@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <uexplugins>
-    <plugin uexName="uexChatKeyboard" version="3.0.15" build="15">
-        <info>15:修复messageShareView可能会遮住文字的bug</info>
+    <plugin uexName="uexChatKeyboard" version="3.0.21" build="21">
+        <info>21:添加IDE支持</info>
+        <build>20:修改键盘弹出时页面弹动</build>
+        <build>19:修复确定按钮背景图异常的bug</build>
+        <build>18:修复自定义功能按钮和表情按钮重新打开会弹出键盘的bug</build>
+        <build>17:收回键盘遮挡数据</build>
+        <build>16:修改点击发送不收回键盘</build>
+        <build>15:修复了messageShareView两列遮住文字的bug</build>
         <build>14:修复插入表情时默认插入到最后的问题,修复在iPhone6 Plus上的显示问题</build>
         <build>13:修复finishWidget时的崩溃问题,修复长按输入框显示放大镜时可以看见表情按钮的问题</build>
         <build>12:修复关闭输入法后窗口显示不正常的bug</build>
