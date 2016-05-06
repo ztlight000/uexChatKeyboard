@@ -52,8 +52,6 @@ typedef NS_ENUM(NSInteger,ZBMessageViewState) {
 
 @property (nonatomic,strong) NSString * facePath;
 
-@property (nonatomic,copy) NSString * keyboardStatus;
-
 @property (nonatomic,assign)CGFloat bottomOffset;
 
 

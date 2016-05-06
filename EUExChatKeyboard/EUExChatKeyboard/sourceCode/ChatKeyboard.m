@@ -48,7 +48,6 @@
         self.uexObj = uexObj;
         self.animationDuration = 0.25;
         self.isInit = YES;
-        self.keyboardStatus = @"0";
         self.bottomOffset=0;
     }
     
@@ -100,8 +99,6 @@
                                          andState:ZBMessageViewStateShowNone];
     }
     
-    
-    
 }
 
 -(void)open {
@@ -117,7 +114,7 @@
     
     [[NSNotificationCenter defaultCenter]addObserver:self
                                             selector:@selector(keyboardChange:)
-                                                name:UIKeyboardDidChangeFrameNotification
+                                                name:UIKeyboardWillChangeFrameNotification
                                               object:nil];
     
     
@@ -156,6 +153,7 @@
         [self.sendButton setTitleColor:chatKeyboardData.sendBtnTextColor forState:UIControlStateNormal];
         [self.sendButton setBackgroundColor:chatKeyboardData.sendBtnbgColorUp];
         [self.sendButton setBackgroundColor:chatKeyboardData.sendBtnbgColorDown forState:UIControlStateHighlighted];
+        self.sendButton.titleLabel.font = [UIFont systemFontOfSize:chatKeyboardData.sendBtnTextSize];
         self.sendButton.layer.borderWidth = 0.6;
         self.sendButton.layer.borderColor = [[UIColor lightGrayColor] CGColor];
 //        [self.sendButton setBackgroundImage:[UIImage imageWithContentsOfFile:UEX_SEND_FACE_NORMAL] forState:UIControlStateNormal];
@@ -211,8 +209,7 @@
 //    CGRect tempRect = self.uexObj.meBrwView.scrollView.frame;
 //    tempRect.size.height = CGRectGetMinY(self.messageToolView.frame) - yy;
 //    self.uexObj.meBrwView.scrollView.frame = tempRect;
-    NSLog(@"changeWebView==>>meBrwView=%@",self.uexObj.meBrwView);
-    NSLog(@"changeWebView==>>scrollView=%@",self.uexObj.meBrwView.scrollView);
+    NSLog(@"changeWebView==>>meBrwView=%@;scrollView=%@",self.uexObj.meBrwView,self.uexObj.meBrwView.scrollView);
     [self.uexObj.meBrwView.scrollView setContentOffset:CGPointMake(0, 0)];
     
     if (CGRectGetMinY(self.messageToolView.frame) < yy + height) {
@@ -235,10 +232,10 @@
             offsetHeight=CGRectGetHeight(rect);
         }
         
-        self.messageToolView.frame = CGRectMake(0.0f,UEX_SCREENHEIGHT-offsetHeight-CGRectGetHeight(inputViewRect),UEX_SCREENWIDTH,CGRectGetHeight(inputViewRect));
+        self.messageToolView.frame = CGRectMake(0.0f,UEX_SCREENHEIGHT - offsetHeight-CGRectGetHeight(inputViewRect),UEX_SCREENWIDTH,CGRectGetHeight(inputViewRect));
         
         CGRect tempRect = self.uexObj.meBrwView.scrollView.frame;
-        tempRect.size.height = CGRectGetMinY(self.messageToolView.frame)+self.bottomOffset+CGRectGetHeight(inputViewRect)-self.uexObj.meBrwView.frame.origin.y;
+        tempRect.size.height = CGRectGetMinY(self.messageToolView.frame) + self.bottomOffset - self.uexObj.meBrwView.frame.origin.y;
         
         self.uexObj.meBrwView.scrollView.frame = tempRect;
         
@@ -251,7 +248,7 @@
                 
                 self.shareMenuView.frame = CGRectMake(0.0f, UEX_SCREENHEIGHT, UEX_SCREENWIDTH, CGRectGetHeight(self.shareMenuView.frame));
                 
-            }
+            }  
                 break;
                 
             case ZBMessageViewStateShowNone:
@@ -289,7 +286,6 @@
     
     NSString * status = @"0";
     
-    
     if (CGRectGetHeight(rect) > 0) {
         status = @"1";
         self.messageToolView.isKeyBoardShow=YES;
@@ -301,23 +297,26 @@
         } else {
             [self.uexObj.meBrwView.scrollView setContentOffset:CGPointMake(0, self.uexObj.meBrwView.scrollView.contentOffset.y)];
         }
-        self.messageToolView.isKeyBoardShow=NO;
+        self.messageToolView.isKeyBoardShow = NO;
         //判断chatKeyboard是否收起
         if(!self.faceView.isHidden&&!self.shareMenuView.isHidden){
-            self.messageToolView.faceSendButton.selected=NO;
+            self.messageToolView.faceSendButton.selected = NO;
         }
-        
     }
     
     NSLog(@"messageViewAnimationWithMessageRect==>>messageInputTextView=%@;meBrwView=%@;scrollView=%@",self.messageToolView.messageInputTextView,self.uexObj.meBrwView,self.uexObj.meBrwView.scrollView);
+    CGFloat inputTextViewY = CGRectGetMinY(self.messageToolView.frame);
+    CGFloat inputTextViewHeight = self.messageToolView.frame.size.height;
     
-    NSDictionary * jsDic = [NSDictionary dictionaryWithObject:status forKey:@"status"];
+//    NSDictionary * jsDic = [NSDictionary dictionaryWithObject:status forKey:@"status"];
+    NSMutableDictionary *jsDic = [[NSMutableDictionary alloc] init];
+    [jsDic setObject:status forKey:@"status"];
+    [jsDic setObject:[NSString stringWithFormat:@"%f",inputTextViewY] forKey:@"inputTextViewY"];
+    [jsDic setObject:[NSString stringWithFormat:@"%f",inputTextViewHeight] forKey:@"inputTextViewHeight"];
     NSString *jsStr = [NSString stringWithFormat:@"if(uexChatKeyboard.onKeyBoardShow!=null){uexChatKeyboard.onKeyBoardShow(\'%@\');}",[jsDic JSONFragment]];
     
-    //if (![status isEqualToString:_keyboardStatus]) {
-    //_keyboardStatus = status;
+
     [self performSelectorOnMainThread:@selector(onKeyboardShowCallback:) withObject:jsStr waitUntilDone:NO];
-    //}
 }
 
 - (void)onKeyboardShowCallback:(id)userInfo {
