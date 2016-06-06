@@ -3,7 +3,7 @@
     <plugin name="uexChatKeyboard">
         <method name="open"></method>
         <method name="close"></method>
-        <method name="getInputBarHeight"></method>
+        <method name="getInputBarHeight" sync="true"></method>
         <method name="hideKeyboard"></method>
         <method name="changeWebViewFrame"></method>
     </plugin>

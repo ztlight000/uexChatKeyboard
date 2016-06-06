@@ -178,7 +178,7 @@
 
 //7-24 by lkl
 
--(void)getInputBarHeight:(NSMutableArray*)inArguments{
+-(NSNumber *)getInputBarHeight:(NSMutableArray*)inArguments{
     CGFloat height;
     if ([[[UIDevice currentDevice]systemVersion]floatValue]>=7) {
         height = 45.0f;
@@ -187,6 +187,7 @@
         height = 40.0f;
     }
     [self callBackJsonWithName:@"cbGetInputBarHeight" Object:@{@"height":@(height)}];
+    return @(height);
     
 }
 
