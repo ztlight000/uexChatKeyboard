@@ -109,6 +109,13 @@
     if([xmlDic objectForKey:@"inputMode"]&&[[xmlDic objectForKey:@"inputMode"] integerValue]==1){
         isAudio=YES;
     }
+    
+    NSTimeInterval maxRecordTime = 0;
+    if (xmlDic[@"maxRecordTime"]) {
+        maxRecordTime = [xmlDic[@"maxRecordTime"] doubleValue];
+    }
+    
+    
     [ChatKeyboardData sharedChatKeyboardData].touchDownImg = touchDownImg;
     [ChatKeyboardData sharedChatKeyboardData].dragOutsideImg = dragOutsideImg;
     [ChatKeyboardData sharedChatKeyboardData].textColor = textColor;
@@ -122,6 +129,9 @@
             _chatKeyboard.bottomOffset=[[xmlDic objectForKey:@"bottom"] floatValue];
         }
         
+        if (maxRecordTime > 0) {
+            _chatKeyboard.maxRecordTime = maxRecordTime;
+        }
         
         [_chatKeyboard open];
         

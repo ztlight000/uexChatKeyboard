@@ -21,6 +21,13 @@
 
 @implementation ChatKeyboard
 
+
+
+
+- (void)setMaxRecordTime:(NSTimeInterval)maxRecordTime{
+    _maxRecordTime = maxRecordTime;
+    self.v.maxRecordTimeInterval = maxRecordTime;
+}
 -(instancetype)initWithUexobj:(EUExChatKeyboard *)uexObj{
     if (self = [super init]) {
         self.uexObj = uexObj;
@@ -28,6 +35,7 @@
         self.isInit = YES;
         self.keyboardStatus = @"0";
         self.bottomOffset=0;
+        _maxRecordTime = 15;
     }
     
     return self;
@@ -605,6 +613,7 @@
     [self.uexObj.meBrwView stringByEvaluatingJavaScriptFromString:jsStr];
     
     _v = [[ACPVoiceActionView alloc]initWithFrame:CGRectMake(0, 0, UEX_SCREENWIDTH, UEX_SCREENHEIGHT-_inputViewHeight)];
+    _v.maxRecordTimeInterval = self.maxRecordTime;
     _v.delegate = self;
     [EUtility brwView:self.uexObj.meBrwView addSubview:_v];
     

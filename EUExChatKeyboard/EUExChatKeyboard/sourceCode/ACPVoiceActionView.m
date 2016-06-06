@@ -24,7 +24,7 @@
     
     if (self=[super initWithFrame:frame]) {
         self.backgroundColor = [UIColor clearColor];
-        
+        _maxRecordTimeInterval = 15;
         _second = 0;
         
         //UIImage * voiceImg = [UIImage imageNamed:@"uexChatKeyboard/voiceResource/touchdown"];
@@ -68,7 +68,7 @@
     _second +=1;
     _secondLabel.text = [NSString stringWithFormat:@"%d’",_second];
     
-    if (_second >= 15) {
+    if (_second >= self.maxRecordTimeInterval) {
         [_secondTimer invalidate];
         [self timeOut];
     }

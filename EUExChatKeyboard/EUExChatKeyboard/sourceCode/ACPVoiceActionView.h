@@ -17,10 +17,12 @@
 
 @interface ACPVoiceActionView : UIView
 @property (nonatomic,weak) id<ACPVoiceActionViewDelegate> delegate;
-@property(nonatomic,strong) UIImageView * voiceActionImgView;
-@property(nonatomic,strong) UILabel * secondLabel;
-@property(nonatomic,strong) NSTimer * secondTimer;
-@property(nonatomic,assign) int second;
+@property (nonatomic,strong) UIImageView * voiceActionImgView;
+@property (nonatomic,strong) UILabel * secondLabel;
+@property (nonatomic,strong) NSTimer * secondTimer;
+@property (nonatomic,assign) int second;
+@property (nonatomic,assign)NSTimeInterval maxRecordTimeInterval;
+
 
 -(void)changeImage:(UIImage *)voiceImg andHiddenSecondLabel:(BOOL)hidden;
 -(void)recordStop;

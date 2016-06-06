@@ -6,141 +6,141 @@
 	<dict>
 		<key>Info.plist</key>
 		<data>
-		E0QBtJtUm4CRflXWikEJyFpZRiw=
+		qR62TOkagAVAnnxlv3rXzHq1JbI=
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
 		JKbXoT98W7zj86Z2W3qbeHZe/kE=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageBubbleResource/chatBubble_Receiving_Cavern@2x.png</key>
+		<key>uexChatKeyboard.bundle/messageBubbleResource/chatBubble_Receiving_Cavern@2x.png</key>
 		<data>
 		nIDYqhypLzaNVQwF94q5W6c6bWM=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageBubbleResource/chatBubble_Receiving_Solid@2x.png</key>
+		<key>uexChatKeyboard.bundle/messageBubbleResource/chatBubble_Receiving_Solid@2x.png</key>
 		<data>
 		eWpMvkq8zeVnaffMmZCoMl6/qIw=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageBubbleResource/chatBubble_Sending_Cavern@2x.png</key>
+		<key>uexChatKeyboard.bundle/messageBubbleResource/chatBubble_Sending_Cavern@2x.png</key>
 		<data>
 		EtvPesE2lD0pBSivwmb0SZQrHKI=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageBubbleResource/chatBubble_Sending_Solid@2x.png</key>
+		<key>uexChatKeyboard.bundle/messageBubbleResource/chatBubble_Sending_Solid@2x.png</key>
 		<data>
 		jQqPdyPpSJ4sEROrpLkX0K110JU=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageInputViewResource/EmotionsSendBtnBlue@2x.png</key>
+		<key>uexChatKeyboard.bundle/messageInputViewResource/EmotionsSendBtnBlue@2x.png</key>
 		<data>
 		j4nEiMlNQnyy3ak7pixGh0kSHcA=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageInputViewResource/EmotionsSendBtnBlueHL@2x.png</key>
+		<key>uexChatKeyboard.bundle/messageInputViewResource/EmotionsSendBtnBlueHL@2x.png</key>
 		<data>
 		4+v4T7rZB0rcA/SB9gjeQ/3RIe0=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageInputViewResource/EmotionsSendBtnGrey@2x.png</key>
+		<key>uexChatKeyboard.bundle/messageInputViewResource/EmotionsSendBtnGrey@2x.png</key>
 		<data>
 		vbH4DZx+uLt8GUK7O5u6e3fIEUY=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageInputViewResource/ToolViewEmotion_ios7@2x.png</key>
+		<key>uexChatKeyboard.bundle/messageInputViewResource/ToolViewEmotion_ios7@2x.png</key>
 		<data>
 		O4NgIDxW7wI/pTiY4EyGAevuvdA=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageInputViewResource/ToolViewInputVoice_ios7@2x.png</key>
+		<key>uexChatKeyboard.bundle/messageInputViewResource/ToolViewInputVoice_ios7@2x.png</key>
 		<data>
 		kCuD67XQ2fUD10dODXBsm9SMSM8=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageInputViewResource/ToolViewKeyboard_ios7@2x.png</key>
+		<key>uexChatKeyboard.bundle/messageInputViewResource/ToolViewKeyboard_ios7@2x.png</key>
 		<data>
 		F43w+BXXU+ZF6MZR3ZYtOemfwJ0=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageInputViewResource/TypeSelectorBtn_Black_ios7@2x.png</key>
+		<key>uexChatKeyboard.bundle/messageInputViewResource/TypeSelectorBtn_Black_ios7@2x.png</key>
 		<data>
 		JW9BWGHjbAyDLXKwrWwLdv5dGwk=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageInputViewResource/input-bar-background.png</key>
+		<key>uexChatKeyboard.bundle/messageInputViewResource/input-bar-background.png</key>
 		<data>
 		Gb0B4/pDOniAPs9yTfmn3vYt7hQ=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageInputViewResource/input-bar-background@2x.png</key>
+		<key>uexChatKeyboard.bundle/messageInputViewResource/input-bar-background@2x.png</key>
 		<data>
 		sNp2G8KImR9Mp+j0swe5pFpt0aU=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageInputViewResource/input-bar-flat.png</key>
+		<key>uexChatKeyboard.bundle/messageInputViewResource/input-bar-flat.png</key>
 		<data>
 		Iyfw5PlmDbcvb7eX2gJjsAOagWA=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageInputViewResource/input-bar-flat@2x.png</key>
+		<key>uexChatKeyboard.bundle/messageInputViewResource/input-bar-flat@2x.png</key>
 		<data>
 		T7z5EGxat6DCu3DcEqQAW2nj5xw=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/ReceiverVoiceNodePlaying000_ios7@2x.png</key>
+		<key>uexChatKeyboard.bundle/voiceResource/ReceiverVoiceNodePlaying000_ios7@2x.png</key>
 		<data>
 		nnzmzMliRHu+NdKoU0efcVYD6tQ=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/ReceiverVoiceNodePlaying001_ios7@2x.png</key>
+		<key>uexChatKeyboard.bundle/voiceResource/ReceiverVoiceNodePlaying001_ios7@2x.png</key>
 		<data>
 		Y4hV7ieqlVsel5kcnqU8mzaMeEc=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/ReceiverVoiceNodePlaying002_ios7@2x.png</key>
+		<key>uexChatKeyboard.bundle/voiceResource/ReceiverVoiceNodePlaying002_ios7@2x.png</key>
 		<data>
 		4B4YyHyWTyHwb4YRMoinjp9LdE4=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/ReceiverVoiceNodePlaying003_ios7@2x.png</key>
+		<key>uexChatKeyboard.bundle/voiceResource/ReceiverVoiceNodePlaying003_ios7@2x.png</key>
 		<data>
 		G3YZ+L7EBkoNk9y9l9IAxOT89cM=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/ReceiverVoiceNodePlaying_ios7@2x.png</key>
+		<key>uexChatKeyboard.bundle/voiceResource/ReceiverVoiceNodePlaying_ios7@2x.png</key>
 		<data>
 		8eCzowPpTn65XzSq0gzfqHmxtjk=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/SenderVoiceNodePlaying000_ios7@2x.png</key>
+		<key>uexChatKeyboard.bundle/voiceResource/SenderVoiceNodePlaying000_ios7@2x.png</key>
 		<data>
 		nnzmzMliRHu+NdKoU0efcVYD6tQ=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/SenderVoiceNodePlaying001_ios7@2x.png</key>
+		<key>uexChatKeyboard.bundle/voiceResource/SenderVoiceNodePlaying001_ios7@2x.png</key>
 		<data>
 		I1b1nzgYW9wrEiohK3Zw5PjvWdw=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/SenderVoiceNodePlaying002_ios7@2x.png</key>
+		<key>uexChatKeyboard.bundle/voiceResource/SenderVoiceNodePlaying002_ios7@2x.png</key>
 		<data>
 		RgNE1WuhaEcZQg5/LTdaHlH2/ik=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/SenderVoiceNodePlaying003_ios7@2x.png</key>
+		<key>uexChatKeyboard.bundle/voiceResource/SenderVoiceNodePlaying003_ios7@2x.png</key>
 		<data>
 		2DVBAVmzLFJVbkDN4UOnSEXdIwY=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/SenderVoiceNodePlaying_ios7@2x.png</key>
+		<key>uexChatKeyboard.bundle/voiceResource/SenderVoiceNodePlaying_ios7@2x.png</key>
 		<data>
 		BGEqMo/effS6UAI+wfe+FK1cDYw=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/holdDownButton@2x.png</key>
+		<key>uexChatKeyboard.bundle/voiceResource/holdDownButton@2x.png</key>
 		<data>
 		ZlcBF4be80oII6Qs9ob5qJprYgc=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/holdDownButton@3x.png</key>
+		<key>uexChatKeyboard.bundle/voiceResource/holdDownButton@3x.png</key>
 		<data>
 		TihFpp2Uy8Wp/22c84nDLf/2XRY=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/holdupButton@2x.png</key>
+		<key>uexChatKeyboard.bundle/voiceResource/holdupButton@2x.png</key>
 		<data>
 		2WMoOi3YfDHocbbE66auEqqyaE4=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/holdupButton@3x.png</key>
+		<key>uexChatKeyboard.bundle/voiceResource/holdupButton@3x.png</key>
 		<data>
 		9/HzcBocOu0yYFTkWjHgIm+J/e8=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/touchDragOutside@2x.png</key>
+		<key>uexChatKeyboard.bundle/voiceResource/touchDragOutside@2x.png</key>
 		<data>
 		3I6vUnHTp5okam+dRN+ApYld+Ig=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/touchDragOutside@3x.png</key>
+		<key>uexChatKeyboard.bundle/voiceResource/touchDragOutside@3x.png</key>
 		<data>
 		WtRQ29KrtrOQlKtJghRbMbpHTcg=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/touchdown@2x.png</key>
+		<key>uexChatKeyboard.bundle/voiceResource/touchdown@2x.png</key>
 		<data>
 		4lo3E6agqe4KlebBfm3gKH23kac=
 		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/touchdown@3x.png</key>
+		<key>uexChatKeyboard.bundle/voiceResource/touchdown@3x.png</key>
 		<data>
 		DDksnc5KXPaWpw7wABLbhAukb2g=
 		</data>
@@ -148,141 +148,379 @@
 	<key>files2</key>
 	<dict>
 		<key>embedded.mobileprovision</key>
-		<data>
-		JKbXoT98W7zj86Z2W3qbeHZe/kE=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageBubbleResource/chatBubble_Receiving_Cavern@2x.png</key>
-		<data>
-		nIDYqhypLzaNVQwF94q5W6c6bWM=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageBubbleResource/chatBubble_Receiving_Solid@2x.png</key>
-		<data>
-		eWpMvkq8zeVnaffMmZCoMl6/qIw=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageBubbleResource/chatBubble_Sending_Cavern@2x.png</key>
-		<data>
-		EtvPesE2lD0pBSivwmb0SZQrHKI=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageBubbleResource/chatBubble_Sending_Solid@2x.png</key>
-		<data>
-		jQqPdyPpSJ4sEROrpLkX0K110JU=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageInputViewResource/EmotionsSendBtnBlue@2x.png</key>
-		<data>
-		j4nEiMlNQnyy3ak7pixGh0kSHcA=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageInputViewResource/EmotionsSendBtnBlueHL@2x.png</key>
-		<data>
-		4+v4T7rZB0rcA/SB9gjeQ/3RIe0=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageInputViewResource/EmotionsSendBtnGrey@2x.png</key>
-		<data>
-		vbH4DZx+uLt8GUK7O5u6e3fIEUY=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageInputViewResource/ToolViewEmotion_ios7@2x.png</key>
-		<data>
-		O4NgIDxW7wI/pTiY4EyGAevuvdA=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageInputViewResource/ToolViewInputVoice_ios7@2x.png</key>
-		<data>
-		kCuD67XQ2fUD10dODXBsm9SMSM8=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageInputViewResource/ToolViewKeyboard_ios7@2x.png</key>
-		<data>
-		F43w+BXXU+ZF6MZR3ZYtOemfwJ0=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageInputViewResource/TypeSelectorBtn_Black_ios7@2x.png</key>
-		<data>
-		JW9BWGHjbAyDLXKwrWwLdv5dGwk=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageInputViewResource/input-bar-background.png</key>
-		<data>
-		Gb0B4/pDOniAPs9yTfmn3vYt7hQ=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageInputViewResource/input-bar-background@2x.png</key>
-		<data>
-		sNp2G8KImR9Mp+j0swe5pFpt0aU=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageInputViewResource/input-bar-flat.png</key>
-		<data>
-		Iyfw5PlmDbcvb7eX2gJjsAOagWA=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/messageInputViewResource/input-bar-flat@2x.png</key>
-		<data>
-		T7z5EGxat6DCu3DcEqQAW2nj5xw=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/ReceiverVoiceNodePlaying000_ios7@2x.png</key>
-		<data>
-		nnzmzMliRHu+NdKoU0efcVYD6tQ=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/ReceiverVoiceNodePlaying001_ios7@2x.png</key>
-		<data>
-		Y4hV7ieqlVsel5kcnqU8mzaMeEc=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/ReceiverVoiceNodePlaying002_ios7@2x.png</key>
-		<data>
-		4B4YyHyWTyHwb4YRMoinjp9LdE4=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/ReceiverVoiceNodePlaying003_ios7@2x.png</key>
-		<data>
-		G3YZ+L7EBkoNk9y9l9IAxOT89cM=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/ReceiverVoiceNodePlaying_ios7@2x.png</key>
-		<data>
-		8eCzowPpTn65XzSq0gzfqHmxtjk=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/SenderVoiceNodePlaying000_ios7@2x.png</key>
-		<data>
-		nnzmzMliRHu+NdKoU0efcVYD6tQ=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/SenderVoiceNodePlaying001_ios7@2x.png</key>
-		<data>
-		I1b1nzgYW9wrEiohK3Zw5PjvWdw=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/SenderVoiceNodePlaying002_ios7@2x.png</key>
-		<data>
-		RgNE1WuhaEcZQg5/LTdaHlH2/ik=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/SenderVoiceNodePlaying003_ios7@2x.png</key>
-		<data>
-		2DVBAVmzLFJVbkDN4UOnSEXdIwY=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/SenderVoiceNodePlaying_ios7@2x.png</key>
-		<data>
-		BGEqMo/effS6UAI+wfe+FK1cDYw=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/holdDownButton@2x.png</key>
-		<data>
-		ZlcBF4be80oII6Qs9ob5qJprYgc=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/holdDownButton@3x.png</key>
-		<data>
-		TihFpp2Uy8Wp/22c84nDLf/2XRY=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/holdupButton@2x.png</key>
-		<data>
-		2WMoOi3YfDHocbbE66auEqqyaE4=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/holdupButton@3x.png</key>
-		<data>
-		9/HzcBocOu0yYFTkWjHgIm+J/e8=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/touchDragOutside@2x.png</key>
-		<data>
-		3I6vUnHTp5okam+dRN+ApYld+Ig=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/touchDragOutside@3x.png</key>
-		<data>
-		WtRQ29KrtrOQlKtJghRbMbpHTcg=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/touchdown@2x.png</key>
-		<data>
-		4lo3E6agqe4KlebBfm3gKH23kac=
-		</data>
-		<key>uexChatKeyboard.bundle/Contents/Resources/voiceResource/touchdown@3x.png</key>
-		<data>
-		DDksnc5KXPaWpw7wABLbhAukb2g=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			JKbXoT98W7zj86Z2W3qbeHZe/kE=
+			</data>
+			<key>hash2</key>
+			<data>
+			0p8akoZIUNhnEHSrm+cwtP59I1VEbMUe0Gn2IpgCK98=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/messageBubbleResource/chatBubble_Receiving_Cavern@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			nIDYqhypLzaNVQwF94q5W6c6bWM=
+			</data>
+			<key>hash2</key>
+			<data>
+			8y5+IOsdnATQ1pGflnJokFgD4CsA7VoFdJ7Fe0Cu8cQ=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/messageBubbleResource/chatBubble_Receiving_Solid@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			eWpMvkq8zeVnaffMmZCoMl6/qIw=
+			</data>
+			<key>hash2</key>
+			<data>
+			NSMjcPvNw3TKDTjJ/tQW1HXKL83isZFz5F3nVR6BlV4=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/messageBubbleResource/chatBubble_Sending_Cavern@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			EtvPesE2lD0pBSivwmb0SZQrHKI=
+			</data>
+			<key>hash2</key>
+			<data>
+			W/04hCezsnPV4sS6HR4nBt5fgJNJZO4HvSRA59INfBw=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/messageBubbleResource/chatBubble_Sending_Solid@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			jQqPdyPpSJ4sEROrpLkX0K110JU=
+			</data>
+			<key>hash2</key>
+			<data>
+			1VAQ9NT1cTQZsV1xXEgbeTTQJXTxfXfrsuyAbS0oZAQ=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/messageInputViewResource/EmotionsSendBtnBlue@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			j4nEiMlNQnyy3ak7pixGh0kSHcA=
+			</data>
+			<key>hash2</key>
+			<data>
+			QSgCCon+Mq+Ep+qMyADyB9DHXyDOL+OHbD29G3q4ToY=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/messageInputViewResource/EmotionsSendBtnBlueHL@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			4+v4T7rZB0rcA/SB9gjeQ/3RIe0=
+			</data>
+			<key>hash2</key>
+			<data>
+			OId0pQigTyhI6tqF1dtL9lZmR/SFDDN01UKKMXsdHcI=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/messageInputViewResource/EmotionsSendBtnGrey@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			vbH4DZx+uLt8GUK7O5u6e3fIEUY=
+			</data>
+			<key>hash2</key>
+			<data>
+			vNvgiHhgPbnPh2XlGDR/1zxGJ96HG15E0sAhKjh7kqA=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/messageInputViewResource/ToolViewEmotion_ios7@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			O4NgIDxW7wI/pTiY4EyGAevuvdA=
+			</data>
+			<key>hash2</key>
+			<data>
+			LLh/nqh3ygXOJ0wxgvWKHj0DRdKuwApFMd/Q+4ufAls=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/messageInputViewResource/ToolViewInputVoice_ios7@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			kCuD67XQ2fUD10dODXBsm9SMSM8=
+			</data>
+			<key>hash2</key>
+			<data>
+			dUqsQwEdDSdkA5UmL7KZiCRJNbGMx4WS9FAMksC+BkQ=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/messageInputViewResource/ToolViewKeyboard_ios7@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			F43w+BXXU+ZF6MZR3ZYtOemfwJ0=
+			</data>
+			<key>hash2</key>
+			<data>
+			ykjXkYlloW0eoNtPBhxGDwwatik69+6hGcthEbjQ0YM=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/messageInputViewResource/TypeSelectorBtn_Black_ios7@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			JW9BWGHjbAyDLXKwrWwLdv5dGwk=
+			</data>
+			<key>hash2</key>
+			<data>
+			oHvcaXxCM9mTLr3J6fz4MISqPya6V6YPriAJp5YzFBM=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/messageInputViewResource/input-bar-background.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Gb0B4/pDOniAPs9yTfmn3vYt7hQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			nekJ8AdREOsY4g59EcbIHsJJjP1v3zF73T38p6E+w64=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/messageInputViewResource/input-bar-background@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			sNp2G8KImR9Mp+j0swe5pFpt0aU=
+			</data>
+			<key>hash2</key>
+			<data>
+			gcbSzo3nBskouzQnqTFNZ5jheiKgqEZ4qspaqRkkqpM=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/messageInputViewResource/input-bar-flat.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Iyfw5PlmDbcvb7eX2gJjsAOagWA=
+			</data>
+			<key>hash2</key>
+			<data>
+			Hoej/Yhvb3DkJUTPIb1xodrDIB1amzBs8GEIjS0UqMc=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/messageInputViewResource/input-bar-flat@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			T7z5EGxat6DCu3DcEqQAW2nj5xw=
+			</data>
+			<key>hash2</key>
+			<data>
+			vw/sivS5Aqtoe/dlU7axWk99S4sJBO+dRekTxqel0M0=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/voiceResource/ReceiverVoiceNodePlaying000_ios7@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			nnzmzMliRHu+NdKoU0efcVYD6tQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			r7TkYPFpPDyWB9bht+HRXrXu17uCdwDDq6uTJmyQkPU=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/voiceResource/ReceiverVoiceNodePlaying001_ios7@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Y4hV7ieqlVsel5kcnqU8mzaMeEc=
+			</data>
+			<key>hash2</key>
+			<data>
+			lsyYh6zn4sM3cV+b90yzcVRu/ddzzYyz53qNHNGQwGE=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/voiceResource/ReceiverVoiceNodePlaying002_ios7@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			4B4YyHyWTyHwb4YRMoinjp9LdE4=
+			</data>
+			<key>hash2</key>
+			<data>
+			3HkIeUyCSaxzj7U+zjRO+qvLaBwMPbQlVOqJiPBkwRc=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/voiceResource/ReceiverVoiceNodePlaying003_ios7@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			G3YZ+L7EBkoNk9y9l9IAxOT89cM=
+			</data>
+			<key>hash2</key>
+			<data>
+			QNP234LLloLYT1Wc1F+fC0mZl7Shxjb/BnqXWB6rNOg=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/voiceResource/ReceiverVoiceNodePlaying_ios7@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			8eCzowPpTn65XzSq0gzfqHmxtjk=
+			</data>
+			<key>hash2</key>
+			<data>
+			tcmptTAupxeKSoj7KvLmsqKhMrDoat71ll3DerJ9Cv0=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/voiceResource/SenderVoiceNodePlaying000_ios7@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			nnzmzMliRHu+NdKoU0efcVYD6tQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			r7TkYPFpPDyWB9bht+HRXrXu17uCdwDDq6uTJmyQkPU=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/voiceResource/SenderVoiceNodePlaying001_ios7@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			I1b1nzgYW9wrEiohK3Zw5PjvWdw=
+			</data>
+			<key>hash2</key>
+			<data>
+			iOAt6qEQr7KNFYHiytVXpaMTVD4sa0CyE1mq4781SOg=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/voiceResource/SenderVoiceNodePlaying002_ios7@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			RgNE1WuhaEcZQg5/LTdaHlH2/ik=
+			</data>
+			<key>hash2</key>
+			<data>
+			ACMpkTiE2RpXWikGp1xKYmy1+/X1iz/MqZJ0WAT0LYs=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/voiceResource/SenderVoiceNodePlaying003_ios7@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			2DVBAVmzLFJVbkDN4UOnSEXdIwY=
+			</data>
+			<key>hash2</key>
+			<data>
+			QtntxrH39MXPtYtVEz8Y9Sy4kscfKZJ2ph6EcYazwWw=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/voiceResource/SenderVoiceNodePlaying_ios7@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			BGEqMo/effS6UAI+wfe+FK1cDYw=
+			</data>
+			<key>hash2</key>
+			<data>
+			EcL1MKOKWOro3wOO1Lu7hz1ugRUdK9PvXkUDTNTpKKw=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/voiceResource/holdDownButton@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ZlcBF4be80oII6Qs9ob5qJprYgc=
+			</data>
+			<key>hash2</key>
+			<data>
+			UOqrzlpSb5yifA1pwcgIik4xFuZcUXkBaOSdvHUa+6Q=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/voiceResource/holdDownButton@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			TihFpp2Uy8Wp/22c84nDLf/2XRY=
+			</data>
+			<key>hash2</key>
+			<data>
+			Rpxj1UTxxvG0gPVIIzMBPXnPfxWqftYWSdkKlb3ihX8=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/voiceResource/holdupButton@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			2WMoOi3YfDHocbbE66auEqqyaE4=
+			</data>
+			<key>hash2</key>
+			<data>
+			NvEN1E+7f+BvY8H9oJNXhKFL4jBp3KP/gblKq11qZA8=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/voiceResource/holdupButton@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			9/HzcBocOu0yYFTkWjHgIm+J/e8=
+			</data>
+			<key>hash2</key>
+			<data>
+			A1+q1JHPpf6wtit39tK7mMu+6G37VZDF8GyHZjq5CAw=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/voiceResource/touchDragOutside@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			3I6vUnHTp5okam+dRN+ApYld+Ig=
+			</data>
+			<key>hash2</key>
+			<data>
+			raw7MJ8ZrBrenKgQHvfMKu2Gf2xi+CMfzSghQiKHuT4=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/voiceResource/touchDragOutside@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			WtRQ29KrtrOQlKtJghRbMbpHTcg=
+			</data>
+			<key>hash2</key>
+			<data>
+			TzGclG1X3L8MbnFYcopkQ0ZdaXY3fHYG639i7j/YRjE=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/voiceResource/touchdown@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			4lo3E6agqe4KlebBfm3gKH23kac=
+			</data>
+			<key>hash2</key>
+			<data>
+			pugMPoiIorqTZdHGTZl8GYJAiWvjXmJMjsHZhcxiYYo=
+			</data>
+		</dict>
+		<key>uexChatKeyboard.bundle/voiceResource/touchdown@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			DDksnc5KXPaWpw7wABLbhAukb2g=
+			</data>
+			<key>hash2</key>
+			<data>
+			GdVBaOhUUIyLqCqSFpMbcGsMQ5hBe+pEXvlAUoyFxXM=
+			</data>
+		</dict>
 	</dict>
 	<key>rules</key>
 	<dict>

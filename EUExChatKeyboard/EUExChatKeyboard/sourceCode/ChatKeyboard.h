@@ -55,6 +55,7 @@ typedef NS_ENUM(NSInteger,ZBMessageViewState) {
 @property (nonatomic,copy) NSString * keyboardStatus;
 @property (nonatomic,assign)CGFloat bottomOffset;
 
+@property (nonatomic,assign)NSTimeInterval maxRecordTime;
 
 
 -(instancetype)initWithUexobj:(EUExChatKeyboard *)uexObj;
