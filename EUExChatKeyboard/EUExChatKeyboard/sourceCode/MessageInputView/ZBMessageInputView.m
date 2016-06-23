@@ -8,7 +8,7 @@
 
 #import "ZBMessageInputView.h"
 #import "NSString+Message.h"
-#import "EUtility.h"
+
 #import "ChatKeyboardData.h"
 
 @interface ZBMessageInputView()<UITextViewDelegate>

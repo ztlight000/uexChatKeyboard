@@ -26,10 +26,11 @@
 		3C6D9C2D1A6C9BCE00F87CF1 /* ACPVoiceActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D9C2C1A6C9BCE00F87CF1 /* ACPVoiceActionView.m */; };
 		3C7DD5731AAD2AA600FDE63B /* ChatKeyboardData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7DD5721AAD2AA600FDE63B /* ChatKeyboardData.m */; };
 		3C9651DC1A636BCD0045C1E0 /* ChatKeyboardUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9651DB1A636BCD0045C1E0 /* ChatKeyboardUtility.m */; };
-		3CC7CC6E1AA5B30C00FEF7A6 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC7CC6D1AA5B30C00FEF7A6 /* XMLReader.m */; };
 		420041B51BABE994000A57F5 /* messageBubbleResource in Resources */ = {isa = PBXBuildFile; fileRef = 420041B21BABE994000A57F5 /* messageBubbleResource */; };
 		420041B61BABE994000A57F5 /* messageInputViewResource in Resources */ = {isa = PBXBuildFile; fileRef = 420041B31BABE994000A57F5 /* messageInputViewResource */; };
 		420041B71BABE994000A57F5 /* voiceResource in Resources */ = {isa = PBXBuildFile; fileRef = 420041B41BABE994000A57F5 /* voiceResource */; };
+		42F20AE91D1B797600DA6EEA /* AppCanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F20AE81D1B797600DA6EEA /* AppCanKit.framework */; };
+		42F20AEF1D1B803100DA6EEA /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F20AEE1D1B803100DA6EEA /* XMLReader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,9 +47,6 @@
 		3C5A1C251A3A8BE400F237F6 /* libuexChatKeyboard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libuexChatKeyboard.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C5A1C281A3A8BE400F237F6 /* EUExChatKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EUExChatKeyboard.h; sourceTree = "<group>"; };
 		3C5A1C2A1A3A8BE400F237F6 /* EUExChatKeyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EUExChatKeyboard.m; sourceTree = "<group>"; };
-		3C5A1C401A3A8CA200F237F6 /* EUExBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBase.h; sourceTree = "<group>"; };
-		3C5A1C411A3A8CA200F237F6 /* EUExBaseDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBaseDefine.h; sourceTree = "<group>"; };
-		3C5A1C421A3A8CA200F237F6 /* EUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUtility.h; sourceTree = "<group>"; };
 		3C5A1C771A3A972800F237F6 /* ZBMessageInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBMessageInputView.h; sourceTree = "<group>"; };
 		3C5A1C781A3A972800F237F6 /* ZBMessageInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBMessageInputView.m; sourceTree = "<group>"; };
 		3C5A1C791A3A972800F237F6 /* ZBMessageTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBMessageTextView.h; sourceTree = "<group>"; };
@@ -65,7 +63,6 @@
 		3C66A5EC1A3AD53B00B68E6B /* ZBMessageShareMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBMessageShareMenuItem.m; sourceTree = "<group>"; };
 		3C66A5ED1A3AD53B00B68E6B /* ZBMessageShareMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBMessageShareMenuView.h; sourceTree = "<group>"; };
 		3C66A5EE1A3AD53B00B68E6B /* ZBMessageShareMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBMessageShareMenuView.m; sourceTree = "<group>"; };
-		3C66A5F41A3AD6B400B68E6B /* EBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBrowserView.h; sourceTree = "<group>"; };
 		3C66A5F61A3AD74C00B68E6B /* NSAttributedString+Attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Attributes.h"; sourceTree = "<group>"; };
 		3C66A5F71A3AD74C00B68E6B /* NSAttributedString+Attributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Attributes.m"; sourceTree = "<group>"; };
 		3C66A5F81A3AD74C00B68E6B /* NSString+Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Message.h"; sourceTree = "<group>"; };
@@ -86,21 +83,14 @@
 		3C7DD5721AAD2AA600FDE63B /* ChatKeyboardData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatKeyboardData.m; sourceTree = "<group>"; };
 		3C9651DA1A636BCD0045C1E0 /* ChatKeyboardUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatKeyboardUtility.h; sourceTree = "<group>"; };
 		3C9651DB1A636BCD0045C1E0 /* ChatKeyboardUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatKeyboardUtility.m; sourceTree = "<group>"; };
-		3C9651EE1A63AC2D0045C1E0 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
-		3C9651EF1A63AC2D0045C1E0 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
-		3C9651F01A63AC2D0045C1E0 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
-		3C9651F11A63AC2D0045C1E0 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
-		3C9651F21A63AC2D0045C1E0 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
-		3C9651F31A63AC2D0045C1E0 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
-		3C9651F41A63AC2D0045C1E0 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
-		3CC7CC6C1AA5B30C00FEF7A6 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
-		3CC7CC6D1AA5B30C00FEF7A6 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
 		420041AB1BABE950000A57F5 /* uexChatKeyboard.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uexChatKeyboard.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		420041B11BABE96E000A57F5 /* EUExBase+Bundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EUExBase+Bundle.h"; sourceTree = "<group>"; };
 		420041B21BABE994000A57F5 /* messageBubbleResource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = messageBubbleResource; sourceTree = "<group>"; };
 		420041B31BABE994000A57F5 /* messageInputViewResource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = messageInputViewResource; sourceTree = "<group>"; };
 		420041B41BABE994000A57F5 /* voiceResource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = voiceResource; sourceTree = "<group>"; };
 		420041CB1BABF363000A57F5 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		42F20AE81D1B797600DA6EEA /* AppCanKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppCanKit.framework; sourceTree = "<group>"; };
+		42F20AED1D1B803100DA6EEA /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
+		42F20AEE1D1B803100DA6EEA /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42F20AE91D1B797600DA6EEA /* AppCanKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +133,7 @@
 		3C5A1C271A3A8BE400F237F6 /* EUExChatKeyboard */ = {
 			isa = PBXGroup;
 			children = (
-				3C5A1C3F1A3A8CA200F237F6 /* engineHeader */,
+				42F20AE81D1B797600DA6EEA /* AppCanKit.framework */,
 				3C5A1C281A3A8BE400F237F6 /* EUExChatKeyboard.h */,
 				3C5A1C2A1A3A8BE400F237F6 /* EUExChatKeyboard.m */,
 				3C5A1C751A3A972800F237F6 /* sourceCode */,
@@ -150,23 +141,10 @@
 			path = EUExChatKeyboard;
 			sourceTree = "<group>";
 		};
-		3C5A1C3F1A3A8CA200F237F6 /* engineHeader */ = {
-			isa = PBXGroup;
-			children = (
-				420041B11BABE96E000A57F5 /* EUExBase+Bundle.h */,
-				3C66A5F41A3AD6B400B68E6B /* EBrowserView.h */,
-				3C5A1C401A3A8CA200F237F6 /* EUExBase.h */,
-				3C5A1C411A3A8CA200F237F6 /* EUExBaseDefine.h */,
-				3C5A1C421A3A8CA200F237F6 /* EUtility.h */,
-			);
-			path = engineHeader;
-			sourceTree = "<group>";
-		};
 		3C5A1C751A3A972800F237F6 /* sourceCode */ = {
 			isa = PBXGroup;
 			children = (
-				3CC7CC6B1AA5B30C00FEF7A6 /* xmlRaeder */,
-				3C9651ED1A63AC2D0045C1E0 /* json */,
+				42F20AEC1D1B803100DA6EEA /* xmlRaeder */,
 				3C66A6091A3ADC7900B68E6B /* Models */,
 				3C66A5FF1A3ADC5D00B68E6B /* Factory */,
 				3C66A5F51A3AD74C00B68E6B /* Extend */,
@@ -256,29 +234,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		3C9651ED1A63AC2D0045C1E0 /* json */ = {
-			isa = PBXGroup;
-			children = (
-				3C9651EE1A63AC2D0045C1E0 /* JSON.h */,
-				3C9651EF1A63AC2D0045C1E0 /* NSObject+SBJSON.h */,
-				3C9651F01A63AC2D0045C1E0 /* NSString+SBJSON.h */,
-				3C9651F11A63AC2D0045C1E0 /* SBJSON.h */,
-				3C9651F21A63AC2D0045C1E0 /* SBJsonBase.h */,
-				3C9651F31A63AC2D0045C1E0 /* SBJsonParser.h */,
-				3C9651F41A63AC2D0045C1E0 /* SBJsonWriter.h */,
-			);
-			path = json;
-			sourceTree = "<group>";
-		};
-		3CC7CC6B1AA5B30C00FEF7A6 /* xmlRaeder */ = {
-			isa = PBXGroup;
-			children = (
-				3CC7CC6C1AA5B30C00FEF7A6 /* XMLReader.h */,
-				3CC7CC6D1AA5B30C00FEF7A6 /* XMLReader.m */,
-			);
-			path = xmlRaeder;
-			sourceTree = "<group>";
-		};
 		420041AC1BABE950000A57F5 /* uexChatKeyboardBundle */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +242,15 @@
 				420041B41BABE994000A57F5 /* voiceResource */,
 			);
 			path = uexChatKeyboardBundle;
+			sourceTree = "<group>";
+		};
+		42F20AEC1D1B803100DA6EEA /* xmlRaeder */ = {
+			isa = PBXGroup;
+			children = (
+				42F20AED1D1B803100DA6EEA /* XMLReader.h */,
+				42F20AEE1D1B803100DA6EEA /* XMLReader.m */,
+			);
+			path = xmlRaeder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,7 +345,7 @@
 			files = (
 				3C7DD5731AAD2AA600FDE63B /* ChatKeyboardData.m in Sources */,
 				3C66A5FD1A3AD74C00B68E6B /* NSString+Message.m in Sources */,
-				3CC7CC6E1AA5B30C00FEF7A6 /* XMLReader.m in Sources */,
+				42F20AEF1D1B803100DA6EEA /* XMLReader.m in Sources */,
 				3C66A6061A3ADC5D00B68E6B /* ZBMessageAvatorFactory.m in Sources */,
 				3C5A1C2B1A3A8BE400F237F6 /* EUExChatKeyboard.m in Sources */,
 				3C66A5F01A3AD53B00B68E6B /* ZBFaceView.m in Sources */,
@@ -501,6 +465,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/uexChatKeyboard";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EUExChatKeyboard",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = $SRCROOT/EUExChatKeyboard/sourceCode/PrefixHeader.pch;
 				LIBRARY_SEARCH_PATHS = (
@@ -518,6 +486,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/uexChatKeyboard";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EUExChatKeyboard",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = $SRCROOT/EUExChatKeyboard/sourceCode/PrefixHeader.pch;
 				LIBRARY_SEARCH_PATHS = (

@@ -10,11 +10,13 @@
 #define PrefixHeader_pch
 
 
-#import "EUtility.h"
 
-#define UEX_PLUGIN_BUNDLE [EUtility bundleForPlugin:@"uexChatKeyboard"]
+#ifdef __OBJC__
+#import <AppCanKit/AppCanKit.h>
+#define UEX_PLUGIN_BUNDLE [NSBundle ac_bundleForPlugin:@"uexChatKeyboard"]
+#define UEX_SCREEN_WIDTH ([UIScreen mainScreen].applicationFrame.size.width)
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
-
+#endif
 #endif /* PrefixHeader_pch */

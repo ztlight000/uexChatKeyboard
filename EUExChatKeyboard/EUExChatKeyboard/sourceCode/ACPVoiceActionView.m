@@ -8,7 +8,7 @@
 
 #import "ACPVoiceActionView.h"
 #import "ChatKeyboardData.h"
-#import "EUtility.h"
+
 
 @implementation ACPVoiceActionView
 
@@ -28,7 +28,7 @@
         _second = 0;
         
         //UIImage * voiceImg = [UIImage imageNamed:@"uexChatKeyboard/voiceResource/touchdown"];
-        UIImage * voiceImg = [UIImage imageWithContentsOfFile:[[EUtility bundleForPlugin:@"uexChatKeyboard"] pathForResource:@"voiceResource/touchdown@2x" ofType:@"png"]];
+        UIImage * voiceImg = [UIImage imageWithContentsOfFile:[UEX_PLUGIN_BUNDLE pathForResource:@"voiceResource/touchdown@2x" ofType:@"png"]];
         if ([ChatKeyboardData sharedChatKeyboardData].touchDownImg) {
             UIImage * tempImg = [UIImage imageWithContentsOfFile:[ChatKeyboardData sharedChatKeyboardData].touchDownImg];
             if (tempImg) {

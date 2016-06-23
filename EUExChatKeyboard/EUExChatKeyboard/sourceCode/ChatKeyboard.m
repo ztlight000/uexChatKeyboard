@@ -131,11 +131,12 @@
     self.messageToolView = [[ZBMessageInputView alloc]initWithFrame:CGRectMake(0.0f,UEX_SCREENHEIGHT - _inputViewHeight-_bottomOffset,UEX_SCREENWIDTH,_inputViewHeight)];
     
     self.messageToolView.delegate = self;
-    [EUtility brwView:self.uexObj.meBrwView addSubview:self.messageToolView];
+    [[self.uexObj.webViewEngine webView] addSubview:self.messageToolView];
+
     
-//    CGRect tempRect = self.uexObj.meBrwView.scrollView.frame;
+//    CGRect tempRect = [self.uexObj.webViewEngine webScrollView].frame;
 //    tempRect.size.height = CGRectGetMinY(self.messageToolView.frame);
-//    self.uexObj.meBrwView.scrollView.frame = tempRect;
+//    [self.uexObj.webViewEngine webScrollView].frame = tempRect;
     
     
     [self shareFaceView];
@@ -148,7 +149,7 @@
         ChatKeyboardData *chatKeyboardData = [ChatKeyboardData sharedChatKeyboardData];
         self.faceView = [[ZBMessageManagerFaceView alloc]initWithFrame:CGRectMake(0.0f,UEX_SCREENHEIGHT, UEX_SCREENWIDTH, 196) andFacePath:self.facePath];
         self.faceView.delegate = self;
-        [EUtility brwView:self.uexObj.meBrwView addSubview:self.faceView];
+        [[self.uexObj.webViewEngine webView] addSubview:self.faceView];
         
         self.sendButton = [UIButton buttonWithType:UIButtonTypeCustom];
         self.sendButton.frame = CGRectMake(UEX_SCREENWIDTH-70, CGRectGetMaxY(self.faceView.frame)+3, 70, 37);
@@ -160,7 +161,7 @@
         self.sendButton.layer.borderColor = [[UIColor lightGrayColor] CGColor];
 //        [self.sendButton setBackgroundImage:[UIImage imageWithContentsOfFile:UEX_SEND_FACE_NORMAL] forState:UIControlStateNormal];
 //        [self.sendButton setBackgroundImage:[UIImage imageWithContentsOfFile:UEX_SEND_FACE_HL] forState:UIControlStateHighlighted];
-        [EUtility brwView:self.uexObj.meBrwView addSubview:self.sendButton];
+        [[self.uexObj.webViewEngine webView] addSubview:self.sendButton];
         [self.sendButton addTarget:self action:@selector(sendButtonDidClicked:) forControlEvents:UIControlEventTouchUpInside];
         
     }
@@ -180,7 +181,7 @@
     if (!self.shareMenuView)
     {
         self.shareMenuView = [[ZBMessageShareMenuView alloc]initWithFrame:CGRectMake(0.0f,UEX_SCREENHEIGHT,UEX_SCREENWIDTH, 196)];
-        [EUtility brwView:self.uexObj.meBrwView addSubview:self.shareMenuView];
+        [[self.uexObj.webViewEngine webView] addSubview:self.shareMenuView];
 
         self.shareMenuView.delegate = self;
         
@@ -206,22 +207,17 @@
 
 
 - (void)changeWebView:(float)height {
-    NSLog(@"changeWebView==>>进入changeWebView");
-    float yy = self.uexObj.meBrwView.frame.origin.y;
-//    CGRect tempRect = self.uexObj.meBrwView.scrollView.frame;
-//    tempRect.size.height = CGRectGetMinY(self.messageToolView.frame) - yy;
-//    self.uexObj.meBrwView.scrollView.frame = tempRect;
-    NSLog(@"changeWebView==>>meBrwView=%@",self.uexObj.meBrwView);
-    NSLog(@"changeWebView==>>scrollView=%@",self.uexObj.meBrwView.scrollView);
-    [self.uexObj.meBrwView.scrollView setContentOffset:CGPointMake(0, 0)];
+
+    float yy = [self.uexObj.webViewEngine webView].frame.origin.y;
+
+    [[self.uexObj.webViewEngine webScrollView] setContentOffset:CGPointMake(0, 0)];
     
     if (CGRectGetMinY(self.messageToolView.frame) < yy + height) {
-        NSLog(@"changeWebView==>>有遮挡设偏移量====%lf",yy + height - CGRectGetMinY(self.messageToolView.frame));
 
-        [self.uexObj.meBrwView.scrollView setContentOffset:CGPointMake(0, yy + height - CGRectGetMinY(self.messageToolView.frame))];
+
+        [[self.uexObj.webViewEngine webScrollView] setContentOffset:CGPointMake(0, yy + height - CGRectGetMinY(self.messageToolView.frame))];
         
     }
-     NSLog(@"changeWebView调整之后==>>scrollView=%@",self.uexObj.meBrwView.scrollView);
 
 }
 
@@ -237,10 +233,10 @@
         
         self.messageToolView.frame = CGRectMake(0.0f,UEX_SCREENHEIGHT-offsetHeight-CGRectGetHeight(inputViewRect),UEX_SCREENWIDTH,CGRectGetHeight(inputViewRect));
         
-        CGRect tempRect = self.uexObj.meBrwView.scrollView.frame;
-        tempRect.size.height = CGRectGetMinY(self.messageToolView.frame)+self.bottomOffset+CGRectGetHeight(inputViewRect)-self.uexObj.meBrwView.frame.origin.y;
+        CGRect tempRect = [self.uexObj.webViewEngine webScrollView].frame;
+        tempRect.size.height = CGRectGetMinY(self.messageToolView.frame)+self.bottomOffset+CGRectGetHeight(inputViewRect)-[self.uexObj.webViewEngine webView].frame.origin.y;
         
-        self.uexObj.meBrwView.scrollView.frame = tempRect;
+        [self.uexObj.webViewEngine webScrollView].frame = tempRect;
         
         switch (state) {
                 
@@ -287,19 +283,19 @@
         
     }];
     
-    NSString * status = @"0";
+    NSInteger status = 0;
     
     
     if (CGRectGetHeight(rect) > 0) {
-        status = @"1";
+        status = 1;
         self.messageToolView.isKeyBoardShow=YES;
     } else {
-        NSLog(@"messageViewAnimationWithMessageRect==>>键盘收回时scrollView=%@",self.uexObj.meBrwView.scrollView);
-        if (self.uexObj.meBrwView.scrollView.frame.size.height >= self.uexObj.meBrwView.scrollView.contentOffset.y) {
-            [self.uexObj.meBrwView.scrollView setContentOffset:CGPointMake(0, 0)];
+
+        if ([self.uexObj.webViewEngine webScrollView].frame.size.height >= [self.uexObj.webViewEngine webScrollView].contentOffset.y) {
+            [[self.uexObj.webViewEngine webScrollView] setContentOffset:CGPointMake(0, 0)];
             
         } else {
-            [self.uexObj.meBrwView.scrollView setContentOffset:CGPointMake(0, self.uexObj.meBrwView.scrollView.contentOffset.y)];
+            [[self.uexObj.webViewEngine webScrollView] setContentOffset:CGPointMake(0, [self.uexObj.webViewEngine webScrollView].contentOffset.y)];
         }
         self.messageToolView.isKeyBoardShow=NO;
         //判断chatKeyboard是否收起
@@ -309,24 +305,15 @@
         
     }
     
-    NSLog(@"messageViewAnimationWithMessageRect==>>messageInputTextView=%@;meBrwView=%@;scrollView=%@",self.messageToolView.messageInputTextView,self.uexObj.meBrwView,self.uexObj.meBrwView.scrollView);
+    NSDictionary *jsDic = @{
+                            @"status":@(status)
+                            };
+    [self.uexObj.webViewEngine callbackWithFunctionKeyPath:@"uexChatKeyboard.onKeyBoardShow" arguments:ACArgsPack(jsDic.ac_JSONFragment)];
     
-    NSDictionary * jsDic = [NSDictionary dictionaryWithObject:status forKey:@"status"];
-    NSString *jsStr = [NSString stringWithFormat:@"if(uexChatKeyboard.onKeyBoardShow!=null){uexChatKeyboard.onKeyBoardShow(\'%@\');}",[jsDic JSONFragment]];
-    
-    //if (![status isEqualToString:_keyboardStatus]) {
-    //_keyboardStatus = status;
-    [self performSelectorOnMainThread:@selector(onKeyboardShowCallback:) withObject:jsStr waitUntilDone:NO];
-    //}
+
 }
 
-- (void)onKeyboardShowCallback:(id)userInfo {
-    
-    NSString *jsStr = (NSString *)userInfo;
-    
-    [self.uexObj.meBrwView stringByEvaluatingJavaScriptFromString:jsStr];
-    
-}
+
 
 #pragma end
 
@@ -460,29 +447,16 @@
 /*
  * 发送信息
  */
-- (void)didSendTextAction:(ZBMessageTextView *)messageInputTextView
-{
+- (void)didSendTextAction:(ZBMessageTextView *)messageInputTextView{
     
     NSString * testContent = messageInputTextView.text;
     [messageInputTextView setText:nil];
-    
-    
     NSDictionary * jsDic = [NSDictionary dictionaryWithObject:testContent forKey:@"emojiconsText"];
     
-    NSString *jsStr = [NSString stringWithFormat:@"if(uexChatKeyboard.onCommit!=null){uexChatKeyboard.onCommit(\'%@\');}", [jsDic JSONFragment]];
-    [self.uexObj.meBrwView stringByEvaluatingJavaScriptFromString:jsStr];
-    
-    NSString *cbJsonStr = [NSString stringWithFormat:@"if(uexChatKeyboard.onCommitJson!=null){uexChatKeyboard.onCommitJson(%@);}", [jsDic JSONFragment]];
-    
-    NSDictionary * cbDic = [NSDictionary dictionaryWithObject:cbJsonStr forKey:@"cbKey"];
-    
-    NSString * cbjson = [cbDic objectForKey:@"cbKey"];
-    
-    
-    [self.uexObj.meBrwView stringByEvaluatingJavaScriptFromString:cbjson];
-    
+    [self.uexObj.webViewEngine callbackWithFunctionKeyPath:@"uexChatKeyboard.onCommit" arguments:ACArgsPack(jsDic.ac_JSONFragment)];
+    [self.uexObj.webViewEngine callbackWithFunctionKeyPath:@"uexChatKeyboard.onCommitJson" arguments:ACArgsPack(jsDic)];
     [self inputTextViewDidChange:messageInputTextView];
-//    [messageInputTextView resignFirstResponder];
+
 }
 
 
@@ -539,8 +513,7 @@
 
 #pragma mark - ZBMessageShareMenuView Delegate
 - (void)didSelecteShareMenuItem:(ZBMessageShareMenuItem *)shareMenuItem atIndex:(NSInteger)index{
-    NSString *jsStr = [NSString stringWithFormat:@"if(uexChatKeyboard.onShareMenuItem!=null){uexChatKeyboard.onShareMenuItem(%d);}", (int)index];
-    [self.uexObj.meBrwView stringByEvaluatingJavaScriptFromString:jsStr];
+    [self.uexObj.webViewEngine callbackWithFunctionKeyPath:@"uexChatKeyboard.onShareMenuItem" arguments:ACArgsPack(@(index))];
     [self doActionWithSelectShareMenuItemIndex:index];
     [self messageViewAnimationWithMessageRect:CGRectZero
                      withMessageInputViewRect:self.messageToolView.frame
@@ -566,7 +539,7 @@
 }
 
 - (void)keyboardChange:(NSNotification *)notification{
-    if ([[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].origin.y<CGRectGetHeight(self.uexObj.meBrwView.frame)) {
+    if ([[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].origin.y<CGRectGetHeight([self.uexObj.webViewEngine webView].frame)) {
         [self messageViewAnimationWithMessageRect:[[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue]
                          withMessageInputViewRect:self.messageToolView.frame
                                       andDuration:0.25
@@ -599,9 +572,13 @@
 }
 
 -(void)didTimeOut{
-    NSDictionary * cbDic = [NSDictionary dictionaryWithObjectsAndKeys:@"2",@"status",@"2",@"voicePath", nil];
-    NSString *jsStr = [NSString stringWithFormat:@"if(uexChatKeyboard.onVoiceAction!=null){uexChatKeyboard.onVoiceAction(\'%@\');}", [cbDic JSONFragment]];
-    [self.uexObj.meBrwView stringByEvaluatingJavaScriptFromString:jsStr];
+    NSDictionary *result = @{
+                             @"status":@2,
+                             @"voicePath":@2
+                             };
+    [self.uexObj.webViewEngine callbackWithFunctionKeyPath:@"uexChatKeyboard.onVoiceAction" arguments:ACArgsPack(result.ac_JSONFragment)];
+    
+
     [self removeViewAndSubviewsFromSuperview:_v];
     _v.delegate = nil;
     
@@ -614,13 +591,16 @@
  */
 - (void)didStartRecordingVoiceAction{
 
-    NSDictionary * cbDic = [NSDictionary dictionaryWithObjectsAndKeys:@"0",@"status",@"0",@"voicePath", nil];
-    NSString *jsStr = [NSString stringWithFormat:@"if(uexChatKeyboard.onVoiceAction!=null){uexChatKeyboard.onVoiceAction(\'%@\');}", [cbDic JSONFragment]];
-    [self.uexObj.meBrwView stringByEvaluatingJavaScriptFromString:jsStr];
+    NSDictionary *result = @{
+                             @"status":@0,
+                             @"voicePath":@0
+                             };
+    [self.uexObj.webViewEngine callbackWithFunctionKeyPath:@"uexChatKeyboard.onVoiceAction" arguments:ACArgsPack(result.ac_JSONFragment)];
+    
     
     _v = [[ACPVoiceActionView alloc]initWithFrame:CGRectMake(0, 0, UEX_SCREENWIDTH, UEX_SCREENHEIGHT-_inputViewHeight)];
     _v.delegate = self;
-    [EUtility brwView:self.uexObj.meBrwView addSubview:_v];
+    [[self.uexObj.webViewEngine webView] addSubview:_v];
     
     
 }
@@ -630,11 +610,12 @@
  */
 - (void)didCancelRecordingVoiceAction{
     
+    NSDictionary *result = @{
+                             @"status":@-1,
+                             @"voicePath":@-1
+                             };
+    [self.uexObj.webViewEngine callbackWithFunctionKeyPath:@"uexChatKeyboard.onVoiceAction" arguments:ACArgsPack(result.ac_JSONFragment)];
 
-    
-    NSDictionary * cbDic = [NSDictionary dictionaryWithObjectsAndKeys:@"-1",@"status",@"-1",@"voicePath", nil];
-    NSString *jsStr = [NSString stringWithFormat:@"if(uexChatKeyboard.onVoiceAction!=null){uexChatKeyboard.onVoiceAction(\'%@\');}", [cbDic JSONFragment]];
-    [self.uexObj.meBrwView stringByEvaluatingJavaScriptFromString:jsStr];
     
     [self removeViewAndSubviewsFromSuperview:_v];
     _v.delegate = nil;
@@ -644,12 +625,13 @@
  *  松开手指完成录音
  */
 - (void)didFinishRecoingVoiceAction{
-    
+    NSDictionary *result = @{
+                             @"status":@1,
+                             @"voicePath":@1
+                             };
+    [self.uexObj.webViewEngine callbackWithFunctionKeyPath:@"uexChatKeyboard.onVoiceAction" arguments:ACArgsPack(result.ac_JSONFragment)];
 
-    
-    NSDictionary * cbDic = [NSDictionary dictionaryWithObjectsAndKeys:@"1",@"status",@"1",@"voicePath", nil];
-    NSString *jsStr = [NSString stringWithFormat:@"if(uexChatKeyboard.onVoiceAction!=null){uexChatKeyboard.onVoiceAction(\'%@\');}", [cbDic JSONFragment]];
-    [self.uexObj.meBrwView stringByEvaluatingJavaScriptFromString:jsStr];
+
     [self removeViewAndSubviewsFromSuperview:_v];
     _v.delegate = nil;
 }

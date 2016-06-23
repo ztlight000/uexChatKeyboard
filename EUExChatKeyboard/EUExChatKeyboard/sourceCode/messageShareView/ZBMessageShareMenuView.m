@@ -7,7 +7,7 @@
 //
 
 #import "ZBMessageShareMenuView.h"
-#import "EUtility.h"
+
 
 // 每行有4个
 #define kZBMessageShareMenuPerRowItemCount 4
@@ -126,7 +126,7 @@
     
     [self.shareMenuScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
-    CGFloat paddingX = ([EUtility screenWidth]-4*kZBShareMenuItemIconSize)/5;
+    CGFloat paddingX = (UEX_SCREEN_WIDTH -4*kZBShareMenuItemIconSize)/5;
     CGFloat paddingY = 10;
     for (ZBMessageShareMenuItem *shareMenuItem in self.shareMenuItems) {
         NSInteger index = [self.shareMenuItems indexOfObject:shareMenuItem];

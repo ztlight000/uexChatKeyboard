@@ -22,41 +22,37 @@
 
 @implementation EUExChatKeyboard
 
-- (id)initWithBrwView:(EBrowserView *)eInBrwView {
-    
-    if (self = [super initWithBrwView:eInBrwView]) {
-        //
+
+- (instancetype)initWithWebViewEngine:(id<AppCanWebViewEngineObject>)engine{
+    if (self = [super initWithWebViewEngine:engine]) {
+        
     }
-    
     return self;
-    
 }
+
+
 
 - (void)clean {
     
     if (_tapGR) {
-        
         _tapGR.delegate = nil;
         _tapGR = nil;
     }
     
     
     if (_chatKeyboard) {
-        
         [_chatKeyboard close];
         _chatKeyboard = nil;
-        
     }
-    
+
 }
 
--(void)open:(NSMutableArray *)array {
-    
-    if ([array count] < 1) {
-        return;
-    }
+-(void)open:(NSMutableArray *)inArguments {
+
     ChatKeyboardData *chatKeyboardData = [ChatKeyboardData sharedChatKeyboardData];
-    NSDictionary * xmlDic = [[array objectAtIndex:0] JSONValue];
+    
+    ACArgsUnpack(NSDictionary *xmlDic) = inArguments;
+    
     
     NSString * xmlPath = [xmlDic objectForKey:@"emojicons"];
     xmlPath = [self absPath:xmlPath];
@@ -98,7 +94,7 @@
     UIColor * textColor = [UIColor colorWithRed:220.0/255.0 green:220.0/255.0 blue:220.0/255.0 alpha:1.0];
     if ([xmlDic objectForKey:@"textColor"]) {
         NSString * textColorStr = [xmlDic objectForKey:@"textColor"];
-        textColor = [EUtility ColorFromString:textColorStr];
+        textColor = [UIColor ac_ColorWithHTMLColorString:textColorStr];
     }
     
     float textSize = 30.0;
@@ -112,12 +108,12 @@
     UIColor * sendBtnbgColorUp = [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:0.5];
     if ([xmlDic objectForKey:@"sendBtnbgColorUp"]) {
         NSString * sendBtnbgColorUpStr = [xmlDic objectForKey:@"sendBtnbgColorUp"];
-        sendBtnbgColorUp = [EUtility ColorFromString:sendBtnbgColorUpStr];
+        sendBtnbgColorUp = [UIColor ac_ColorWithHTMLColorString:sendBtnbgColorUpStr];
     }
     UIColor * sendBtnbgColorDown = [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1.0];
     if ([xmlDic objectForKey:@"sendBtnbgColorDown"]) {
         NSString * sendBtnbgColorDownStr = [xmlDic objectForKey:@"sendBtnbgColorDown"];
-        sendBtnbgColorDown = [EUtility ColorFromString:sendBtnbgColorDownStr];
+        sendBtnbgColorDown = [UIColor ac_ColorWithHTMLColorString:sendBtnbgColorDownStr];
     }
     NSString * sendBtnText = @"发送";
     if ([xmlDic objectForKey:@"sendBtnText"]) {
@@ -130,7 +126,7 @@
     UIColor * sendBtnTextColor = [UIColor colorWithRed:128.0/255.0 green:128.0/255.0 blue:128.0/255.0 alpha:1.0];
     if ([xmlDic objectForKey:@"sendBtnTextColor"]) {
         NSString * sendBtnTextColorStr = [xmlDic objectForKey:@"sendBtnTextColor"];
-        sendBtnTextColor = [EUtility ColorFromString:sendBtnTextColorStr];
+        sendBtnTextColor = [UIColor ac_ColorWithHTMLColorString:sendBtnTextColorStr];
     }
     
     chatKeyboardData.touchDownImg = touchDownImg;
@@ -154,8 +150,8 @@
         [_chatKeyboard open];
         
         _tapGR = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hideKeyboard:)];
-        
-        [self.meBrwView addGestureRecognizer:_tapGR];
+        [[self.webViewEngine webView]addGestureRecognizer:_tapGR];
+
         
         _tapGR.delegate = self;
         
@@ -193,31 +189,22 @@
 
 //7-24 by lkl
 
--(void)getInputBarHeight:(NSMutableArray*)inArguments{
+- (NSNumber *)getInputBarHeight:(NSMutableArray*)inArguments{
     CGFloat height;
-    if ([[[UIDevice currentDevice]systemVersion]floatValue]>=7) {
+    if (ACSystemVersion() >= 7) {
         height = 45.0f;
     }
     else{
         height = 40.0f;
     }
-    [self callBackJsonWithName:@"cbGetInputBarHeight" Object:@{@"height":@(height)}];
     
-}
+    [self.webViewEngine callbackWithFunctionKeyPath:@"uexChatKeyboard.cbGetInputBarHeight" arguments:ACArgsPack(@{@"height":@(height)}.ac_JSONFragment)];
+    return @(height);
 
--(void)callBackJsonWithName:(NSString *)name Object:(id)obj{
-    const NSString *kPluginName = @"uexChatKeyboard";
-    NSString *result=[obj JSONFragment];
-    NSString *jsSuccessStr = [NSString stringWithFormat:@"if(%@.%@ != null){%@.%@('%@');}",kPluginName,name,kPluginName,name,result];
-    [self performSelector:@selector(delayedCallBack:) withObject:jsSuccessStr afterDelay:0.01];
     
 }
 
 
--(void)delayedCallBack:(NSString *)str{
-    [EUtility brwView:meBrwView evaluateScript:str];
-    
-}
 
 -(void)getShareDicFromSharePath:(NSString *)sharePath
 {
@@ -253,17 +240,15 @@
     [ChatKeyboardData sharedChatKeyboardData].deleteImg = [emojiconsDic objectForKey:@"delete"];
 }
 
-- (void)changeWebViewFrame:(NSMutableArray *)array {
-    
-    float h = [[array objectAtIndex:0] floatValue];
-    
+- (void)changeWebViewFrame:(NSMutableArray *)inArguments {
+    float h = [inArguments.firstObject floatValue];
     if (_chatKeyboard) {
         [_chatKeyboard changeWebView:h];
     }
     
 }
 
--(void)close:(NSMutableArray *)array {
+-(void)close:(NSMutableArray *)inArguments {
     
     [self clean];
 }
