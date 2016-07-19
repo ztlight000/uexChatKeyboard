@@ -17,6 +17,8 @@
 @property (nonatomic, strong) NSString * delete;
 @property (nonatomic, strong) NSString * pageNum;
 @property (nonatomic, strong) UITapGestureRecognizer * tapGR;
+@property (nonatomic, strong) UIPanGestureRecognizer *panRecognizer;
+@property (nonatomic, strong) UILongPressGestureRecognizer *longPressRecognizer;
 
 @end
 
@@ -40,6 +42,17 @@
         _tapGR = nil;
     }
     
+    if (_panRecognizer) {
+        
+        _panRecognizer.delegate = nil;
+        _panRecognizer = nil;
+    }
+    
+    if (_longPressRecognizer) {
+        
+        _longPressRecognizer.delegate = nil;
+        _longPressRecognizer = nil;
+    }
     
     if (_chatKeyboard) {
         
@@ -150,7 +163,6 @@
             _chatKeyboard.bottomOffset=[[xmlDic objectForKey:@"bottom"] floatValue];
         }
         
-        
         [_chatKeyboard open];
         
         _tapGR = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hideKeyboard:)];
@@ -158,6 +170,18 @@
         [self.meBrwView addGestureRecognizer:_tapGR];
         
         _tapGR.delegate = self;
+        
+        _panRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(hideKeyboard:)];
+        
+        [self.meBrwView addGestureRecognizer:_panRecognizer];
+        
+        _panRecognizer.delegate = self;
+        
+        _longPressRecognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(hideKeyboard:)];
+        
+        [self.meBrwView addGestureRecognizer:_longPressRecognizer];
+        
+        _longPressRecognizer.delegate = self;
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(50 * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
             [_chatKeyboard.messageToolView uex_change:isAudio];

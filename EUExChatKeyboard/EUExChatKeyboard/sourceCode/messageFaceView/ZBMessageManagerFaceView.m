@@ -33,6 +33,7 @@
 
 - (void)setup{
     
+    //表情区域的背景色
     self.backgroundColor = [UIColor colorWithRed:248.0f/255 green:248.0f/255 blue:255.0f/255 alpha:1.0];
     
     int faceCount = (int)[[ChatKeyboardData sharedChatKeyboardData].faceArray count];
@@ -66,6 +67,8 @@
     
     ZBExpressionSectionBar *sectionBar = [[ZBExpressionSectionBar alloc]initWithFrame:CGRectMake(0.0f,CGRectGetMaxY(pageControl.frame),CGRectGetWidth(self.bounds), FaceSectionBarHeight)];
     [self addSubview:sectionBar];
+    //最下部发送条的颜色
+//    sectionBar.backgroundColor = [UIColor redColor];
 }
 
 #pragma mark  scrollView Delegate

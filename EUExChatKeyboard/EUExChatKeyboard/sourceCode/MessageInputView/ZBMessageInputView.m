@@ -276,7 +276,6 @@
     [self addSubview:textView];
 	self.messageInputTextView = textView;
     
-    
     // 配置不同iOS SDK版本的样式
     switch (style)
     {
@@ -344,7 +343,7 @@
                                           prevFrame.size.width,
                                           prevFrame.size.height + changeInHeight);
     
-    
+
     self.messageInputTextView.contentInset = UIEdgeInsetsMake((numLines >= 6 ? 4.0f : 0.0f),
                                                        0.0f,
                                                        (numLines >= 6 ? 4.0f : 0.0f),
