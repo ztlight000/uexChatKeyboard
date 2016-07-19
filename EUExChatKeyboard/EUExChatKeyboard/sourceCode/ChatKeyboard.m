@@ -9,6 +9,26 @@
 #import "ChatKeyboard.h"
 #import "ChatKeyboardData.h"
 
+// iOS系统版本
+#define SYSTEM_VERSION    [[[UIDevice currentDevice] systemVersion] doubleValue]
+// 标准系统状态栏高度
+#define SYS_STATUSBAR_HEIGHT                        20
+// 热点栏高度
+#define HOTSPOT_STATUSBAR_HEIGHT            20
+// 导航栏（UINavigationController.UINavigationBar）高度
+#define NAVIGATIONBAR_HEIGHT                44
+// 工具栏（UINavigationController.UIToolbar）高度
+#define TOOLBAR_HEIGHT                              44
+// 标签栏（UITabBarController.UITabBar）高度
+#define TABBAR_HEIGHT                              44
+// APP_STATUSBAR_HEIGHT=SYS_STATUSBAR_HEIGHT+[HOTSPOT_STATUSBAR_HEIGHT]
+#define APP_STATUSBAR_HEIGHT                (CGRectGetHeight([UIApplication sharedApplication].statusBarFrame))
+// 根据APP_STATUSBAR_HEIGHT判断是否存在热点栏
+#define IS_HOTSPOT_CONNECTED                (APP_STATUSBAR_HEIGHT==(SYS_STATUSBAR_HEIGHT+HOTSPOT_STATUSBAR_HEIGHT)?YES:NO)
+// 无热点栏时，标准系统状态栏高度+导航栏高度
+#define NORMAL_STATUS_AND_NAV_BAR_HEIGHT    (SYS_STATUSBAR_HEIGHT+NAVIGATIONBAR_HEIGHT)
+// 实时系统状态栏高度+导航栏高度，如有热点栏，其高度包含在APP_STATUSBAR_HEIGHT中。
+#define STATUS_AND_NAV_BAR_HEIGHT                    (APP_STATUSBAR_HEIGHT+NAVIGATIONBAR_HEIGHT)
 
 
 #define UEX_SEND_FACE_NORMAL [UEX_PLUGIN_BUNDLE pathForResource:@"messageInputViewResource/EmotionsSendBtnGrey@2x" ofType:@"png"]
@@ -117,6 +137,11 @@
                                                 name:UIKeyboardWillChangeFrameNotification
                                               object:nil];
     
+    [[NSNotificationCenter defaultCenter]addObserver:self
+                                            selector:@selector(handleUIApplicationWillChangeStatusBarFrameNotification:)
+                                                name:UIApplicationWillChangeStatusBarFrameNotification
+                                              object:nil];
+
     
     if ([[[UIDevice currentDevice]systemVersion]floatValue]>=7) {
         _inputViewHeight = 45.0f;
@@ -125,11 +150,29 @@
         _inputViewHeight = 40.0f;
     }
     
-    self.messageToolView = [[ZBMessageInputView alloc]initWithFrame:CGRectMake(0.0f,UEX_SCREENHEIGHT - _inputViewHeight-_bottomOffset,UEX_SCREENWIDTH,_inputViewHeight)];
+    
+    CGFloat contentSatrtY = 0;
+    
+    if (IS_HOTSPOT_CONNECTED) { // iPhone4(s)-iOS6/iOS7屏幕坐标系下：hostView.frame={{0, 40}, {320, 440}}/{{0, 20}, {320, 460}}
+
+        if (SYSTEM_VERSION >= 7.0) { // 如果设置了edgesForExtendedLayout=UIRectEdgeNone 
+            contentSatrtY -= HOTSPOT_STATUSBAR_HEIGHT;// 64（有热点栏时，会自动下移20）
+            
+            self.messageToolView = [[ZBMessageInputView alloc]initWithFrame:CGRectMake(0.0f,UEX_SCREENHEIGHT - _inputViewHeight-_bottomOffset - HOTSPOT_STATUSBAR_HEIGHT,UEX_SCREENWIDTH,_inputViewHeight)];
+        }
+    } else { // iPhone4(s)-iOS6/iOS7屏幕坐标系下：hostView.frame={{0, 20}, {320, 460}}/{{0, 0}, {320, 480}}
+        contentSatrtY = NORMAL_STATUS_AND_NAV_BAR_HEIGHT; // 64
+        
+        self.messageToolView = [[ZBMessageInputView alloc]initWithFrame:CGRectMake(0.0f,UEX_SCREENHEIGHT - _inputViewHeight-_bottomOffset,UEX_SCREENWIDTH,_inputViewHeight)];
+    }
+    
+    //输入框的背景色
+//    self.messageToolView.backgroundColor = [UIColor redColor];
+//    self.messageToolView.image = nil;
     
     self.messageToolView.delegate = self;
     [EUtility brwView:self.uexObj.meBrwView addSubview:self.messageToolView];
-    
+
 //    CGRect tempRect = self.uexObj.meBrwView.scrollView.frame;
 //    tempRect.size.height = CGRectGetMinY(self.messageToolView.frame);
 //    self.uexObj.meBrwView.scrollView.frame = tempRect;
@@ -139,6 +182,30 @@
     [self shareShareMeun];
 }
 
+//状态栏变化的通知(zt)
+- (void)handleUIApplicationWillChangeStatusBarFrameNotification:(NSNotification*)notification
+{
+    CGRect newStatusBarFrame = [(NSValue*)[notification.userInfo objectForKey:UIApplicationStatusBarFrameUserInfoKey] CGRectValue];
+    // 根据系统状态栏高判断热点栏的变动
+    BOOL bPersonalHotspotConnected = (CGRectGetHeight(newStatusBarFrame)==(SYS_STATUSBAR_HEIGHT+HOTSPOT_STATUSBAR_HEIGHT)?YES:NO);
+    
+    CGPoint newCenter = CGPointZero;
+    CGFloat OffsetY = bPersonalHotspotConnected?+HOTSPOT_STATUSBAR_HEIGHT:-HOTSPOT_STATUSBAR_HEIGHT;
+    if (SYSTEM_VERSION >= 7.0) { // 即使设置了extendedLayoutIncludesOpaqueBars=NO/edgesForExtendedLayout=UIRectEdgeNone，对没有自动调整的部分View做必要的手动调整
+        newCenter = self.messageToolView.center;
+        newCenter.y -= OffsetY;
+        self.messageToolView.center = newCenter;
+        
+        CGRect tempRect = self.uexObj.meBrwView.scrollView.frame;
+        tempRect.size.height -= OffsetY;
+        self.uexObj.meBrwView.scrollView.frame = tempRect;
+        
+    } else { // Custom Content对应的view整体调整
+        
+    }
+    
+}
+
 - (void)shareFaceView{
     
     if (!self.faceView) {
@@ -146,7 +213,6 @@
         self.faceView = [[ZBMessageManagerFaceView alloc]initWithFrame:CGRectMake(0.0f,UEX_SCREENHEIGHT, UEX_SCREENWIDTH, 196) andFacePath:self.facePath];
         self.faceView.delegate = self;
         [EUtility brwView:self.uexObj.meBrwView addSubview:self.faceView];
-        
         self.sendButton = [UIButton buttonWithType:UIButtonTypeCustom];
         self.sendButton.frame = CGRectMake(UEX_SCREENWIDTH-70, CGRectGetMaxY(self.faceView.frame)+3, 70, 37);
         [self.sendButton setTitle:chatKeyboardData.sendBtnText forState:UIControlStateNormal];
@@ -160,7 +226,6 @@
 //        [self.sendButton setBackgroundImage:[UIImage imageWithContentsOfFile:UEX_SEND_FACE_HL] forState:UIControlStateHighlighted];
         [EUtility brwView:self.uexObj.meBrwView addSubview:self.sendButton];
         [self.sendButton addTarget:self action:@selector(sendButtonDidClicked:) forControlEvents:UIControlEventTouchUpInside];
-        
     }
 }
 
@@ -198,17 +263,13 @@
         
         self.shareMenuView.shareMenuItems = [NSArray arrayWithArray:itemArray];
         [self.shareMenuView reloadData];
-        
+        self.shareMenuView.backgroundColor = [UIColor redColor];
     }
 }
-
 
 - (void)changeWebView:(float)height {
     NSLog(@"changeWebView==>>进入changeWebView");
     float yy = self.uexObj.meBrwView.frame.origin.y;
-//    CGRect tempRect = self.uexObj.meBrwView.scrollView.frame;
-//    tempRect.size.height = CGRectGetMinY(self.messageToolView.frame) - yy;
-//    self.uexObj.meBrwView.scrollView.frame = tempRect;
     NSLog(@"changeWebView==>>meBrwView=%@;scrollView=%@",self.uexObj.meBrwView,self.uexObj.meBrwView.scrollView);
     [self.uexObj.meBrwView.scrollView setContentOffset:CGPointMake(0, 0)];
     
@@ -218,7 +279,6 @@
         [self.uexObj.meBrwView.scrollView setContentOffset:CGPointMake(0, yy + height - CGRectGetMinY(self.messageToolView.frame))];
         
     }
-     NSLog(@"changeWebView调整之后==>>scrollView=%@",self.uexObj.meBrwView.scrollView);
 
 }
 
@@ -232,7 +292,13 @@
             offsetHeight=CGRectGetHeight(rect);
         }
         
-        self.messageToolView.frame = CGRectMake(0.0f,UEX_SCREENHEIGHT - offsetHeight-CGRectGetHeight(inputViewRect),UEX_SCREENWIDTH,CGRectGetHeight(inputViewRect));
+        CGFloat messageToolViewHeigh = UEX_SCREENHEIGHT - offsetHeight - CGRectGetHeight(inputViewRect);
+        
+        if (IS_HOTSPOT_CONNECTED){
+            messageToolViewHeigh -= HOTSPOT_STATUSBAR_HEIGHT;
+        }
+        
+        self.messageToolView.frame = CGRectMake(0.0f,messageToolViewHeigh,UEX_SCREENWIDTH,CGRectGetHeight(inputViewRect));
         
         CGRect tempRect = self.uexObj.meBrwView.scrollView.frame;
         tempRect.size.height = CGRectGetMinY(self.messageToolView.frame) + self.bottomOffset - self.uexObj.meBrwView.frame.origin.y;
@@ -427,7 +493,6 @@
     else {
         changeInHeight = MIN(changeInHeight, maxHeight - self.previousTextViewContentHeight);
     }
-
     
     if(changeInHeight != 0.0f) {
         
@@ -551,7 +616,6 @@
 
 - (void)keyboardWillHide:(NSNotification *)notification {
     
-    
     [self messageViewAnimationWithMessageRect:CGRectZero
                      withMessageInputViewRect:self.messageToolView.frame
                                   andDuration:0.0
@@ -643,9 +707,6 @@
  *  松开手指完成录音
  */
 - (void)didFinishRecoingVoiceAction{
-    
-
-    
     NSDictionary * cbDic = [NSDictionary dictionaryWithObjectsAndKeys:@"1",@"status",@"1",@"voicePath", nil];
     NSString *jsStr = [NSString stringWithFormat:@"if(uexChatKeyboard.onVoiceAction!=null){uexChatKeyboard.onVoiceAction(\'%@\');}", [cbDic JSONFragment]];
     [self.uexObj.meBrwView stringByEvaluatingJavaScriptFromString:jsStr];
