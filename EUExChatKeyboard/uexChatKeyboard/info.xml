@@ -1,32 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <uexplugins>
-    <plugin uexName="uexChatKeyboard" version="3.0.26" build="26">
-        <info>26:修改长按收回键盘，适配状态栏，表情放大</info>
-        <build>25:修改键盘跟输入框弹出不一致问题,修改键盘遮挡最后一条消息,修改键盘弹出时聊天内容滚动遮挡bug</build>
-        <build>24:修改键盘+号切换异常，修改发送按钮自定义</build>
-        <build>23:修改发送消息遮挡、修改录音从0开始</build>
-        <build>22:修改回调对象引用类型</build>
-        <build>21:添加IDE支持</build>
-        <build>20:修改键盘弹出时页面弹动</build>
-        <build>19:修复确定按钮背景图异常的bug</build>
-        <build>18:修复自定义功能按钮和表情按钮重新打开会弹出键盘的bug</build>
-        <build>17:收回键盘遮挡数据</build>
-        <build>16:修改点击发送不收回键盘</build>
-        <build>15:修复了messageShareView两列遮住文字的bug</build>
-        <build>14:修复插入表情时默认插入到最后的问题,修复在iPhone6 Plus上的显示问题</build>
-        <build>13:修复finishWidget时的崩溃问题,修复长按输入框显示放大镜时可以看见表情按钮的问题</build>
-        <build>12:修复关闭输入法后窗口显示不正常的bug</build>
-        <build>11:修复一个在iOS9下可能导致APP崩溃的bug</build>
-        <build>10:open添加可选参数，可以设置初始键盘页面为语音页面</build>
-        <build>9:修复直接输入表情时输入框变形问题.修复联系点击录音按钮录音提示无法关闭问题</build>
-        <build>8:修复输入内容过多时的显示问题</build>
-        <build>7:新增方法onCommitJson回调，onCommit方法保持不变</build>
-        <build>6:onCommit直接回调json对象,新增方法changeWebViewFrame</build>
-        <build>5:新增API：隐藏键盘</build>
-    	<build>4:新增API：获取键盘高度</build>
-        <build>3:open方法参数改为json类型,可以设置默认文字，自定义语音输入时的提示框</build>
-        <build>2:修复语音提示图片不显示的问题</build>
-        <build>1:onCommit接口的参数使用json格式</build>
-        <build>0:EUExChatKeyboard插件</build>
-    </plugin>
+  <plugin uexName="uexChatKeyboard" version="3.0.27" build="27">
+    <info>27: IDE证书更新</info>
+    <build>26: 修改长按收回键盘，适配状态栏，表情放大</build>
+    <build>25: 修改键盘跟输入框弹出不一致问题,修改键盘遮挡最后一条消息,修改键盘弹出时聊天内容滚动遮挡bug</build>
+    <build>24: 修改键盘+号切换异常，修改发送按钮自定义</build>
+    <build>23: 修改发送消息遮挡、修改录音从0开始</build>
+    <build>22: 修改回调对象引用类型</build>
+    <build>21: 添加IDE支持</build>
+    <build>20: 修改键盘弹出时页面弹动</build>
+    <build>19: 修复确定按钮背景图异常的bug</build>
+    <build>18: 修复自定义功能按钮和表情按钮重新打开会弹出键盘的bug</build>
+    <build>17: 收回键盘遮挡数据</build>
+    <build>16: 修改点击发送不收回键盘</build>
+    <build>15: 修复了messageShareView两列遮住文字的bug</build>
+    <build>14: 修复插入表情时默认插入到最后的问题,修复在iPhone6 Plus上的显示问题</build>
+    <build>13: 修复finishWidget时的崩溃问题,修复长按输入框显示放大镜时可以看见表情按钮的问题</build>
+    <build>12: 修复关闭输入法后窗口显示不正常的bug</build>
+    <build>11: 修复一个在iOS9下可能导致APP崩溃的bug</build>
+    <build>10: open添加可选参数，可以设置初始键盘页面为语音页面</build>
+    <build>9: 修复直接输入表情时输入框变形问题.修复联系点击录音按钮录音提示无法关闭问题</build>
+    <build>8: 修复输入内容过多时的显示问题</build>
+    <build>7: 新增方法onCommitJson回调，onCommit方法保持不变</build>
+    <build>6: onCommit直接回调json对象,新增方法changeWebViewFrame</build>
+    <build>5: 新增API：隐藏键盘</build>
+    <build>4: 新增API：获取键盘高度</build>
+    <build>3: open方法参数改为json类型,可以设置默认文字，自定义语音输入时的提示框</build>
+    <build>2: 修复语音提示图片不显示的问题</build>
+    <build>1: onCommit接口的参数使用json格式</build>
+    <build>0: EUExChatKeyboard插件</build>
+  </plugin>
 </uexplugins>
