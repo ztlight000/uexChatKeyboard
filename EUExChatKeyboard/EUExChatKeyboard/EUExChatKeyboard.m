@@ -210,7 +210,11 @@
     
     chatKeyboardData.placeHold = placeholder;
     
-    _chatKeyboard.messageToolView.messageInputTextView.placeHolder = chatKeyboardData.placeHold;
+    if (_chatKeyboard) {
+        
+        _chatKeyboard.messageToolView.messageInputTextView.placeHolder = chatKeyboardData.placeHold;
+        
+    }
     
 }
 
