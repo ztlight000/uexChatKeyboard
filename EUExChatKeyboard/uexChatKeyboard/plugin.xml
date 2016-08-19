@@ -6,5 +6,6 @@
         <method name="getInputBarHeight"></method>
         <method name="hideKeyboard"></method>
         <method name="changeWebViewFrame"></method>
+        <method name="setPlaceholder"></method>
     </plugin>
 </uexplugins>

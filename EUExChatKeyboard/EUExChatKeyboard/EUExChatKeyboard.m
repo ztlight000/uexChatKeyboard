@@ -192,6 +192,28 @@
     
 }
 
+-(void)setPlaceholder:(NSMutableArray *)array {
+    
+    NSLog(@"setPlaceholder==>>array=%@",array);
+    
+    if ([array count] <= 0) {
+        
+        return;
+        
+    }
+    
+    NSDictionary * xmlDic = [[array objectAtIndex:0] JSONValue];
+    
+    NSString * placeholder = [xmlDic objectForKey:@"placeholder"];
+    
+    ChatKeyboardData *chatKeyboardData = [ChatKeyboardData sharedChatKeyboardData];
+    
+    chatKeyboardData.placeHold = placeholder;
+    
+    _chatKeyboard.messageToolView.messageInputTextView.placeHolder = chatKeyboardData.placeHold;
+    
+}
+
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     
     return YES;

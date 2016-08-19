@@ -263,7 +263,7 @@
         
         self.shareMenuView.shareMenuItems = [NSArray arrayWithArray:itemArray];
         [self.shareMenuView reloadData];
-        self.shareMenuView.backgroundColor = [UIColor redColor];
+//        self.shareMenuView.backgroundColor = [UIColor redColor];
     }
 }
 
